@@ -1,4 +1,4 @@
-package com.floramorn;
+package com.lzm.Cajas;
 
 import com.facebook.react.ReactActivity;
 
