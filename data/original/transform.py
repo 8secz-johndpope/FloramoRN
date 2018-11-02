@@ -19,8 +19,9 @@ species_places_data = get_file_data("speciesPlaces.json")
 species = []
 all_colors = []
 all_life_forms = []
-en = []
-es = []
+all_places = []
+en = {}
+es = {}
 
 
 def find_by_id(array, item_id):
@@ -74,10 +75,11 @@ for index, element in enumerate(species_data):
     gender_name = genero["nombre"]
     family_name = familia["nombre"]
     key = f'{family_name}_{gender_name}_{name}'
+    key = key.lower()
     specie = {
         "id": index,
         "tropicos_id": element["id_tropicos"],
-        "key": key.lower(),
+        "key": key,
         "name": name,
         "gender": gender_name,
         "family": family_name,
@@ -85,14 +87,17 @@ for index, element in enumerate(species_data):
         "life_forms": get_life_forms(element),
         "thumbnail": element["thumbnail"]
     }
+    i18n_es = {
+        "description": element["descripcion_es"],
+        "distribution": element["distribucion_es"]
+    }
+    es[key] = i18n_es
+    i18n_en = {
+        "description": element["descripcion_en"],
+        "distribution": element["distribucion_en"]
+    }
+    en[key] = i18n_en
     # print(specie)
     species.append(specie)
 all_colors.sort()
 all_life_forms.sort()
-
-# print(find_by_id(colors_data, 15))
-
-# for data in species_data:
-#     specie = {
-#
-#     }
