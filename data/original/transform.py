@@ -30,6 +30,22 @@ def find_by_id(array, item_id):
             return item
 
 
+def find_for_species(array, item_id):
+    found = []
+    for item in array:
+        if item["especie_id"] == str(item_id):
+            found.append(item)
+    return found
+
+
+def get_photos(item_id):
+    photos_raw = find_for_species(photos_data, item_id)
+    photos = []
+    for photo in photos_raw:
+        photos.append(photo["path"])
+    return photos
+
+
 def get_colors(item):
     color1_id = int(item["color1_id"])
     color1_name = find_by_id(colors_data, color1_id)["nombre"]
@@ -85,8 +101,11 @@ for index, element in enumerate(species_data):
         "family": family_name,
         "colors": get_colors(element),
         "life_forms": get_life_forms(element),
-        "thumbnail": element["thumbnail"]
+        "thumbnail": element["thumbnail"],
+        "photos": get_photos(element["id"])
     }
+    print(specie)
+    species.append(specie)
     i18n_es = {
         "description": element["descripcion_es"],
         "distribution": element["distribucion_es"]
@@ -97,7 +116,5 @@ for index, element in enumerate(species_data):
         "distribution": element["distribucion_en"]
     }
     en[key] = i18n_en
-    # print(specie)
-    species.append(specie)
 all_colors.sort()
 all_life_forms.sort()
