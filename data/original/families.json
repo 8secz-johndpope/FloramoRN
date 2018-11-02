@@ -1,4 +1,4 @@
-const families = [
+[
   {
     "id": 6,
     "fecha": null,

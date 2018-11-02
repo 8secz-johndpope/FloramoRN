@@ -1,4 +1,4 @@
-const photos = [
+[
   {
     "id": 1000,
     "fecha": null,

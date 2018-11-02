@@ -1,4 +1,4 @@
-const speciesPlaces = [
+[
   {
     "id": 1000,
     "fecha": null,

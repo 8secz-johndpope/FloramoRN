@@ -1,4 +1,4 @@
-const places = [
+[
   {
     "id": 1000,
     "fecha": null,

@@ -1,4 +1,4 @@
-const species = [
+[
   {
     "id": 8,
     "fecha": null,
@@ -4679,4 +4679,4 @@ const species = [
     "distribucion_en": "Colombia, Ecuador and Bolivia.",
     "thumbnail": "Halen_pulc.jpg"
   }
-];
+]

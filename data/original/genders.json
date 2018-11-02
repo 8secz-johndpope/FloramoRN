@@ -1,4 +1,4 @@
-const genders = [
+[
   {
     "id": 7,
     "fecha": null,
