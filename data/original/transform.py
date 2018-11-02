@@ -16,6 +16,11 @@ photos_data = get_file_data("photos.json")
 places_data = get_file_data("places.json")
 species_data = get_file_data("species.json")
 species_places_data = get_file_data("speciesPlaces.json")
+species = []
+all_colors = []
+all_life_forms = []
+en = []
+es = []
 
 
 def find_by_id(array, item_id):
@@ -26,29 +31,37 @@ def find_by_id(array, item_id):
 
 def get_colors(item):
     color1_id = int(item["color1_id"])
-    colors = [find_by_id(colors_data, color1_id)["nombre"]]
+    color1_name = find_by_id(colors_data, color1_id)["nombre"]
+    if color1_name not in all_colors:
+        all_colors.append(color1_name)
+    colors = [color1_name]
 
     if item["color2_id"] != 'null':
         color2_id = int(item["color2_id"])
         color2 = find_by_id(colors_data, color2_id)
-        colors.append(color2["nombre"])
+        color2_name = color2["nombre"]
+        if color2_name not in all_colors:
+            all_colors.append(color2_name)
+        colors.append(color2_name)
     return colors
 
 
 def get_life_forms(item):
     life_form1_id = int(item["forma_vida1_id"])
-    life_forms = [find_by_id(life_forms_data, life_form1_id)["nombre"]]
+    life_form1_name = find_by_id(life_forms_data, life_form1_id)["nombre"]
+    if life_form1_name not in all_life_forms:
+        all_life_forms.append(life_form1_name)
+    life_forms = [life_form1_name]
 
     if item["forma_vida2_id"] != 'null':
         life_form2_id = int(item["forma_vida2_id"])
         life_form2 = find_by_id(life_forms_data, life_form2_id)
-        life_forms.append(life_form2["nombre"])
+        life_form2_name = life_form2["nombre"]
+        if life_form2_name not in all_life_forms:
+            all_life_forms.append(life_form2_name)
+        life_forms.append(life_form2_name)
     return life_forms
 
-
-species = []
-en = []
-es = []
 
 for index, element in enumerate(species_data):
     genero_id = int(element["genero_id"])
@@ -72,8 +85,10 @@ for index, element in enumerate(species_data):
         "life_forms": get_life_forms(element),
         "thumbnail": element["thumbnail"]
     }
-    print(specie)
+    # print(specie)
     species.append(specie)
+all_colors.sort()
+all_life_forms.sort()
 
 # print(find_by_id(colors_data, 15))
 
