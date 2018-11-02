@@ -46,6 +46,19 @@ def get_photos(item_id):
     return photos
 
 
+def get_places(item_id):
+    places_raw = find_for_species(species_places_data, item_id)
+    places = []
+    for place_raw in places_raw:
+        place_id = place_raw["place_id"]
+        place = find_by_id(places_data, int(place_id))
+        place_name = place["nombre_norm"]
+        if place_name not in all_places:
+            all_places.append(place_name)
+        places.append(place_name)
+    return places
+
+
 def get_colors(item):
     color1_id = int(item["color1_id"])
     color1_name = find_by_id(colors_data, color1_id)["nombre"]
@@ -102,9 +115,9 @@ for index, element in enumerate(species_data):
         "colors": get_colors(element),
         "life_forms": get_life_forms(element),
         "thumbnail": element["thumbnail"],
-        "photos": get_photos(element["id"])
+        "photos": get_photos(element["id"]),
+        "places": get_places(element["id"])
     }
-    print(specie)
     species.append(specie)
     i18n_es = {
         "description": element["descripcion_es"],
@@ -118,3 +131,23 @@ for index, element in enumerate(species_data):
     en[key] = i18n_en
 all_colors.sort()
 all_life_forms.sort()
+all_places.sort()
+
+es["colors"] = {}
+en["colors"] = {}
+for color in all_colors:
+    es["colors"][color] = color
+    en["colors"][color] = color
+
+es["life_forms"] = {}
+en["life_forms"] = {}
+for life_form in all_life_forms:
+    es["life_forms"][life_form] = life_form
+    en["life_forms"][life_form] = life_form
+
+es["places"] = {}
+en["places"] = {}
+for place in all_places:
+    es["places"][place] = place
+    en["colors"][place] = place
+
