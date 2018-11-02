@@ -151,3 +151,11 @@ for place in all_places:
     es["places"][place] = place
     en["colors"][place] = place
 
+with open('out/en.json', 'w') as outfile:
+    json.dump(en, outfile)
+
+with open('out/es.json', 'w') as outfile:
+    json.dump(es, outfile)
+
+with open('out/species.json', 'w') as outfile:
+    json.dump(species, outfile)
