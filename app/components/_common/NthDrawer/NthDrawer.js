@@ -7,6 +7,7 @@ import NthText from '../NthText/NthText';
 import DrawerHeader from './DrawerHeader';
 import DrawerItem from './DrawerItem';
 import type { DrawerItemConfig } from './DrawerItem';
+import colors from "../../../styles/colors";
 
 type Props = {
   navigation: Object
@@ -27,6 +28,9 @@ const navigationItems: Array<DrawerItemConfig> = [
     imageSolid: require('../../../../assets/images/drawer/solid/tropicos.png'),
   },
   {
+    key: 'separator',
+  },
+  {
     key: 'paramo',
     imageLight: require('../../../../assets/images/drawer/light/mountains.png'),
     imageSolid: require('../../../../assets/images/drawer/solid/mountains.png'),
@@ -42,6 +46,9 @@ const navigationItems: Array<DrawerItemConfig> = [
   {
     key: 'app',
     icon: 'window-alt',
+  },
+  {
+    key: 'separator2',
   },
   {
     key: 'bugs',
@@ -67,9 +74,9 @@ class NthDrawer extends Component<Props, {}> {
     const { navigation } = this.props;
     const selectedIndex = navigation.state.index;
     return (
-      <View style={{ flex: 1 }}>
+      <View style={{ flex: 1, backgroundColor: colors.primary50 }}>
         <DrawerHeader />
-        <View style={{ flex: 1, paddingTop: 20 }}>
+        <View style={{ flex: 1 }}>
           {navigationItems.map((item, index) => (
             <DrawerItem
               key={`drawer_${item.key}`}

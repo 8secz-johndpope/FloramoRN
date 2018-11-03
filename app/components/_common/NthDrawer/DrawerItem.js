@@ -1,6 +1,6 @@
 /* @flow */
 import React, { Component } from 'react';
-import { TouchableOpacity, Image } from 'react-native';
+import { TouchableOpacity, Image, View } from 'react-native';
 import FontAwesome5Pro from 'react-native-vector-icons/FontAwesome5Pro';
 import NthText from '../NthText/NthText';
 import colors from '../../../styles/colors';
@@ -10,6 +10,7 @@ export type DrawerItemConfig = {
   icon?: string,
   imageLight?: any,
   imageSolid?: any,
+  separator?: string
 }
 
 type Props = {
@@ -46,7 +47,27 @@ class DrawerItem extends Component<Props, {}> {
   }
 
   render() {
-    const { item, selected, onPress } = this.props;
+    const {
+      item, selected, onPress,
+    } = this.props;
+    if (item.key.startsWith('separator')) {
+      return (
+        <View style={{
+          borderTopWidth: 1,
+          borderTopColor: colors.primary100,
+          marginTop: 10,
+        }}
+        >
+          <NthText
+            i18n={`navigation.drawer.${item.key}`}
+            font="barlow"
+            size="small"
+            color={colors.primary600}
+            style={{ marginLeft: 15, marginTop: 10 }}
+          />
+        </View>
+      );
+    }
     return (
       <TouchableOpacity
         key={item.key}
@@ -56,7 +77,7 @@ class DrawerItem extends Component<Props, {}> {
           alignItems: 'center',
           padding: 10,
           paddingLeft: 20,
-          backgroundColor: selected ? colors.primary200 : colors.white,
+          backgroundColor: selected ? colors.primary200 : colors.primary50,
         }}
       >
         {this.getIcon()}

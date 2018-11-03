@@ -9,11 +9,15 @@ import colors from '../../../styles/colors';
 // eslint-disable-next-line quotes,import/no-unresolved
 const icon = require("../../../../assets/images/drawer/icon.png");
 
+const gradient = [
+  colors.primary700, colors.primary500, colors.primary300, colors.primary100, colors.primary50,
+];
+
 class DrawerHeader extends Component<{}, {}> {
   render() {
     return (
       <LinearGradient
-        colors={[colors.primary700, colors.primary500, colors.primary300, colors.primary100]}
+        colors={gradient}
         style={{
           paddingBottom: verticalScale(15),
           height: verticalScale(150),
