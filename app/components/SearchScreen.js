@@ -1,8 +1,9 @@
 /* @flow */
 import React, { Component } from 'react';
 import {
-  View, Text, Image, Button,
+  View, Button,
 } from 'react-native';
+import NthText from './_common/NthText/NthText';
 
 type Props = {};
 type State = {};
@@ -11,7 +12,7 @@ class SearchScreen extends Component<Props, State> {
   render() {
     return (
       <View style={{ marginTop: 50 }}>
-        <Text>Search here</Text>
+        <NthText text="Search screen" />
         <Button
           onPress={() => this.props.navigation.goBack()}
           title="Go back home"

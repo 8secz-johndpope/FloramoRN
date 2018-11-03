@@ -1,0 +1,48 @@
+const fonts = {
+  barlow: {
+    thin: 'Barlow-Thin',
+    extraLight: 'Barlow-ExtraLight',
+    light: 'Barlow-Light',
+    regular: 'Barlow-Regular',
+    medium: 'Barlow-Medium',
+    semiBold: 'Barlow-SemiBold',
+    bold: 'Barlow-Bold',
+    extraBold: 'Barlow-ExtraBold',
+    black: 'Barlow-Black',
+    italic: {
+      thin: 'Barlow-ThinItalic',
+      extraLight: 'Barlow-ExtraLightItalic',
+      light: 'Barlow-LightItalic',
+      regular: 'Barlow-Italic',
+      medium: 'Barlow-MediumItalic',
+      semiBold: 'Barlow-SemiBoldItalic',
+      bold: 'Barlow-BoldItalic',
+      extraBold: 'Barlow-ExtraBoldItalic',
+      black: 'Barlow-BlackItalic',
+    },
+  },
+  montserrat: {
+    thin: 'Montserrat-Thin',
+    extraLight: 'Montserrat-ExtraLight',
+    light: 'Montserrat-Light',
+    regular: 'Montserrat-Regular',
+    medium: 'Montserrat-Medium',
+    semiBold: 'Montserrat-SemiBold',
+    bold: 'Montserrat-Bold',
+    extraBold: 'Montserrat-ExtraBold',
+    black: 'Montserrat-Black',
+    italic: {
+      thin: 'Montserrat-ThinItalic',
+      extraLight: 'Montserrat-ExtraLightItalic',
+      light: 'Montserrat-LightItalic',
+      regular: 'Montserrat-Italic',
+      medium: 'Montserrat-MediumItalic',
+      semiBold: 'Montserrat-SemiBoldItalic',
+      bold: 'Montserrat-BoldItalic',
+      extraBold: 'Montserrat-ExtraBoldItalic',
+      black: 'Montserrat-BlackItalic',
+    },
+  },
+};
+
+export default fonts;

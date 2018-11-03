@@ -1,8 +1,9 @@
 /* @flow */
 import React, { Component } from 'react';
 import {
-  View, Text, Image, Button,
+  View, Button,
 } from 'react-native';
+import NthText from './_common/NthText/NthText';
 
 type Props = {};
 type State = {};
@@ -11,7 +12,7 @@ class EncyclopediaScreen extends Component<Props, State> {
   render() {
     return (
       <View style={{ marginTop: 50 }}>
-        <Text>Encyclopedia here</Text>
+        <NthText text="Encyclopedia list goes here" />
         <Button
           onPress={() => this.props.navigation.navigate('Search')}
           title="Go to Search"
