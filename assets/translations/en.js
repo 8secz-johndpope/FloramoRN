@@ -2,8 +2,8 @@ const en = {
   title: 'Flóramo',
   navigation: {
     title: {
-      encyclopedia: 'encyclopedia_en',
-      search: 'search_en',
+      encyclopedia: 'Encyclopedia',
+      search: 'Search',
     },
     drawer: {
       encyclopedia: 'Encyclopedia',

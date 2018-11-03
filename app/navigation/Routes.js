@@ -1,5 +1,5 @@
-import EncyclopediaScreen from '../components/EncyclopediaScreen';
-import SearchScreen from '../components/SearchScreen';
+import EncyclopediaScreen from '../components/encyclopedia/EncyclopediaScreen';
+import SearchScreen from '../components/search/SearchScreen';
 
 const routes = {
   encyclopedia: {
