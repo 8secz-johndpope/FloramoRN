@@ -2,11 +2,11 @@
 import React, { Component } from 'react';
 import { NavigationActions } from 'react-navigation';
 import {
-  Image, ImageBackground, View, TouchableOpacity,
+  Image, View, TouchableOpacity,
 } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 import NthText from '../components/_common/NthText/NthText';
-
-const coverImage = require('../../assets/images/drawer/drawer-cover.png');
+import colors from '../styles/colors';
 
 const encyclopediaIcon = require('../../assets/images/drawer/address.png');
 const searchIcon = require('../../assets/images/drawer/ambulance.png');
@@ -43,21 +43,16 @@ class CustomDrawer extends Component<Props, {}> {
     const selectedIndex = navigation.state.index;
     return (
       <View style={{ flex: 1 }}>
-        <View style={{ height: 150 }}>
-          <ImageBackground
-            resizeMode="contain"
-            source={coverImage}
-            style={{
-              flex: 1,
-              width: '100%',
-              height: '100%',
-              justifyContent: 'center',
-            }}
-          >
-            <NthText text="Header" font="barlow" />
-            <NthText text="Something" font="barlow" weight="black" />
-          </ImageBackground>
-        </View>
+        <LinearGradient
+          colors={[colors.primary500, colors.primary300, colors.primary100]}
+          style={{
+            padding: 15,
+            height: 150,
+            justifyContent: 'flex-end',
+          }}
+        >
+          <NthText text="Whatever" />
+        </LinearGradient>
         <View style={{ flex: 1 }}>
           {navigationItems.map((item, index) => (
             <TouchableOpacity
