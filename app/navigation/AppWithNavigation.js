@@ -3,13 +3,14 @@
 * @flow
 */
 import React, { Component } from 'react';
-import { StatusBar } from 'react-native';
+import { SafeAreaView } from 'react-native';
 import RNLanguages from 'react-native-languages';
 import { createDrawerNavigator } from 'react-navigation';
 import { ThemeProvider } from 'react-native-elements';
 import colors from '../styles/colors';
 import i18n from '../i18n';
 import appNavigation from './Routes';
+import CustomDrawer from './CustomDrawer';
 
 const theme = {
   colors: {
@@ -17,9 +18,11 @@ const theme = {
     secondary: colors.secondary200,
   },
 };
-
 const RootStack = createDrawerNavigator(appNavigation.routes,
-  { initialRouteName: appNavigation.initialScreen });
+  {
+    initialRouteName: appNavigation.initialScreen,
+    contentComponent: CustomDrawer,
+  });
 
 class AppWithNavigation extends Component<{}, {}> {
   componentWillMount() {
@@ -37,11 +40,13 @@ class AppWithNavigation extends Component<{}, {}> {
   render() {
     return (
       <ThemeProvider theme={theme}>
-        <StatusBar
-          backgroundColor={colors.primary900}
-          barStyle="light-content"
-        />
-        <RootStack />
+        <SafeAreaView style={{
+          flex: 1,
+          backgroundColor: colors.primary50,
+        }}
+        >
+          <RootStack />
+        </SafeAreaView>
       </ThemeProvider>
     );
   }
