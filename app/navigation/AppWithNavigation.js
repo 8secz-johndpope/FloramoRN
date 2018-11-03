@@ -3,7 +3,7 @@
 * @flow
 */
 import React, { Component } from 'react';
-import { TouchableOpacity, View } from 'react-native';
+import { TouchableOpacity, View, Image } from 'react-native';
 import RNLanguages from 'react-native-languages';
 import { DrawerNavigator, StackNavigator } from 'react-navigation';
 import { ThemeProvider } from 'react-native-elements';
@@ -12,6 +12,8 @@ import i18n from '../i18n';
 import appNavigation from './Routes';
 import CustomDrawer from './CustomDrawer';
 import NthText from '../components/_common/NthText/NthText';
+
+const menuIcon = require('../../assets/images/drawer/bars.png');
 
 const theme = {
   colors: {
@@ -39,9 +41,12 @@ const Navigation = StackNavigator({
         headerLeft: (
           <TouchableOpacity
             onPress={() => navigation.toggleDrawer()}
-            style={{ marginLeft: 20 }}
+            style={{ paddingHorizontal: 20 }}
           >
-            <NthText text="menu" size="small" color={colors.primary50} />
+            <Image
+              source={menuIcon}
+              style={{ width: 24, height: 24, tintColor: colors.primary50 }}
+            />
           </TouchableOpacity>
         ),
       });
