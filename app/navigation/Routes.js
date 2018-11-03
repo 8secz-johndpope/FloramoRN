@@ -2,8 +2,18 @@ import EncyclopediaScreen from '../components/EncyclopediaScreen';
 import SearchScreen from '../components/SearchScreen';
 
 const routes = {
-  Encyclopedia: { screen: EncyclopediaScreen },
-  Search: { screen: SearchScreen },
+  Encyclopedia: {
+    screen: EncyclopediaScreen,
+    navigationOptions: {
+      title: 'encyclopedia',
+    },
+  },
+  Search: {
+    screen: SearchScreen,
+    navigationOptions: {
+      title: 'search',
+    },
+  },
 };
 
 const routesKeys = Object.keys(routes);
