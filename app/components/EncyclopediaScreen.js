@@ -1,8 +1,7 @@
 /* @flow */
 import React, { Component } from 'react';
-import {
-  View, Button,
-} from 'react-native';
+import { View, Button } from 'react-native';
+import FontAwesome5Pro from 'react-native-vector-icons/FontAwesome5Pro';
 import NthText from './_common/NthText/NthText';
 import NthHeader from './_common/NthHeader/NthHeader';
 import NthContainer from './_common/NthHeader/NthContainer';
@@ -25,6 +24,7 @@ class EncyclopediaScreen extends Component<Props, State> {
             onPress={() => this.props.navigation.openDrawer()}
             title="Open drawer"
           />
+          <FontAwesome5Pro name="comments" light />
         </NthContainer>
       </View>
     );
