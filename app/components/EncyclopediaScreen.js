@@ -8,20 +8,6 @@ type Props = {};
 type State = {};
 
 class EncyclopediaScreen extends Component<Props, State> {
-  static navigationOptions = {
-    drawerLabel: 'Encyclopedia',
-    drawerIcon: ({ tintColor }) => (
-      <Image
-        source={require('../../assets/images/drawer/address.png')}
-        style={[{
-          tintColor,
-          width: 24,
-          height: 24,
-        }]}
-      />
-    ),
-  };
-
   render() {
     return (
       <View style={{ marginTop: 50 }}>

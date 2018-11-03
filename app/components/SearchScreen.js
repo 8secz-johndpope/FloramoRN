@@ -8,20 +8,6 @@ type Props = {};
 type State = {};
 
 class SearchScreen extends Component<Props, State> {
-  static navigationOptions = {
-    drawerLabel: 'Search',
-    drawerIcon: ({ tintColor }) => (
-      <Image
-        source={require('../../assets/images/drawer/ambulance.png')}
-        style={[{
-          tintColor,
-          width: 24,
-          height: 24,
-        }]}
-      />
-    ),
-  };
-
   render() {
     return (
       <View style={{ marginTop: 50 }}>
