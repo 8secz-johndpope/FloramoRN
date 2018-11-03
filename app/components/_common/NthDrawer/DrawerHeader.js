@@ -1,8 +1,8 @@
 /* @flow */
 import React, { Component } from 'react';
 import LinearGradient from 'react-native-linear-gradient';
-import NthText from '../../components/_common/NthText/NthText';
-import colors from '../../styles/colors';
+import NthText from '../NthText/NthText';
+import colors from '../../../styles/colors';
 
 class DrawerHeader extends Component<{}, {}> {
   render() {

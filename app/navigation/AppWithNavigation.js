@@ -10,7 +10,7 @@ import { ThemeProvider } from 'react-native-elements';
 import colors from '../styles/colors';
 import i18n from '../i18n';
 import appNavigation from './Routes';
-import CustomDrawer from './Drawer/CustomDrawer';
+import NthDrawer from '../components/_common/NthDrawer/NthDrawer';
 
 const theme = {
   colors: {
@@ -21,7 +21,7 @@ const theme = {
 const DrawerNavigation = createDrawerNavigator(appNavigation.routes,
   {
     initialRouteName: appNavigation.initialScreen,
-    contentComponent: CustomDrawer,
+    contentComponent: NthDrawer,
   });
 
 class AppWithNavigation extends Component<{}, {}> {

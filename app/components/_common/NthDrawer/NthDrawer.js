@@ -2,12 +2,12 @@
 import React, { Component } from 'react';
 import { NavigationActions } from 'react-navigation';
 import { View } from 'react-native';
-import NthText from '../../components/_common/NthText/NthText';
+import NthText from '../NthText/NthText';
 import DrawerHeader from './DrawerHeader';
 import DrawerItem from './DrawerItem';
 
-const encyclopediaIcon = require('../../../assets/images/drawer/address.png');
-const searchIcon = require('../../../assets/images/drawer/ambulance.png');
+const encyclopediaIcon = require('../../../../assets/images/drawer/address.png');
+const searchIcon = require('../../../../assets/images/drawer/ambulance.png');
 
 type Props = {
   navigation: Object
@@ -26,7 +26,7 @@ const navigationItems = [
   },
 ];
 
-class CustomDrawer extends Component<Props, {}> {
+class NthDrawer extends Component<Props, {}> {
   navigateToScreen = route => (
     () => {
       const navigateAction = NavigationActions.navigate({
@@ -58,4 +58,4 @@ class CustomDrawer extends Component<Props, {}> {
   }
 }
 
-export default CustomDrawer;
+export default NthDrawer;

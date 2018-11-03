@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import {
   Image, TouchableOpacity,
 } from 'react-native';
-import NthText from '../../components/_common/NthText/NthText';
-import colors from '../../styles/colors';
+import NthText from '../NthText/NthText';
+import colors from '../../../styles/colors';
 
 type Props = {
   item: any,
