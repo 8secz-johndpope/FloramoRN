@@ -3,17 +3,14 @@
 * @flow
 */
 import React, { Component } from 'react';
-import { TouchableOpacity, View, Image } from 'react-native';
+import { View, StatusBar } from 'react-native';
 import RNLanguages from 'react-native-languages';
-import { DrawerNavigator, StackNavigator } from 'react-navigation';
+import { createDrawerNavigator } from 'react-navigation';
 import { ThemeProvider } from 'react-native-elements';
 import colors from '../styles/colors';
 import i18n from '../i18n';
 import appNavigation from './Routes';
 import CustomDrawer from './CustomDrawer';
-import NthText from '../components/_common/NthText/NthText';
-
-const menuIcon = require('../../assets/images/drawer/bars.png');
 
 const theme = {
   colors: {
@@ -21,38 +18,11 @@ const theme = {
     secondary: colors.secondary200,
   },
 };
-const DrawerNavigation = DrawerNavigator(appNavigation.routes,
+const DrawerNavigation = createDrawerNavigator(appNavigation.routes,
   {
     initialRouteName: appNavigation.initialScreen,
     contentComponent: CustomDrawer,
   });
-
-const Navigation = StackNavigator({
-  DrawerStack: {
-    screen: DrawerNavigation,
-    navigationOptions: ({ navigation }) => {
-      const selectedIndex = navigation.state.index;
-      const selectedRoute = navigation.state.routes[selectedIndex];
-      const title = selectedRoute.key;
-      return ({
-        headerStyle: { backgroundColor: colors.primary700 },
-        headerTintColor: 'white',
-        headerTitle: <NthText text={title} color={colors.primary50} size="small" font="barlow" weight="bold" />,
-        headerLeft: (
-          <TouchableOpacity
-            onPress={() => navigation.toggleDrawer()}
-            style={{ paddingHorizontal: 20 }}
-          >
-            <Image
-              source={menuIcon}
-              style={{ width: 24, height: 24, tintColor: colors.primary50 }}
-            />
-          </TouchableOpacity>
-        ),
-      });
-    },
-  },
-});
 
 class AppWithNavigation extends Component<{}, {}> {
   componentWillMount() {
@@ -70,12 +40,18 @@ class AppWithNavigation extends Component<{}, {}> {
   render() {
     return (
       <ThemeProvider theme={theme}>
+        <StatusBar
+          barStyle="light-content"
+          hidden={false}
+          backgroundColor={colors.primary900}
+          translucent
+        />
         <View style={{
           flex: 1,
           backgroundColor: colors.primary50,
         }}
         >
-          <Navigation />
+          <DrawerNavigation />
         </View>
       </ThemeProvider>
     );
