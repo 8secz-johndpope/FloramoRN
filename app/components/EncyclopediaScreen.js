@@ -1,30 +1,26 @@
 /* @flow */
 import React, { Component } from 'react';
-import { View, Button } from 'react-native';
-import FontAwesome5Pro from 'react-native-vector-icons/FontAwesome5Pro';
+import { View } from 'react-native';
 import NthText from './_common/NthText/NthText';
 import NthHeader from './_common/NthHeader/NthHeader';
 import NthContainer from './_common/NthHeader/NthContainer';
 
-type Props = {};
+type Props = {
+  navigation: Object
+};
 type State = {};
 
 class EncyclopediaScreen extends Component<Props, State> {
   render() {
+    const { navigation } = this.props;
     return (
       <View>
-        <NthHeader i18n="navigation.title.encyclopedia" />
+        <NthHeader
+          i18n="navigation.title.encyclopedia"
+          onPress={() => navigation.openDrawer()}
+        />
         <NthContainer>
           <NthText text="Encyclopedia list goes here" />
-          <Button
-            onPress={() => this.props.navigation.navigate('Search')}
-            title="Go to Search"
-          />
-          <Button
-            onPress={() => this.props.navigation.openDrawer()}
-            title="Open drawer"
-          />
-          <FontAwesome5Pro name="comments" light />
         </NthContainer>
       </View>
     );
