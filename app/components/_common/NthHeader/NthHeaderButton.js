@@ -15,7 +15,7 @@ type Props = {
 
 const NthHeaderButton = (props: Props) => {
   const { type } = props;
-  const paddingTop = deviceHelper.isiPhoneX() ? 20 : 0;
+  const paddingTop = deviceHelper.isiPhone() ? 15 : 20;
   const icon = type === 'back' ? 'long-arrow-left' : 'bars';
   return (
     <TouchableOpacity

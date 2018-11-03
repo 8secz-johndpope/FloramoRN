@@ -10,7 +10,7 @@ import { ThemeProvider } from 'react-native-elements';
 import colors from '../styles/colors';
 import i18n from '../i18n';
 import appNavigation from './Routes';
-import CustomDrawer from './CustomDrawer';
+import CustomDrawer from './Drawer/CustomDrawer';
 
 const theme = {
   colors: {
