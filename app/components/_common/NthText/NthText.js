@@ -24,7 +24,7 @@ type Props = {
   style?: any,
 };
 
-const baseFontSize = Platform.OS === 'ios' ? 20 : 19;
+const baseFontSize = Platform.OS === 'ios' ? 16 : 15;
 
 const transformToScale = (factor) => {
   const total = Math.round(baseFontSize * factor);

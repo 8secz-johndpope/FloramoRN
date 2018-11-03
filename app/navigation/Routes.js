@@ -2,13 +2,13 @@ import EncyclopediaScreen from '../components/EncyclopediaScreen';
 import SearchScreen from '../components/SearchScreen';
 
 const routes = {
-  Encyclopedia: {
+  encyclopedia: {
     screen: EncyclopediaScreen,
     navigationOptions: {
       title: 'encyclopedia',
     },
   },
-  Search: {
+  search: {
     screen: SearchScreen,
     navigationOptions: {
       title: 'search',
@@ -25,7 +25,7 @@ routesKeys.forEach((route) => {
 const appNavigation = {
   routes,
   navigationTree,
-  initialScreen: 'Encyclopedia',
+  initialScreen: 'encyclopedia',
 };
 
 export default appNavigation;

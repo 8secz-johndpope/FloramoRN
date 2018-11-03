@@ -1,3 +1,4 @@
+/* eslint-disable global-require,import/no-unresolved */
 /* @flow */
 import React, { Component } from 'react';
 import { NavigationActions } from 'react-navigation';
@@ -5,29 +6,55 @@ import { View } from 'react-native';
 import NthText from '../NthText/NthText';
 import DrawerHeader from './DrawerHeader';
 import DrawerItem from './DrawerItem';
-
-const encyclopediaIcon = require('../../../../assets/images/drawer/address.png');
-const searchIcon = require('../../../../assets/images/drawer/ambulance.png');
+import type { DrawerItemConfig } from './DrawerItem';
 
 type Props = {
   navigation: Object
 };
 
-const navigationItems = [
+const navigationItems: Array<DrawerItemConfig> = [
   {
-    key: 'Encyclopedia',
-    label: 'Encyclopedia',
-    icon: encyclopediaIcon,
+    key: 'encyclopedia',
+    icon: 'book-open',
   },
   {
-    key: 'Search',
-    label: 'Search',
-    icon: searchIcon,
+    key: 'search',
+    icon: 'search',
+  },
+  {
+    key: 'tropicos',
+    imageLight: require('../../../../assets/images/drawer/light/tropicos.png'),
+    imageSolid: require('../../../../assets/images/drawer/solid/tropicos.png'),
+  },
+  {
+    key: 'paramo',
+    imageLight: require('../../../../assets/images/drawer/light/mountains.png'),
+    imageSolid: require('../../../../assets/images/drawer/solid/mountains.png'),
+  },
+  {
+    key: 'cajas',
+    icon: 'tree-alt',
+  },
+  {
+    key: 'dmq',
+    icon: 'city',
+  },
+  {
+    key: 'app',
+    icon: 'window-alt',
+  },
+  {
+    key: 'bugs',
+    icon: 'bug',
+  },
+  {
+    key: 'credits',
+    icon: 'users',
   },
 ];
 
 class NthDrawer extends Component<Props, {}> {
-  navigateToScreen = route => (
+  navigateToScreen = (route: string) => (
     () => {
       const navigateAction = NavigationActions.navigate({
         routeName: route,
@@ -42,7 +69,7 @@ class NthDrawer extends Component<Props, {}> {
     return (
       <View style={{ flex: 1 }}>
         <DrawerHeader />
-        <View style={{ flex: 1 }}>
+        <View style={{ flex: 1, paddingTop: 20 }}>
           {navigationItems.map((item, index) => (
             <DrawerItem
               key={`drawer_${item.key}`}
