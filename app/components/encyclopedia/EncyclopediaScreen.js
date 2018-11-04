@@ -7,6 +7,7 @@ import species from '../../../data/species';
 import EncyclopediaItem from './EncyclopediaItem';
 import colors from '../../styles/colors';
 import type { Plant } from '../../../data/plantTypes';
+import appNavigation from '../../navigation/Routes';
 
 type Props = {
   navigation: Object
@@ -35,6 +36,14 @@ class EncyclopediaScreen extends Component<Props, State> {
     };
   }
 
+  onPlantPress(plant: Plant) {
+    const { navigation } = this.props;
+    navigation.navigate({
+      ...appNavigation.navigationTree.detail,
+      ...{ params: { plant } },
+    });
+  }
+
   render() {
     const { navigation } = this.props;
     const { sortedSpecies } = this.state;
@@ -43,7 +52,12 @@ class EncyclopediaScreen extends Component<Props, State> {
         <View style={{ flex: 1 }}>
           <FlatList
             data={sortedSpecies}
-            renderItem={({ item }) => <EncyclopediaItem plant={item} />}
+            renderItem={({ item }) => (
+              <EncyclopediaItem
+                plant={item}
+                onPress={plant => this.onPlantPress(plant)}
+              />
+            )}
             ItemSeparatorComponent={({ highlighted }) => (
               <View style={[{ backgroundColor: colors.primary200, width: '100%', height: 1 }, highlighted && { marginLeft: 0 }]} />
             )}

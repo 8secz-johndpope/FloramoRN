@@ -1,16 +1,20 @@
 /* @flow */
-import React, { Component } from 'react';
-import { View } from 'react-native';
+import React from 'react';
+import NthText from '../_common/NthText/NthText';
+import NthContainer from '../_common/NthHeader/NthContainer';
 
-type Props = {};
-type State = {};
+type Props = {
+  navigation: Object
+};
 
-class DetailScreen extends Component<Props, State> {
-  render() {
-    return (
-      <View />
-    );
-  }
-}
+const DetailScreen = (props: Props) => {
+  const { navigation } = props;
+  const { plant } = navigation.state.params;
+  return (
+    <NthContainer onPress={() => navigation.goBack()} i18nHeader="title" type="back">
+      <NthText text={plant.name} />
+    </NthContainer>
+  );
+};
 
 export default DetailScreen;
