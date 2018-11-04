@@ -4,7 +4,7 @@ export type Color = "blue" | "brown" | "cone" | "green" | "orange" | "pink" | "p
 export type LifeForm = "aquatic" | "cushion" | "grass" | "herb" | "liana" | "rosette" | "shrub" | "tree";
 export type Plant = {
   id: number,
-  tropicos_id: string,
+  tropicosId: string,
   key: string,
   name: string,
   gender: string,
@@ -12,6 +12,7 @@ export type Plant = {
   colors: Array<Color>,
   lifeForms: Array<LifeForm>,
   thumbnail: string,
+  detailImage: string,
   photos: Array<string>,
   places: Array<string>,
 }

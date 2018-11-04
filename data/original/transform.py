@@ -42,7 +42,8 @@ def get_photos(item_id):
     photos_raw = find_for_species(photos_data, item_id)
     photos = []
     for photo in photos_raw:
-        photos.append(photo["path"])
+        path = get_image_path('full_size', photo["path"]),
+        photos.append(path)
     return photos
 
 
@@ -93,6 +94,10 @@ def get_life_forms(item):
     return life_forms
 
 
+def get_image_path(folder, image):
+    return f'require("../assets/images/encyclopedia/{folder}/{image}")',
+
+
 for index, element in enumerate(species_data):
     genero_id = int(element["genero_id"])
     genero = find_by_id(genders_data, genero_id)
@@ -107,14 +112,15 @@ for index, element in enumerate(species_data):
     key = key.lower()
     specie = {
         "id": index,
-        "tropicos_id": element["id_tropicos"],
+        "tropicosId": element["id_tropicos"],
         "key": key,
         "name": name,
         "gender": gender_name,
         "family": family_name,
         "colors": get_colors(element),
-        "life_forms": get_life_forms(element),
-        "thumbnail": element["thumbnail"],
+        "lifeForms": get_life_forms(element),
+        "thumbnail": get_image_path('encyclopedia_thumbnails', element["thumbnail"]),
+        "detailImage": get_image_path('detail_images', element["thumbnail"]),
         "photos": get_photos(element["id"]),
         "places": get_places(element["id"])
     }
