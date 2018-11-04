@@ -7,7 +7,7 @@ import NthText from '../NthText/NthText';
 import DrawerHeader from './DrawerHeader';
 import DrawerItem from './DrawerItem';
 import type { DrawerItemConfig } from './DrawerItem';
-import colors from "../../../styles/colors";
+import colors from '../../../styles/colors';
 
 type Props = {
   navigation: Object
@@ -26,9 +26,7 @@ const navigationItems: Array<DrawerItemConfig> = [
     key: 'tropicos',
     imageLight: require('../../../../assets/images/drawer/light/tropicos.png'),
     imageSolid: require('../../../../assets/images/drawer/solid/tropicos.png'),
-  },
-  {
-    key: 'separator',
+    after: 'separator',
   },
   {
     key: 'paramo',
@@ -46,9 +44,7 @@ const navigationItems: Array<DrawerItemConfig> = [
   {
     key: 'app',
     icon: 'window-alt',
-  },
-  {
-    key: 'separator2',
+    after: 'separator2',
   },
   {
     key: 'bugs',

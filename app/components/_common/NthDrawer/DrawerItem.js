@@ -10,7 +10,7 @@ export type DrawerItemConfig = {
   icon?: string,
   imageLight?: any,
   imageSolid?: any,
-  separator?: string
+  after?: string
 }
 
 type Props = {
@@ -50,8 +50,9 @@ class DrawerItem extends Component<Props, {}> {
     const {
       item, selected, onPress,
     } = this.props;
-    if (item.key.startsWith('separator')) {
-      return (
+    let separator = null;
+    if (item.after && item.after.startsWith('separator')) {
+      separator = (
         <View style={{
           borderTopWidth: 1,
           borderTopColor: colors.primary100,
@@ -59,7 +60,7 @@ class DrawerItem extends Component<Props, {}> {
         }}
         >
           <NthText
-            i18n={`navigation.drawer.${item.key}`}
+            i18n={`navigation.drawer.${item.after}`}
             font="barlow"
             size="small"
             color={colors.primary600}
@@ -69,24 +70,27 @@ class DrawerItem extends Component<Props, {}> {
       );
     }
     return (
-      <TouchableOpacity
-        key={item.key}
-        onPress={onPress}
-        style={{
-          flexDirection: 'row',
-          alignItems: 'center',
-          padding: 10,
-          paddingLeft: 20,
-          backgroundColor: selected ? colors.primary200 : colors.primary50,
-        }}
-      >
-        {this.getIcon()}
-        <NthText
-          i18n={`navigation.drawer.${item.key}`}
-          font="barlow"
-          color={selected ? selectedColor : nonSelectedColor}
-        />
-      </TouchableOpacity>
+      <View>
+        <TouchableOpacity
+          key={item.key}
+          onPress={onPress}
+          style={{
+            flexDirection: 'row',
+            alignItems: 'center',
+            padding: 10,
+            paddingLeft: 20,
+            backgroundColor: selected ? colors.primary200 : colors.primary50,
+          }}
+        >
+          {this.getIcon()}
+          <NthText
+            i18n={`navigation.drawer.${item.key}`}
+            font="barlow"
+            color={selected ? selectedColor : nonSelectedColor}
+          />
+        </TouchableOpacity>
+        {separator}
+      </View>
     );
   }
 }
