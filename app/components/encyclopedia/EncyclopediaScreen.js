@@ -4,6 +4,7 @@ import { FlatList, View } from 'react-native';
 import NthContainer from '../_common/NthHeader/NthContainer';
 import species from '../../../data/species';
 import EncyclopediaItem from './EncyclopediaItem';
+import colors from '../../styles/colors';
 
 type Props = {
   navigation: Object
@@ -19,6 +20,9 @@ class EncyclopediaScreen extends Component<Props, State> {
           <FlatList
             data={species}
             renderItem={({ item }) => <EncyclopediaItem plant={item} />}
+            ItemSeparatorComponent={({ highlighted }) => (
+              <View style={[{ backgroundColor: colors.primary200, width: '100%', height: 1 }, highlighted && { marginLeft: 0 }]} />
+            )}
           />
         </View>
       </NthContainer>
