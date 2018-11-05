@@ -2,6 +2,7 @@ const colors = {
   black: '#000000',
   white: '#FFFFFF',
   textShadow: '#333333',
+  overlayBackground: 'rgba(0, 0, 0, .85)',
 
   primary50: '#ECEFF1',
   primary100: '#CFD8DC',
