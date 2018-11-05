@@ -23,10 +23,10 @@ type State = {
   index: number
 }
 
-const { width, height } = Dimensions.get('window');
+const { width } = Dimensions.get('window');
 const labelWidth = 90;
 
-const getFullName = (plant: Plant) => `${plant.gender} ${plant.name}`;
+const getFullName = (plant: Plant) => `${plant.genus} ${plant.species}`;
 
 const getDetailImage = (plant: Plant) => (
   <View style={{ height: verticalScale(200), overflow: 'hidden' }}>
@@ -98,7 +98,7 @@ class DetailScreen extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {
-      overlayShown: true,
+      overlayShown: false,
       index: 0,
     };
   }
@@ -110,12 +110,7 @@ class DetailScreen extends Component<Props, State> {
           {photos.map((photo, i) => (
             <TouchableOpacity
               key={`photo_${i}`}
-              onPress={() => {
-                this.setState({
-                  overlayShown: true,
-                  index: i,
-                });
-              }}
+              onPress={() => this.openOverlay(i)}
             >
               <Image
                 source={photo}
@@ -135,6 +130,13 @@ class DetailScreen extends Component<Props, State> {
   closeOverlay() {
     this.setState({
       overlayShown: false,
+    });
+  }
+
+  openOverlay(index: number) {
+    this.setState({
+      overlayShown: true,
+      index,
     });
   }
 
@@ -187,8 +189,8 @@ class DetailScreen extends Component<Props, State> {
             {getDetailImage(plant)}
             <Card>
               {textRow('family', plant.family)}
-              {textRow('genus', plant.gender)}
-              {textRow('species', plant.name)}
+              {textRow('genus', plant.genus)}
+              {textRow('species', plant.species)}
               {colorRow(plant.colors)}
               {lifeFormRow(plant.lifeForms)}
               {i18nRow('distribution', `plants.${plant.key}.distribution`)}

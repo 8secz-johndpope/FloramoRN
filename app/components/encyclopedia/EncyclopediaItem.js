@@ -34,7 +34,7 @@ const EncyclopediaItem = (props: Props) => {
           }}
         />
         <View style={{ marginLeft: 10 }}>
-          <NthText text={`${plant.gender} ${plant.name}`} weight="semiBold" italic />
+          <NthText text={`${plant.genus} ${plant.species}`} weight="semiBold" italic />
           <NthText text={plant.family} weight="light" italic />
           <View style={{ flexDirection: 'row', marginTop: 8 }}>
             {plant.lifeForms.map((lifeForm, i) => (

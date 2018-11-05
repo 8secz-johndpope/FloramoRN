@@ -21,8 +21,8 @@ class EncyclopediaScreen extends Component<Props, State> {
     super(props);
     const sortedSpecies = _.cloneDeep(species);
     sortedSpecies.sort((a, b) => {
-      const aFullName = `${a.gender} ${a.name}`;
-      const bFullName = `${b.gender} ${b.name}`;
+      const aFullName = `${a.genus} ${a.species}`;
+      const bFullName = `${b.genus} ${b.species}`;
       if (aFullName > bFullName) {
         return 1;
       }
