@@ -28,6 +28,15 @@ const en = {
       credits: 'Credits',
     },
   },
+  plantDetails: {
+    family: 'Family',
+    genus: 'Genus',
+    species: 'Species',
+    color: 'Color',
+    lifeForm: 'Life form',
+    distribution: 'Distribution',
+  },
+  plants,
   colors: {
     blue: 'Blue',
     brown: 'Brown',
@@ -70,7 +79,6 @@ const en = {
     tungurahua: 'Tungurahua',
     zamorachinchipe: 'Zamora Chinchipe',
   },
-  plants,
 };
 
 

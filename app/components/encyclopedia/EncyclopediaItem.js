@@ -6,7 +6,8 @@ import { scale } from 'react-native-size-matters';
 import NthText from '../_common/NthText/NthText';
 import colors from '../../styles/colors';
 import type { Plant } from '../../../data/plantTypes';
-import plantTypes from '../../../data/plantTypes';
+import PlantColor from './PlantColor';
+import PlantLifeForm from './PlantLifeForm';
 
 type Props = {
   plant: Plant,
@@ -15,7 +16,6 @@ type Props = {
 
 const EncyclopediaItem = (props: Props) => {
   const { plant, onPress } = props;
-  const style = { width: 24, height: 24, marginLeft: 8 };
   return (
     <TouchableOpacity onPress={() => onPress(plant)}>
       <View style={{
@@ -34,17 +34,15 @@ const EncyclopediaItem = (props: Props) => {
           }}
         />
         <View style={{ marginLeft: 10 }}>
-          <NthText text={`${plant.gender} ${plant.name}`} weight="semiBold" italic size="small" />
-          <NthText text={plant.family} weight="light" italic size="small" />
+          <NthText text={`${plant.gender} ${plant.name}`} weight="semiBold" italic />
+          <NthText text={plant.family} weight="light" italic />
           <View style={{ flexDirection: 'row', marginTop: 8 }}>
             {plant.lifeForms.map((lifeForm, i) => (
-              <Image
-                key={`lifeForm${i}_${plant.id}`}
-                source={plantTypes.lifeForms[lifeForm].image}
-                style={[style, { borderWidth: 1, borderRadius: 5 }]}
-              />))}
+              <PlantLifeForm lifeForm={lifeForm} key={`lifeForm_${i}_${plant.id}`} />
+            ))}
             {plant.colors.map((color, i) => (
-              <Image key={`color_${i}_${plant.id}`} source={plantTypes.colors[color].image} style={style} />))}
+              <PlantColor color={color} key={`color_${i}_${plant.id}`} />
+            ))}
           </View>
         </View>
       </View>

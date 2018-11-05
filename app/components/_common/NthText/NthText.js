@@ -22,9 +22,10 @@ type Props = {
   italic?: boolean,
   shadow?: boolean,
   style?: any,
+  multiline?: boolean
 };
 
-const baseFontSize = Platform.OS === 'ios' ? 16 : 15;
+const baseFontSize = Platform.OS === 'ios' ? 14 : 13;
 
 const transformToScale = (factor) => {
   const total = Math.round(baseFontSize * factor);
@@ -70,6 +71,7 @@ export default class NthText extends Component<Props, {}> {
     italic: false,
     shadow: false,
     uppercase: false,
+    multiline: false,
   };
 
   render() {
@@ -87,6 +89,7 @@ export default class NthText extends Component<Props, {}> {
       italic,
       uppercase,
       shadow,
+      multiline,
       ...attributes
     } = this.props;
 
@@ -112,15 +115,14 @@ export default class NthText extends Component<Props, {}> {
     let shadowStyle = {};
     if (shadow) {
       shadowStyle = {
-        textShadowColor: colors.gray2,
+        textShadowColor: colors.textShadow,
         textShadowOffset: { width: 2, height: 2 },
         textShadowRadius: 3,
       };
     }
-
+    const numberOfLines = multiline ? {} : { numberOfLines: 1 };
     return (
       <Text
-        numberOfLines={1}
         style={[
           {
             fontFamily: getFontFamily(usableFont, weight, italic),
@@ -130,6 +132,7 @@ export default class NthText extends Component<Props, {}> {
             textAlign: align,
           }, style, shadowStyle]}
         {...attributes}
+        {...numberOfLines}
       >
         {shownText}
       </Text>

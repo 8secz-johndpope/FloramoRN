@@ -29,10 +29,10 @@ const NthHeader = (props: Props) => {
       <NthText
         i18n={i18n}
         style={{ paddingTop: 20 }}
+        size="title"
         uppercase
         weight="bold"
         font="barlow"
-        size="regular"
         color={colors.secondary500}
       />
     );
