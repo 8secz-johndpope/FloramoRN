@@ -12,6 +12,7 @@ import type { Plant } from '../../../data/plantTypes';
 import styles from './encyclopediaStyles';
 import PlantColor from './PlantColor';
 import PlantLifeForm from './PlantLifeForm';
+import DetailGallery from './DetailGallery';
 
 type Props = {
   navigation: Object
@@ -96,8 +97,9 @@ const DetailScreen = (props: Props) => {
             {i18nRow('distribution', `plants.${plant.key}.distribution`)}
           </Card>
           <Card>
-            <NthText i18n={`plants.${plant.key}.description`} multiline lineHeight={1.4} />
+            <NthText i18n={`plants.${plant.key}.description`} multiline lineHeight={1.4} font="barlow" />
           </Card>
+          <DetailGallery photos={plant.photos} />
         </ScrollView>
       </View>
     </NthContainer>
