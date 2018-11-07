@@ -1,7 +1,8 @@
 /* @flow */
 import React, { Component } from 'react';
-import NthContainer from '../_common/NthHeader/NthContainer';
 import About from './About';
+
+const image = require('../../../assets/images/about/cajas.jpg');
 
 type Props = {
   navigation: Object
@@ -12,9 +13,11 @@ class AboutCajasScreen extends Component<Props, State> {
   render() {
     const { navigation } = this.props;
     return (
-      <NthContainer onPress={() => navigation.openDrawer()} i18nHeader="navigation.title.cajas">
-        <About type="cajas" />
-      </NthContainer>
+      <About
+        image={image}
+        type="cajas"
+        navigation={navigation}
+      />
     );
   }
 }

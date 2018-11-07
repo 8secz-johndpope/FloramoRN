@@ -1,7 +1,8 @@
 /* @flow */
 import React, { Component } from 'react';
-import NthContainer from '../_common/NthHeader/NthContainer';
 import About from './About';
+
+const image = require('../../../assets/images/about/quito.jpg');
 
 type Props = {
   navigation: Object
@@ -12,9 +13,11 @@ class AboutDMQScreen extends Component<Props, State> {
   render() {
     const { navigation } = this.props;
     return (
-      <NthContainer onPress={() => navigation.openDrawer()} i18nHeader="navigation.title.dmq">
-        <About type="dmq" />
-      </NthContainer>
+      <About
+        image={image}
+        type="dmq"
+        navigation={navigation}
+      />
     );
   }
 }

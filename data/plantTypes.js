@@ -11,9 +11,9 @@ export type Plant = {
   family: string,
   colors: Array<Color>,
   lifeForms: Array<LifeForm>,
-  thumbnail: string,
-  detailImage: string,
-  photos: Array<string>,
+  thumbnail: number,
+  detailImage: number,
+  photos: Array<number>,
   places: Array<string>,
 }
 

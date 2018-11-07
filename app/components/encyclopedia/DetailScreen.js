@@ -4,7 +4,6 @@ import React, { Component } from 'react';
 import {
   View, Image, ScrollView, TouchableOpacity, Dimensions,
 } from 'react-native';
-import { verticalScale } from 'react-native-size-matters';
 import { Card } from 'react-native-elements';
 import FontAwesome5Pro from 'react-native-vector-icons/FontAwesome5Pro';
 import NthText from '../_common/NthText/NthText';
@@ -14,6 +13,7 @@ import type { Plant } from '../../../data/plantTypes';
 import styles from './encyclopediaStyles';
 import PlantColor from './PlantColor';
 import PlantLifeForm from './PlantLifeForm';
+import DetailImage from '../_common/DetailImage/DetailImage';
 
 type Props = {
   navigation: Object
@@ -27,30 +27,6 @@ const { width } = Dimensions.get('window');
 const labelWidth = 90;
 
 const getFullName = (plant: Plant) => `${plant.genus} ${plant.species}`;
-
-const getDetailImage = (plant: Plant) => (
-  <View style={{ height: verticalScale(200), overflow: 'hidden' }}>
-    <Image
-      resizeMode="cover"
-      source={plant.detailImage}
-      style={{
-        width: '100%', backgroundColor: 'pink', bottom: 0, position: 'absolute',
-      }}
-    />
-    <NthText
-      shadow
-      text={getFullName(plant)}
-      color={colors.primary50}
-      size="title"
-      font="barlow"
-      style={{
-        position: 'absolute',
-        bottom: 10,
-        right: 10,
-      }}
-    />
-  </View>
-);
 
 const getLabel = label => (
   <NthText
@@ -186,7 +162,7 @@ class DetailScreen extends Component<Props, State> {
         {overlayShown ? this.renderOverlay(plant) : null}
         <View style={{ flex: 1 }}>
           <ScrollView>
-            {getDetailImage(plant)}
+            <DetailImage image={plant.detailImage} imageTitle={getFullName(plant)} />
             <Card>
               {textRow('family', plant.family)}
               {textRow('genus', plant.genus)}
