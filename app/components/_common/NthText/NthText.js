@@ -22,7 +22,8 @@ type Props = {
   italic?: boolean,
   shadow?: boolean,
   style?: any,
-  multiline?: boolean
+  multiline?: boolean,
+  children?: any
 };
 
 const baseFontSize = Platform.OS === 'ios' ? 14 : 13;
@@ -72,6 +73,7 @@ export default class NthText extends Component<Props, {}> {
     shadow: false,
     uppercase: false,
     multiline: false,
+    children: null,
   };
 
   render() {
@@ -90,6 +92,7 @@ export default class NthText extends Component<Props, {}> {
       uppercase,
       shadow,
       multiline,
+      children,
       ...attributes
     } = this.props;
 
@@ -101,6 +104,9 @@ export default class NthText extends Component<Props, {}> {
     }
     if (uppercase) {
       shownText = shownText.toUpperCase();
+    }
+    if (children) {
+      shownText = children;
     }
 
     let usableLineHeight = 1;
