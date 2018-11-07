@@ -1013,7 +1013,7 @@ const species = [
     thumbnail: require('../assets/images/encyclopedia/encyclopedia_thumbnails/Pepe_grav.jpg'),
     detailImage: require('../assets/images/encyclopedia/detail_images/Pepe_grav.jpg'),
     photos: [require('../assets/images/encyclopedia/full_size/Pepe_grav.jpg')],
-    places: ['el oro'],
+    places: ['eloro'],
   },
   {
     id: 69,
@@ -1477,7 +1477,7 @@ const species = [
     thumbnail: require('../assets/images/encyclopedia/encyclopedia_thumbnails/Xenop_rose.jpg'),
     detailImage: require('../assets/images/encyclopedia/detail_images/Xenop_rose.jpg'),
     photos: [require('../assets/images/encyclopedia/full_size/Xenop_rose.jpg')],
-    places: ['los rios'],
+    places: ['losrios'],
   },
   {
     id: 100,
@@ -1739,7 +1739,7 @@ const species = [
     photos: [require('../assets/images/encyclopedia/full_size/Diplo_obla_1.jpg'),
       require('../assets/images/encyclopedia/full_size/Diplo_obla_2.jpg')],
     places: ['azuay',
-      'el oro',
+      'eloro',
       'loja'],
   },
   {
@@ -2595,7 +2595,7 @@ const species = [
     places: ['azuay',
       'carchi',
       'loja',
-      'los rios',
+      'losrios',
       'moronasantiago'],
   },
   {
@@ -2617,7 +2617,7 @@ const species = [
       'carchi',
       'chimborazo',
       'cotopaxi',
-      'el oro',
+      'eloro',
       'esmeraldas',
       'imbabura',
       'loja',
@@ -2728,7 +2728,7 @@ const species = [
       'carchi',
       'chimborazo',
       'cotopaxi',
-      'el oro',
+      'eloro',
       'imbabura',
       'loja',
       'moronasantiago',
