@@ -18,16 +18,21 @@ const NthContainer = (props: Props) => {
     children, i18nHeader, header, onPress, noPadding, type,
   } = props;
   const padding = noPadding ? 0 : 20;
-  let headerComponent;
+  const headerProps = {
+    onPress,
+    type,
+    i18n: undefined,
+    text: undefined,
+  };
   if (i18nHeader) {
-    headerComponent = <NthHeader i18n={i18nHeader} onPress={onPress} type={type} />;
+    headerProps.i18n = i18nHeader;
   }
   if (header) {
-    headerComponent = <NthHeader text={header} onPress={onPress} type={type} />;
+    headerProps.text = header;
   }
   return (
     <View style={{ flex: 1 }}>
-      {headerComponent}
+      <NthHeader {...headerProps} />
       <View style={{ padding, flex: 1 }}>
         {children}
       </View>

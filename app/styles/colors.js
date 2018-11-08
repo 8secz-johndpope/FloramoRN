@@ -15,16 +15,16 @@ const colors = {
   primary800: '#37474F',
   primary900: '#263238',
 
-  secondary50: '#F9FBE7',
-  secondary100: '#F0F4C3',
-  secondary200: '#E6EE9C',
-  secondary300: '#DCE775',
-  secondary400: '#D4E157',
-  secondary500: '#CDDC39',
-  secondary600: '#C0CA33',
-  secondary700: '#AFB42B',
-  secondary800: '#9E9D24',
-  secondary900: '#827717',
+  secondary50: '#E0F2F1',
+  secondary100: '#B2DFDB',
+  secondary200: '#80CBC4',
+  secondary300: '#4DB6AC',
+  secondary400: '#26A69A',
+  secondary500: '#009688',
+  secondary600: '#00897B',
+  secondary700: '#00796B',
+  secondary800: '#00695C',
+  secondary900: '#004D40',
 };
 
 export default colors;

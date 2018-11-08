@@ -24,7 +24,7 @@ const NthHeaderButton = (props: Props) => {
     >
       <FontAwesome5Pro
         name={icon}
-        color={colors.secondary500}
+        color={colors.secondary50}
         size={30}
         light
       />

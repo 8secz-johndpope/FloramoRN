@@ -23,46 +23,32 @@ const NthHeader = (props: Props) => {
   const hasBackButton = onPress !== null;
   const otherStyles = hasBackButton ? styles.containerWithBackButton : {};
   const height = deviceHelper.isiPhoneX() ? 95 : 75;
-  let textComponent;
+  const textProps = {
+    style: { paddingTop: 20 },
+    size: 'title',
+    uppercase: true,
+    weight: 'bold',
+    font: 'barlow',
+    color: colors.secondary50,
+    i18n: undefined,
+    text: undefined,
+  };
   if (i18n) {
-    textComponent = (
-      <NthText
-        i18n={i18n}
-        style={{ paddingTop: 20 }}
-        size="title"
-        uppercase
-        weight="bold"
-        font="barlow"
-        color={colors.secondary500}
-      />
-    );
+    textProps.i18n = i18n;
   }
   if (text) {
-    textComponent = (
-      <NthText
-        text={text}
-        style={{ paddingTop: 20 }}
-        uppercase
-        weight="bold"
-        font="barlow"
-        size="regular"
-        color={colors.secondary500}
-      />
-    );
+    textProps.text = text;
   }
   return (
     <View
       style={[
-        {
-          height,
-          backgroundColor: colors.primary900,
-        },
+        { height, backgroundColor: colors.primary500 },
         styles.container,
         otherStyles,
       ]}
     >
       {hasBackButton ? <NthHeaderButton onPress={() => onPress && onPress()} type={type} /> : null}
-      {textComponent}
+      <NthText {...textProps} />
       {hasBackButton ? <View style={{ width: 35 }} /> : null}
     </View>
   );
