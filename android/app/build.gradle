@@ -115,8 +115,8 @@ android {
         applicationId "com.lzm.Cajas"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 37
-        versionName "3.0.1-alpha"
+        versionCode 38
+        versionName "3.0.2-alpha"
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
