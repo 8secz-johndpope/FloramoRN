@@ -697,10 +697,10 @@ const species = [
   {
     id: 47,
     tropicosId: '26619689',
-    key: 'iso\u00ebtaceae_iso\u00ebtes_novo-granadensis',
+    key: 'isoëtaceae_isoëtes_novo-granadensis',
     species: 'novo-granadensis',
-    genus: 'Iso\u00ebtes',
-    family: 'Iso\u00ebtaceae',
+    genus: 'Isoëtes',
+    family: 'Isoëtaceae',
     colors: ['cone'],
     lifeForms: ['aquatic',
       'herb'],

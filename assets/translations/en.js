@@ -94,7 +94,7 @@ const en = {
   colors: {
     blue: 'Blue',
     brown: 'Brown',
-    cone: 'Cone',
+    cone: 'Fern/Other',
     green: 'Green',
     orange: 'Orange',
     pink: 'Pink',

@@ -24,7 +24,7 @@ type State = {
 }
 
 const { width } = Dimensions.get('window');
-const labelWidth = 90;
+const labelWidth = 95;
 
 const getFullName = (plant: Plant) => `${plant.genus} ${plant.species}`;
 

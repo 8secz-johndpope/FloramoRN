@@ -792,7 +792,7 @@ const plants = {
     distribution: 'I Ecuador to Bolivia.',
   },
   loranthaceae_aetanthus_nodosus: {
-    description: 'Parasitic shrubs. Branches hanging, dichotomous, the younger ones reddish. Leaves simple, opposite, decussate, elliptical, or less frequently ovate, 5-10 x 3.5-6 cm, succulent, very brittle, entire, papillose, base rounded-decurrent, apex acute or obtuse; venation not visible. Inflorescence a fascicle; pedicels and calyx red or purple to black. Flowers tubular, fleshy; calyx ca. 6 mm long, cyathiform; corolla 6-8 cm long, 3/4 red, yellow apically; stamens yellow; style slender, red with yellow bands. Fruit an ovoid berry, ca. 1.2 cm, purple-black, juicy. Seed solitary.',
+    description: 'Parasitic shrubs. Branches hanging, dichotomous, the younger ones reddish. Leaves simple, opposite, decussate, elliptical, or less frequently ovate, 5-10 x 3.5-6 cm, succulent, very brittle, entire, papillose, base rounded-decurrent, apex acute or obtuse; venation not visible. Inflorescence a fascicle; pedicels and calyx red or purple to black. Flowers tubular, fleshy; calyx ca. 6 mm long, cyathiform; corolla 6-8 cm long, ¾ red, yellow apically; stamens yellow; style slender, red with yellow bands. Fruit an ovoid berry, ca. 1.2 cm, purple-black, juicy. Seed solitary.',
     distribution: 'Colombia to Peru.',
   },
   melastomataceae_axinaea_macrophylla: {
