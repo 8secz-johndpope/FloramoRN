@@ -45,7 +45,7 @@ class About extends Component<Props, State> {
   }
 
   onPress(type: string, data: string) {
-    if (type === 'url') {
+    if (type === 'link') {
       Linking.openURL(data);
     } else {
       this.setState({
