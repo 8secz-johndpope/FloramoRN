@@ -93,6 +93,14 @@ const es = {
       '©Missouri Botanical Garden, Science and Conservation Division',
     ],
   },
+  bugs: {
+    intro: 'Déjanos saber si encontraste un problema con la app, si tienes comentarios o ideas para nueva functionalidad.\n\n'
+      + 'Si estas reportando un problema, por favor incluye los datos de tu teléfono (marca, modelo, versión de Android/iOS) y una'
+      + 'corta explicación de lo que estabas haciendo.',
+    fieldHint: 'Comentarios, problemas, ideas',
+    subject: 'Comentarios, problemas, ideas',
+    email: 'nth.development@gmail.com',
+  },
   colors: {
     blue: 'Azul',
     brown: 'Café',

@@ -91,6 +91,14 @@ const en = {
       '©Missouri Botanical Garden, Science and Conservation Division',
     ],
   },
+  bugs: {
+    intro: 'Let us know if you found a bug, send us your feedback, comments or ideas for new features.\n\n'
+      + 'If you are reporting a bug, please include your phone information (make, model, Android/iOS version) along with a short explanation'
+      + 'of what you were doing.',
+    fieldHint: 'Any comments, feedback or bugs found',
+    subject: 'Comments, suggestions, feedback, bugs',
+    email: 'nth.development@gmail.com',
+  },
   colors: {
     blue: 'Blue',
     brown: 'Brown',
