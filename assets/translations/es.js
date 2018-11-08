@@ -92,6 +92,13 @@ const es = {
       'Todos los derechos reservados.',
       '©Missouri Botanical Garden, Science and Conservation Division',
     ],
+    moreInfo: {
+      cushion: 'Almohadillas',
+      hairs: 'Pelos blancos o plateados',
+      leaves: 'Hojas reducidas',
+      rosette: 'Rosetas',
+      button: 'Cerrar',
+    },
   },
   bugs: {
     intro: 'Déjanos saber si encontraste un problema con la app, si tienes comentarios o ideas para nueva functionalidad.\n\n'

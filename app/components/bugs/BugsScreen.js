@@ -64,7 +64,7 @@ class BugsScreen extends Component<Props, State> {
               light
             />
           )}
-          title="Send"
+          title={I18n.t('bugs.button')}
           buttonStyle={{
             height: 70,
             borderRadius: 5,

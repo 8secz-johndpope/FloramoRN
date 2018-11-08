@@ -90,6 +90,13 @@ const en = {
       'All rights reserved.',
       '©Missouri Botanical Garden, Science and Conservation Division',
     ],
+    moreInfo: {
+      cushion: 'Cushion-plants',
+      hairs: 'White or silvery hairs',
+      leaves: 'Hard leaves',
+      rosette: 'Rosettes',
+      button: 'Close',
+    },
   },
   bugs: {
     intro: 'Let us know if you found a bug, send us your feedback, comments or ideas for new features.\n\n'
@@ -98,6 +105,7 @@ const en = {
     fieldHint: 'Any comments, feedback or bugs found',
     subject: 'Comments, suggestions, feedback, bugs',
     email: 'nth.development@gmail.com',
+    button: 'send',
   },
   colors: {
     blue: 'Blue',
