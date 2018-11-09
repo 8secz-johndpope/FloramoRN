@@ -30,8 +30,7 @@ const navigationItems: Array<DrawerItemConfig> = [
   },
   {
     key: 'paramo',
-    imageLight: require('../../../../assets/images/drawer/light/mountains.png'),
-    imageSolid: require('../../../../assets/images/drawer/solid/mountains.png'),
+    icon: 'mountains',
   },
   {
     key: 'cajas',
@@ -48,7 +47,7 @@ const navigationItems: Array<DrawerItemConfig> = [
   },
   {
     key: 'bugs',
-    icon: 'bug',
+    icon: 'spider-black-widow',
   },
   {
     key: 'credits',
