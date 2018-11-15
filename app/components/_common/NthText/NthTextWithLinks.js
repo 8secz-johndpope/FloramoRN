@@ -5,7 +5,7 @@ import NthText from './NthText';
 import colors from '../../../styles/colors';
 
 type Props = {
-  paragraph: string,
+  text: string,
   onPress: (string, string) => void
 };
 
@@ -33,9 +33,9 @@ export default class NthTextWithLinks extends Component<Props, {}> {
   }
 
   createContent() {
-    const { paragraph } = this.props;
+    const { text } = this.props;
     const content = [];
-    const parts = paragraph.split('<a');
+    const parts = text.split('<a');
     parts.forEach((part, index) => {
       if (index === 0) {
         content.push(part);
@@ -56,7 +56,7 @@ export default class NthTextWithLinks extends Component<Props, {}> {
   }
 
   render() {
-    const { paragraph, onPress, ...attributes } = this.props;
+    const { text, onPress, ...attributes } = this.props;
     return (
       <View {...attributes}>
         <NthText font="barlow" multiline>

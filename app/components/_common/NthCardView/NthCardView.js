@@ -3,6 +3,7 @@ import React from 'react';
 import CardView from 'react-native-cardview';
 import { scale } from 'react-native-size-matters';
 import colors from '../../../styles/colors';
+import nthCardViewHelper from './nthCardViewHelper';
 
 type Margin = {
   top?: number,
@@ -24,16 +25,6 @@ const defaultMargins = {
   right: scale(15),
 };
 
-const getMargin = (margin: Margin) => {
-  const mergedMargin = { ...defaultMargins, ...margin };
-  return ({
-    marginTop: mergedMargin.top,
-    marginBottom: mergedMargin.bottom,
-    marginLeft: mergedMargin.left,
-    marginRight: mergedMargin.right,
-  });
-};
-
 const NthCardView = (props: Props) => {
   const { children, margin, padding } = props;
   return (
@@ -41,7 +32,10 @@ const NthCardView = (props: Props) => {
       cardElevation={2}
       cardMaxElevation={2}
       cornerRadius={5}
-      style={[{ backgroundColor: colors.white, padding }, getMargin(margin)]}
+      style={[
+        { backgroundColor: colors.white, padding },
+        nthCardViewHelper.getMargin(defaultMargins, margin)]
+      }
     >
       {children}
     </CardView>

@@ -101,7 +101,7 @@ class About extends Component<Props, State> {
                 {paragraphs.map(paragraph => (
                   <NthTextWithLinks
                     key={paragraph}
-                    paragraph={paragraph}
+                    text={paragraph}
                     onPress={(linkType, data) => this.onPress(linkType, data)}
                     style={{ marginBottom: verticalScale(16) }}
                   />
