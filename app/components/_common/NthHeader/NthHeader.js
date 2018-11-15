@@ -26,8 +26,7 @@ const NthHeader = (props: Props) => {
   const textProps = {
     style: { paddingTop: 20 },
     size: 'title',
-    uppercase: true,
-    weight: 'bold',
+    weight: 'semiBold',
     font: 'barlow',
     color: colors.secondary50,
     i18n: undefined,

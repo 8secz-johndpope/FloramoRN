@@ -38,7 +38,7 @@ const getFontSize = (size) => {
     case 'big':
       return transformToScale(2.5);
     case 'title':
-      return transformToScale(1.5);
+      return transformToScale(1.3);
     case 'regular':
       return transformToScale(1);
     case 'small':

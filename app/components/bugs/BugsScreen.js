@@ -10,6 +10,7 @@ import I18n from '../../i18n';
 import colors from '../../styles/colors';
 import NthText from '../_common/NthText/NthText';
 import fonts from '../../styles/fonts';
+import NthButton from '../_common/NthButton/NthButton';
 
 type Props = {
   navigation: Object
@@ -54,24 +55,9 @@ class BugsScreen extends Component<Props, State> {
             style={{ flex: 1, textAlignVertical: 'top', fontFamily: fonts.montserrat.regular }}
           />
         </View>
-        <Button
-          iconRight
-          icon={(
-            <FontAwesome5Pro
-              name="paper-plane"
-              color={colors.secondary50}
-              size={30}
-              light
-            />
-          )}
-          title={I18n.t('bugs.button')}
-          buttonStyle={{
-            height: 70,
-            borderRadius: 5,
-          }}
-          titleStyle={{
-            color: colors.secondary50,
-          }}
+        <NthButton
+          icon="paper-plane"
+          i18nTitle="bugs.button"
           onPress={() => {
             const subject = I18n.t('bugs.subject');
             const email = I18n.t('bugs.email');

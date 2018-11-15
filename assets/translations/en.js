@@ -11,7 +11,7 @@ const en = {
     title: {
       encyclopedia: 'Encyclopedia',
       search: 'Search',
-      tropicos: 'Tropicos Search',
+      tropicos: 'Tropicos® Search',
       paramo: 'Páramo',
       cajas: 'Cajas',
       dmq: 'DMQ',
@@ -41,6 +41,14 @@ const en = {
     lifeForm: 'Life form',
     distribution: 'Distribution',
   },
+  tropicosSearch: {
+    warning: 'This search will connect to the Internet',
+    info: 'Enter at least one of the following criteria to perform a search on the Tropicos® database. This search will show up to {{max}} results.',
+    name: 'Name',
+    commonName: 'Common name',
+    family: 'Family',
+    button: 'Search in Tropicos®',
+  },
   bugs: {
     intro: 'Let us know if you found a bug, send us your feedback, comments or ideas for new features.\n\n'
       + 'If you are reporting a bug, please include your phone information (make, model, Android/iOS version) along with a short explanation'
@@ -48,7 +56,7 @@ const en = {
     fieldHint: 'Any comments, feedback or bugs found',
     subject: 'Comments, suggestions, feedback, bugs',
     email: 'nth.development@gmail.com',
-    button: 'send',
+    button: 'Send',
   },
   colors: {
     blue: 'Blue',

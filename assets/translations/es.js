@@ -11,7 +11,7 @@ const es = {
     title: {
       encyclopedia: 'Enciclopedia',
       search: 'Búsqueda',
-      tropicos: 'Búsqueda en Tropicos',
+      tropicos: 'Búsqueda en Tropicos®',
       paramo: 'Páramo',
       cajas: 'Cajas',
       dmq: 'DMQ',
@@ -41,6 +41,14 @@ const es = {
     lifeForm: 'Forma de vida',
     distribution: 'Distribución',
   },
+  tropicosSearch: {
+    warning: 'Esta búsqueda se conectará al internet',
+    info: 'Ingrese al menos uno de los siguientes criterios para buscar en la base de datos de Tropicos®. Se mostrarán hasta {{max}} resultados.',
+    name: 'Nombre',
+    commonName: 'Nombre común',
+    family: 'Familia',
+    button: 'Buscar en Tropicos®',
+  },
   bugs: {
     intro: 'Déjanos saber si encontraste un problema con la app, si tienes comentarios o ideas para nueva functionalidad.\n\n'
       + 'Si estas reportando un problema, por favor incluye los datos de tu teléfono (marca, modelo, versión de Android/iOS) y una'
@@ -48,6 +56,7 @@ const es = {
     fieldHint: 'Comentarios, problemas, ideas',
     subject: 'Comentarios, problemas, ideas',
     email: 'nth.development@gmail.com',
+    button: 'Enviar',
   },
   colors: {
     blue: 'Azul',
