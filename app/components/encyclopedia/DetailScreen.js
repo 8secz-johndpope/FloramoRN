@@ -2,10 +2,10 @@
 /* eslint-disable react/no-array-index-key */
 import React, { Component } from 'react';
 import {
-  View, Image, ScrollView, TouchableOpacity, Dimensions,
+  Dimensions, Image, ScrollView, TouchableOpacity, View,
 } from 'react-native';
-import { Card } from 'react-native-elements';
 import FontAwesome5Pro from 'react-native-vector-icons/FontAwesome5Pro';
+import { scale } from 'react-native-size-matters';
 import NthText from '../_common/NthText/NthText';
 import NthContainer from '../_common/NthHeader/NthContainer';
 import colors from '../../styles/colors';
@@ -14,6 +14,7 @@ import styles from './encyclopediaStyles';
 import PlantColor from './PlantColor';
 import PlantLifeForm from './PlantLifeForm';
 import DetailImage from '../_common/DetailImage/DetailImage';
+import NthCardView from '../_common/NthCardView/NthCardView';
 
 type Props = {
   navigation: Object
@@ -81,7 +82,7 @@ class DetailScreen extends Component<Props, State> {
 
   detailGallery(photos: Array<number>) {
     return (
-      <Card containerStyle={{ marginBottom: 24 }}>
+      <NthCardView margin={{ bottom: scale(20) }}>
         <View style={{ flexDirection: 'row' }}>
           {photos.map((photo, i) => (
             <TouchableOpacity
@@ -99,7 +100,7 @@ class DetailScreen extends Component<Props, State> {
             </TouchableOpacity>
           ))}
         </View>
-      </Card>
+      </NthCardView>
     );
   }
 
@@ -163,17 +164,17 @@ class DetailScreen extends Component<Props, State> {
         <View style={{ flex: 1 }}>
           <ScrollView>
             <DetailImage image={plant.detailImage} imageTitle={getFullName(plant)} />
-            <Card>
+            <NthCardView margin={{ bottom: 0 }}>
               {textRow('family', plant.family)}
               {textRow('genus', plant.genus)}
               {textRow('species', plant.species)}
               {colorRow(plant.colors)}
               {lifeFormRow(plant.lifeForms)}
               {i18nRow('distribution', `plants.${plant.key}.distribution`)}
-            </Card>
-            <Card>
+            </NthCardView>
+            <NthCardView margin={{ bottom: 0 }}>
               <NthText i18n={`plants.${plant.key}.description`} multiline lineHeight={1.4} font="barlow" />
-            </Card>
+            </NthCardView>
             {this.detailGallery(plant.photos)}
           </ScrollView>
         </View>

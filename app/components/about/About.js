@@ -2,17 +2,17 @@
 /* @flow */
 import React, { Component } from 'react';
 import {
-  Linking, ScrollView, View, Image, Dimensions,
+  Dimensions, Image, Linking, ScrollView, View,
 } from 'react-native';
 import { verticalScale } from 'react-native-size-matters';
-import { Button, Card, Overlay } from 'react-native-elements';
-import FontAwesome5Pro from 'react-native-vector-icons/FontAwesome5Pro';
+import { Button, Overlay } from 'react-native-elements';
 import I18n from '../../i18n';
 import NthTextWithLinks from '../_common/NthText/NthTextWithLinks';
 import NthContainer from '../_common/NthHeader/NthContainer';
 import DetailImage from '../_common/DetailImage/DetailImage';
 import NthText from '../_common/NthText/NthText';
 import colors from '../../styles/colors';
+import NthCardView from '../_common/NthCardView/NthCardView';
 
 const images = {
   cushion: require('../../../assets/images/about/cushion.jpg'),
@@ -97,7 +97,7 @@ class About extends Component<Props, State> {
           <ScrollView>
             <View>
               <DetailImage image={image} />
-              <Card style={{ padding: 20 }}>
+              <NthCardView>
                 {paragraphs.map(paragraph => (
                   <NthTextWithLinks
                     key={paragraph}
@@ -106,7 +106,7 @@ class About extends Component<Props, State> {
                     style={{ marginBottom: verticalScale(16) }}
                   />
                 ))}
-              </Card>
+              </NthCardView>
             </View>
           </ScrollView>
           {this.infoOverlay()}

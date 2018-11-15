@@ -1,6 +1,6 @@
 /* @flow */
 import React, { Component } from 'react';
-import { SectionList, View, Text } from 'react-native';
+import { SectionList, View } from 'react-native';
 import _ from 'lodash';
 import NthContainer from '../_common/NthHeader/NthContainer';
 import species from '../../../data/species';
