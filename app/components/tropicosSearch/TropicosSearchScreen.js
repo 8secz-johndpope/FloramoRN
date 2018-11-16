@@ -1,15 +1,10 @@
 /* @flow */
 import React, { Component } from 'react';
-import { View } from 'react-native';
-import FontAwesome5Pro from 'react-native-vector-icons/FontAwesome5Pro';
-import NthText from '../_common/NthText/NthText';
 import NthContainer from '../_common/NthHeader/NthContainer';
-import colors from '../../styles/colors';
-import NthInput from '../_common/NthInput/NthInput';
-import NthButton from '../_common/NthButton/NthButton';
 import appConfig from '../../appConfig';
 import TropicosSearchForm from './TropicosSearchForm';
 import TropicosResults from './TropicosResults';
+import TropicosLoading from './TropicosLoading';
 
 const axios = require('axios');
 
@@ -21,6 +16,7 @@ type State = {
   commonName: string,
   family: string,
   hasError: boolean,
+  isLoading: boolean,
   results: any
 };
 
@@ -46,6 +42,7 @@ class TropicosSearchScreen extends Component<Props, State> {
       commonName: '',
       family: '',
       hasError: false,
+      isLoading: false,
       results: undefined,
     };
   }
@@ -66,7 +63,9 @@ class TropicosSearchScreen extends Component<Props, State> {
     } else {
       const url = appConfig.search_url;
       const key = appConfig.tropicos;
-
+      this.setState({
+        isLoading: true,
+      });
       axios.get(url, {
         params: {
           ...getParams(trimmedName, trimmedCommonName, trimmedFamily),
@@ -79,6 +78,7 @@ class TropicosSearchScreen extends Component<Props, State> {
         .then((response) => {
           this.setState({
             results: response.data,
+            isLoading: false,
           });
         })
         .catch((error) => {
@@ -93,13 +93,14 @@ class TropicosSearchScreen extends Component<Props, State> {
   resetResults() {
     this.setState({
       results: undefined,
+      isLoading: false,
     });
   }
 
   render() {
     const { navigation } = this.props;
     const {
-      name, commonName, family, hasError, results,
+      name, commonName, family, hasError, results, isLoading,
     } = this.state;
     const headerProps = {};
     let component;
@@ -126,6 +127,7 @@ class TropicosSearchScreen extends Component<Props, State> {
     return (
       <NthContainer {...headerProps}>
         {component}
+        {isLoading ? <TropicosLoading /> : null}
       </NthContainer>
     );
   }

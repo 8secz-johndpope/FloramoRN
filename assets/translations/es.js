@@ -49,6 +49,7 @@ const es = {
     commonName: 'Nombre común',
     family: 'Familia',
     button: 'Buscar en Tropicos®',
+    loading: 'cargando...',
   },
   bugs: {
     intro: 'Déjanos saber si encontraste un problema con la app, si tienes comentarios o ideas para nueva functionalidad.\n\n'

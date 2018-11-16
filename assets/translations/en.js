@@ -49,6 +49,7 @@ const en = {
     commonName: 'Common name',
     family: 'Family',
     button: 'Search in Tropicos®',
+    loading: 'loading...',
   },
   bugs: {
     intro: 'Let us know if you found a bug, send us your feedback, comments or ideas for new features.\n\n'
