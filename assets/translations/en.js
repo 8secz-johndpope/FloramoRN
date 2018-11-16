@@ -12,6 +12,7 @@ const en = {
       encyclopedia: 'Encyclopedia',
       search: 'Search',
       tropicos: 'Tropicos® Search',
+      tropicosResults: 'Tropicos® Results',
       paramo: 'Páramo',
       cajas: 'Cajas',
       dmq: 'DMQ',

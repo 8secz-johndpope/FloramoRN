@@ -1,13 +1,17 @@
 /* @flow */
 import React, { Component } from 'react';
-import { Linking, View } from 'react-native';
+import { View } from 'react-native';
 import FontAwesome5Pro from 'react-native-vector-icons/FontAwesome5Pro';
 import NthText from '../_common/NthText/NthText';
 import NthContainer from '../_common/NthHeader/NthContainer';
 import colors from '../../styles/colors';
 import NthInput from '../_common/NthInput/NthInput';
 import NthButton from '../_common/NthButton/NthButton';
-import I18n from '../../i18n';
+import appConfig from '../../appConfig';
+import TropicosSearchForm from './TropicosSearchForm';
+import TropicosResults from './TropicosResults';
+
+const axios = require('axios');
 
 type Props = {
   navigation: Object
@@ -15,7 +19,23 @@ type Props = {
 type State = {
   name: string,
   commonName: string,
-  family: string
+  family: string,
+  hasError: boolean,
+  results: any
+};
+
+const getParams = (name: string, commonName: string, family: string) => {
+  const params = {};
+  if (name !== '') {
+    params.name = name;
+  }
+  if (commonName !== '') {
+    params.commonName = commonName;
+  }
+  if (family !== '') {
+    params.family = family;
+  }
+  return params;
 };
 
 class TropicosSearchScreen extends Component<Props, State> {
@@ -25,6 +45,8 @@ class TropicosSearchScreen extends Component<Props, State> {
       name: '',
       commonName: '',
       family: '',
+      hasError: false,
+      results: undefined,
     };
   }
 
@@ -34,47 +56,76 @@ class TropicosSearchScreen extends Component<Props, State> {
     this.setState(newState);
   }
 
+  onSearchPressed() {
+    const { name, commonName, family } = this.state;
+    const trimmedName = name.trim();
+    const trimmedCommonName = commonName.trim();
+    const trimmedFamily = family.trim();
+    if (trimmedName === '' && trimmedCommonName === '' && trimmedFamily === '') {
+      this.setState({ hasError: true });
+    } else {
+      const url = appConfig.search_url;
+      const key = appConfig.tropicos;
+
+      axios.get(url, {
+        params: {
+          ...getParams(trimmedName, trimmedCommonName, trimmedFamily),
+          type: 'wildcard',
+          format: 'json',
+          apikey: key,
+          pagesize: 100,
+        },
+      })
+        .then((response) => {
+          this.setState({
+            results: response.data,
+          });
+        })
+        .catch((error) => {
+          this.resetResults();
+        })
+        .then(() => {
+          // always executed
+        });
+    }
+  }
+
+  resetResults() {
+    this.setState({
+      results: undefined,
+    });
+  }
+
   render() {
     const { navigation } = this.props;
-    const { name, commonName, family } = this.state;
-    return (
-      <NthContainer onPress={() => navigation.openDrawer()} i18nHeader="navigation.title.tropicos">
-        <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 8 }}>
-          <FontAwesome5Pro
-            name="info-circle"
-            color={colors.primary800}
-            size={20}
-            light
-            style={{ marginRight: 6 }}
-          />
-          <NthText i18n="tropicosSearch.warning" font="barlow" weight="semiBold" italic multiline size="small" />
-        </View>
-        <NthText i18n="tropicosSearch.info" i18nParams={{ max: 100 }} font="barlow" multiline size="small" />
-        <View style={{ marginTop: 16 }}>
-          <NthInput
-            i18nLabel="tropicosSearch.name"
-            value={name}
-            onChangeText={value => this.onChange('name', value)}
-          />
-          <View style={{ marginTop: 16 }}>
-            <NthInput
-              i18nLabel="tropicosSearch.commonName"
-              value={commonName}
-              onChangeText={value => this.onChange('commonName', value)}
-            />
-          </View>
-          <View style={{ marginVertical: 16 }}>
-            <NthInput
-              i18nLabel="tropicosSearch.family"
-              value={family}
-              onChangeText={value => this.onChange('family', value)}
-            />
-          </View>
-        </View>
-        <NthButton
-          i18nTitle="tropicosSearch.button"
-          onPress={() => {}}
+    const {
+      name, commonName, family, hasError, results,
+    } = this.state;
+    const headerProps = {};
+    let component;
+    if (results) {
+      component = <TropicosResults results={results} />;
+      headerProps.onPress = () => this.resetResults();
+      headerProps.i18nHeader = 'navigation.title.tropicosResults';
+      headerProps.type = 'back';
+    } else {
+      headerProps.onPress = () => navigation.openDrawer();
+      headerProps.i18nHeader = 'navigation.title.tropicos';
+      headerProps.type = 'hamburger';
+      component = (
+        <TropicosSearchForm
+          name={name}
+          commonName={commonName}
+          family={family}
+          onChange={(field, value) => this.onChange(field, value)}
+          onSearchPressed={() => this.onSearchPressed()}
+          hasError={hasError}
         />
+      );
+    }
+    return (
+      <NthContainer {...headerProps}>
+        {component}
       </NthContainer>
     );
   }

@@ -166,6 +166,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-webview')
     compile project(':react-native-cardview')
     compile project(':react-native-linear-gradient')
     compile project(':react-native-vector-icons')

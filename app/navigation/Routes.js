@@ -8,68 +8,20 @@ import AboutCajasScreen from '../components/about/AboutCajasScreen';
 import AboutDMQScreen from '../components/about/AboutDMQScreen';
 import AboutAppScreen from '../components/about/AboutAppScreen';
 import DetailScreen from '../components/encyclopedia/DetailScreen';
+import WebView from '../components/encyclopedia/WebView';
 
 const routes = {
-  encyclopedia: {
-    screen: EncyclopediaScreen,
-    navigationOptions: {
-      title: 'encyclopedia',
-    },
-  },
-  detail: {
-    screen: DetailScreen,
-    navigationOptions: {
-      title: 'detail',
-    },
-  },
-  search: {
-    screen: SearchScreen,
-    navigationOptions: {
-      title: 'search',
-    },
-  },
-  tropicos: {
-    screen: TropicosSearchScreen,
-    navigationOptions: {
-      title: 'tropicos',
-    },
-  },
-  paramo: {
-    screen: AboutParamoScreen,
-    navigationOptions: {
-      title: 'paramo',
-    },
-  },
-  cajas: {
-    screen: AboutCajasScreen,
-    navigationOptions: {
-      title: 'cajas',
-    },
-  },
-  dmq: {
-    screen: AboutDMQScreen,
-    navigationOptions: {
-      title: 'dmq',
-    },
-  },
-  app: {
-    screen: AboutAppScreen,
-    navigationOptions: {
-      title: 'app',
-    },
-  },
-  bugs: {
-    screen: BugsScreen,
-    navigationOptions: {
-      title: 'bugs',
-    },
-  },
-  credits: {
-    screen: CreditsScreen,
-    navigationOptions: {
-      title: 'credits',
-    },
-  },
+  encyclopedia: { screen: EncyclopediaScreen },
+  detail: { screen: DetailScreen },
+  search: { screen: SearchScreen },
+  tropicos: { screen: TropicosSearchScreen },
+  tropicosResults: { screen: WebView },
+  paramo: { screen: AboutParamoScreen },
+  cajas: { screen: AboutCajasScreen },
+  dmq: { screen: AboutDMQScreen },
+  app: { screen: AboutAppScreen },
+  bugs: { screen: BugsScreen },
+  credits: { screen: CreditsScreen },
 };
 
 const routesKeys = Object.keys(routes);
