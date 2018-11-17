@@ -4,7 +4,8 @@ import NthContainer from '../_common/NthHeader/NthContainer';
 import appConfig from '../../appConfig';
 import TropicosSearchForm from './TropicosSearchForm';
 import TropicosResults from './TropicosResults';
-import TropicosLoading from './TropicosLoading';
+import appNavigation from '../../navigation/Routes';
+import TropicosLoading from '../tropicosLoading/TropicosLoading';
 
 const axios = require('axios');
 
@@ -95,6 +96,15 @@ class TropicosSearchScreen extends Component<Props, State> {
     }
   }
 
+  onPlantPressed(nameId: string) {
+    const { navigation } = this.props;
+    const url = `${appConfig.base_url}${nameId}`;
+    navigation.navigate({
+      ...appNavigation.navigationTree.plantWebView,
+      ...{ params: { url } },
+    });
+  }
+
   resetResults() {
     this.setState({
       results: undefined,
@@ -110,7 +120,12 @@ class TropicosSearchScreen extends Component<Props, State> {
     const headerProps = {};
     let component;
     if (results) {
-      component = <TropicosResults results={results} />;
+      component = (
+        <TropicosResults
+          results={results}
+          onPress={nameId => this.onPlantPressed(nameId)}
+        />
+      );
       headerProps.onPress = () => this.resetResults();
       headerProps.i18nHeader = 'navigation.title.tropicosResults';
       headerProps.type = 'back';

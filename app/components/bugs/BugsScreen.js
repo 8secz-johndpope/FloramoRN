@@ -3,8 +3,6 @@ import React, { Component } from 'react';
 import {
   View, TextInput, Keyboard, Linking,
 } from 'react-native';
-import { Button } from 'react-native-elements';
-import FontAwesome5Pro from 'react-native-vector-icons/FontAwesome5Pro';
 import NthContainer from '../_common/NthHeader/NthContainer';
 import I18n from '../../i18n';
 import colors from '../../styles/colors';

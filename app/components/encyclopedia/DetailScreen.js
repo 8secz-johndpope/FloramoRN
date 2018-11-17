@@ -15,6 +15,8 @@ import PlantColor from './PlantColor';
 import PlantLifeForm from './PlantLifeForm';
 import DetailImage from '../_common/DetailImage/DetailImage';
 import NthCardView from '../_common/NthCardView/NthCardView';
+import appConfig from "../../appConfig";
+import appNavigation from "../../navigation/Routes";
 
 type Props = {
   navigation: Object
@@ -110,6 +112,16 @@ class DetailScreen extends Component<Props, State> {
     });
   }
 
+  onPlantPressed() {
+    const { navigation } = this.props;
+    const { plant } = navigation.state.params;
+    const url = `${appConfig.base_url}${plant.tropicosId}`;
+    navigation.navigate({
+      ...appNavigation.navigationTree.plantWebView,
+      ...{ params: { url } },
+    });
+  }
+
   openOverlay(index: number) {
     this.setState({
       overlayShown: true,
@@ -163,7 +175,11 @@ class DetailScreen extends Component<Props, State> {
         {overlayShown ? this.renderOverlay(plant) : null}
         <View style={{ flex: 1 }}>
           <ScrollView>
-            <DetailImage image={plant.detailImage} imageTitle={getFullName(plant)} />
+            <DetailImage
+              image={plant.detailImage}
+              imageTitle={getFullName(plant)}
+              onPress={() => this.onPlantPressed()}
+            />
             <NthCardView margin={{ bottom: 0 }}>
               {textRow('family', plant.family)}
               {textRow('genus', plant.genus)}

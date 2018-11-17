@@ -1,25 +1,30 @@
 /* @flow */
 import _ from 'lodash';
 import React, { Component } from 'react';
-import { View, FlatList } from 'react-native';
+import { View, FlatList, TouchableOpacity } from 'react-native';
 import NthText from '../_common/NthText/NthText';
 import colors from '../../styles/colors';
 
 type Props = {
-  results: any
+  results: any,
+  onPress: string=>void
 };
 type State = {};
 
 class TropicosResults extends Component<Props, State> {
   getItem(plant: Object) {
+    const { onPress } = this.props;
     return (
-      <View style={{ padding: 20 }}>
+      <TouchableOpacity
+        style={{ padding: 20 }}
+        onPress={() => onPress(plant.NameId)}
+      >
         <View style={{ flexDirection: 'row', marginBottom: 4 }}>
           <NthText weight="bold" text={plant.ScientificName} font="barlow" />
           <NthText text={plant.Author} font="barlow" style={{ marginLeft: 8 }} />
         </View>
         <NthText text={plant.Family} font="barlow" />
-      </View>
+      </TouchableOpacity>
     );
   }
 

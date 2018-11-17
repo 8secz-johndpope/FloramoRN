@@ -8,14 +8,14 @@ import AboutCajasScreen from '../components/about/AboutCajasScreen';
 import AboutDMQScreen from '../components/about/AboutDMQScreen';
 import AboutAppScreen from '../components/about/AboutAppScreen';
 import DetailScreen from '../components/encyclopedia/DetailScreen';
-import WebView from '../components/encyclopedia/WebView';
+import PlantWebView from '../components/plantWebView/PlantWebView';
 
 const routes = {
   encyclopedia: { screen: EncyclopediaScreen },
   detail: { screen: DetailScreen },
   search: { screen: SearchScreen },
   tropicos: { screen: TropicosSearchScreen },
-  tropicosResults: { screen: WebView },
+  plantWebView: { screen: PlantWebView },
   paramo: { screen: AboutParamoScreen },
   cajas: { screen: AboutCajasScreen },
   dmq: { screen: AboutDMQScreen },
