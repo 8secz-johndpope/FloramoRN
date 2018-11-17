@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 const encyclopediaStyles = StyleSheet.create({
   detailRow: {
     flexDirection: 'row',
-    height: 24,
+    minHeight: 24,
     marginBottom: 8,
     alignItems: 'center',
   },

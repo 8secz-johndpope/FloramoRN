@@ -72,7 +72,7 @@ export default class NthText extends Component<Props, {}> {
     italic: false,
     shadow: false,
     uppercase: false,
-    multiline: false,
+    multiline: true,
     children: null,
   };
 

@@ -15,8 +15,8 @@ import PlantColor from './PlantColor';
 import PlantLifeForm from './PlantLifeForm';
 import DetailImage from '../_common/DetailImage/DetailImage';
 import NthCardView from '../_common/NthCardView/NthCardView';
-import appConfig from "../../appConfig";
-import appNavigation from "../../navigation/Routes";
+import appConfig from '../../appConfig';
+import appNavigation from '../../navigation/Routes';
 
 type Props = {
   navigation: Object
@@ -50,7 +50,12 @@ const textRow = (label: string, value: string) => (
 const i18nRow = (label: string, value: string) => (
   <View key={`${label}_${value}`} style={[styles.detailRow, styles.noMargin]}>
     {getLabel(label)}
-    <NthText i18n={value} style={{ flex: 1 }} font="barlow" />
+    <NthText
+      i18n={value}
+      font="barlow"
+      style={{ flex: 1 }}
+      multiline
+    />
   </View>
 );
 
