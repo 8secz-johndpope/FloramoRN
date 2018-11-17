@@ -50,6 +50,14 @@ const es = {
     family: 'Familia',
     button: 'Buscar en Tropicos®',
     loading: 'cargando...',
+    results: {
+      all: {
+        one: 'Mostrando un resultado encontrado',
+        other: 'Mostrando los {{count}} resultados encontrados',
+      },
+      zero: 'No se encontraron resultados',
+      other: 'Se encontraron {{count}} resultados. Mostrando los primeros {{max}}',
+    },
   },
   bugs: {
     intro: 'Déjanos saber si encontraste un problema con la app, si tienes comentarios o ideas para nueva functionalidad.\n\n'

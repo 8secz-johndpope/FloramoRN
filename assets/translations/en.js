@@ -50,6 +50,14 @@ const en = {
     family: 'Family',
     button: 'Search in Tropicos®',
     loading: 'loading...',
+    results: {
+      all: {
+        one: 'Showing one found result',
+        other: 'Showing all {{count}} found results',
+      },
+      zero: 'No results were found :(',
+      other: 'Found {{count}} results. Showing first {{max}}',
+    },
   },
   bugs: {
     intro: 'Let us know if you found a bug, send us your feedback, comments or ideas for new features.\n\n'

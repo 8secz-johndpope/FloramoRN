@@ -8,6 +8,8 @@ import TropicosLoading from './TropicosLoading';
 
 const axios = require('axios');
 
+const maxResults = 100;
+
 type Props = {
   navigation: Object
 };
@@ -72,13 +74,16 @@ class TropicosSearchScreen extends Component<Props, State> {
           type: 'wildcard',
           format: 'json',
           apikey: key,
-          pagesize: 100,
+          pagesize: maxResults,
         },
       })
         .then((response) => {
           this.setState({
             results: response.data,
             isLoading: false,
+            name: '',
+            commonName: '',
+            family: '',
           });
         })
         .catch((error) => {
@@ -109,10 +114,12 @@ class TropicosSearchScreen extends Component<Props, State> {
       headerProps.onPress = () => this.resetResults();
       headerProps.i18nHeader = 'navigation.title.tropicosResults';
       headerProps.type = 'back';
+      headerProps.noPadding = true;
     } else {
       headerProps.onPress = () => navigation.openDrawer();
       headerProps.i18nHeader = 'navigation.title.tropicos';
       headerProps.type = 'hamburger';
+      headerProps.noPadding = false;
       component = (
         <TropicosSearchForm
           name={name}
