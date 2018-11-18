@@ -51,9 +51,13 @@ const es = {
       and: 'Búsqueda que concuerde con TODOS los siguientes parámetros:',
       or: 'Búsqueda que concuerde con AL MENOS UNO de los siguientes parámetros:',
       color: 'Especies con color {{colors}}',
+      noColor: 'Especies con cualquier color',
       lifeForm: 'Especies con forma de vida {{lifeForms}}',
+      noLifeForm: 'Especies con cualquier forma de vida',
       input: 'Especies con familia, género o especie que contenga {{input}}',
+      noInput: 'Especies con cualquier familia, género o especie',
     },
+    button: 'Buscar',
   },
   tropicosSearch: {
     warning: 'Esta búsqueda se conectará al internet',

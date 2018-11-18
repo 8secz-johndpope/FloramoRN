@@ -10,6 +10,7 @@ import NthInput from '../_common/NthInput/NthInput';
 import I18n from '../../i18n';
 import NthText from '../_common/NthText/NthText';
 import colors from '../../styles/colors';
+import NthButton from '../_common/NthButton/NthButton';
 
 type Props = {
   navigation: Object
@@ -131,40 +132,51 @@ class SearchScreen extends Component<Props, State> {
 
   colorHint() {
     const { selectedColors } = this.state;
+    let props = {};
     if (selectedColors.length === 0) {
-      return null;
+      props = {
+        i18n: 'search.hint.noColor',
+      };
+    } else {
+      const myColors = selectedColors.map(color => I18n.t(`colors.${color}`));
+      props = {
+        i18n: 'search.hint.color',
+        i18nParams: { colors: _.join(myColors, ', ') },
+      };
     }
-    const myColors = selectedColors.map(color => I18n.t(`colors.${color}`));
-    const props = {
-      i18n: 'search.hint.color',
-      i18nParams: { colors: _.join(myColors, ', ') },
-    };
     return hintText(props);
   }
 
   lifeFormHint() {
     const { selectedLifeForms } = this.state;
+    let props = {};
     if (selectedLifeForms.length === 0) {
-      return null;
+      props = {
+        i18n: 'search.hint.noLifeForm',
+      };
+    } else {
+      const myLifeForms = selectedLifeForms.map(lifeForm => I18n.t(`lifeForms.${lifeForm}`));
+      props = {
+        i18n: 'search.hint.lifeForm',
+        i18nParams: { lifeForms: _.join(myLifeForms, ', ') },
+      };
     }
-    const myLifeForms = selectedLifeForms.map(lifeForm => I18n.t(`lifeForms.${lifeForm}`));
-    const props = {
-      i18n: 'search.hint.lifeForm',
-      i18nParams: { lifeForms: _.join(myLifeForms, ', ') },
-    };
     return hintText(props);
   }
 
   inputHint() {
     const { input } = this.state;
-    const trimmedInput = input.trim();
+    const trimmedInput = input.trim(); let props = {};
     if (trimmedInput.length === 0) {
-      return null;
+      props = {
+        i18n: 'search.hint.noInput',
+      };
+    } else {
+      props = {
+        i18n: 'search.hint.input',
+        i18nParams: { input: trimmedInput },
+      };
     }
-    const props = {
-      i18n: 'search.hint.input',
-      i18nParams: { input: trimmedInput },
-    };
     return hintText(props);
   }
 
@@ -175,10 +187,14 @@ class SearchScreen extends Component<Props, State> {
         {this.traitsSelectors()}
         {this.input()}
         {this.andOrToggle()}
+
         {this.andOrHint()}
         {this.colorHint()}
         {this.lifeFormHint()}
         {this.inputHint()}
+        <View style={{ marginTop: 20 }}>
+          <NthButton i18nTitle="search.button" onPress={() => {}} />
+        </View>
       </NthContainer>
     );
   }

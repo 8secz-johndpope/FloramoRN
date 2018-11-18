@@ -50,10 +50,14 @@ const en = {
     hint: {
       and: 'Search species matching ALL of the next criteria:',
       or: 'Search species matching ANY of the next criteria:',
+      noColor: 'Species with any color',
       color: 'Species with color {{colors}}',
+      noLifeForm: 'Species with any life form',
       lifeForm: 'Species with life form {{lifeForms}}',
+      noInput: 'Species with any family, genus or name',
       input: 'Species with family, genus or name containing {{input}}',
     },
+    button: 'Search',
   },
   tropicosSearch: {
     warning: 'This search will connect to the Internet',

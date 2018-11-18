@@ -16,7 +16,7 @@ const NthInput = (props: Props) => {
   return (
     <Input
       label={label}
-      labelStyle={{ fontFamily: fonts.barlow.bold }}
+      labelStyle={{ fontFamily: fonts.barlow.semiBold }}
       inputStyle={{ fontFamily: fonts.barlow.regular }}
       onChangeText={input => onChangeText(input)}
       value={value}
