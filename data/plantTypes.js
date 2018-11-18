@@ -41,9 +41,14 @@ const lifeForms = {
   tree: { image: require('../assets/images/encyclopedia/lifeForms/tree.png') },
 };
 
+const allColors: Array<string> = Object.keys(colors);
+const allLifeForms: Array<string> = Object.keys(lifeForms);
+
 const plantTypes = {
   colors,
   lifeForms,
+  allColors,
+  allLifeForms,
 };
 
 export default plantTypes;

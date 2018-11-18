@@ -42,7 +42,7 @@ const getFontSize = (size) => {
     case 'regular':
       return transformToScale(1);
     case 'small':
-      return transformToScale(0.8);
+      return transformToScale(0.7);
     case 'tiny':
       return transformToScale(0.6);
     default:

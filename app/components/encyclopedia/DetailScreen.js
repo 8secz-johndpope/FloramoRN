@@ -11,12 +11,11 @@ import NthContainer from '../_common/NthHeader/NthContainer';
 import colors from '../../styles/colors';
 import type { Plant } from '../../../data/plantTypes';
 import styles from './encyclopediaStyles';
-import PlantColor from './PlantColor';
-import PlantLifeForm from './PlantLifeForm';
 import DetailImage from '../_common/DetailImage/DetailImage';
 import NthCardView from '../_common/NthCardView/NthCardView';
 import appConfig from '../../appConfig';
 import appNavigation from '../../navigation/Routes';
+import PlantTrait from '../_common/plantTrait/PlantTrait';
 
 type Props = {
   navigation: Object
@@ -63,7 +62,7 @@ const colorRow = plantColors => (
   <View key="colors" style={styles.detailRow}>
     {getLabel('color')}
     {plantColors.map(color => (
-      <PlantColor color={color} key={`color_${color}`} />
+      <PlantTrait type="colors" trait={color} key={`color_${color}`} />
     ))}
   </View>
 );
@@ -72,7 +71,7 @@ const lifeFormRow = plantLifeForms => (
   <View key="lifeForms" style={styles.detailRow}>
     {getLabel('lifeForm')}
     {plantLifeForms.map(lifeForm => (
-      <PlantLifeForm lifeForm={lifeForm} withLabel key={`lifeForm_${lifeForm}`} />
+      <PlantTrait type="lifeForms" trait={lifeForm} withLabel key={`lifeForm_${lifeForm}`} />
     ))}
   </View>
 );

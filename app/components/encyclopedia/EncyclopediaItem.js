@@ -6,8 +6,7 @@ import { scale } from 'react-native-size-matters';
 import NthText from '../_common/NthText/NthText';
 import colors from '../../styles/colors';
 import type { Plant } from '../../../data/plantTypes';
-import PlantColor from './PlantColor';
-import PlantLifeForm from './PlantLifeForm';
+import PlantTrait from '../_common/plantTrait/PlantTrait';
 
 type Props = {
   plant: Plant,
@@ -38,10 +37,10 @@ const EncyclopediaItem = (props: Props) => {
           <NthText text={plant.family} weight="light" italic />
           <View style={{ flexDirection: 'row', marginTop: 8 }}>
             {plant.lifeForms.map((lifeForm, i) => (
-              <PlantLifeForm lifeForm={lifeForm} key={`lifeForm_${i}_${plant.id}`} />
+              <PlantTrait type="lifeForms" trait={lifeForm} key={`lifeForm_${i}_${plant.id}`} withBorder />
             ))}
             {plant.colors.map((color, i) => (
-              <PlantColor color={color} key={`color_${i}_${plant.id}`} />
+              <PlantTrait type="colors" trait={color} key={`color_${i}_${plant.id}`} />
             ))}
           </View>
         </View>
