@@ -1,6 +1,7 @@
 import plants from './en/plants';
 import credits from './en/credits';
 import about from './en/about';
+import places from './places';
 
 const en = {
   title: 'Flóramo',
@@ -41,6 +42,18 @@ const en = {
     color: 'Color',
     lifeForm: 'Life form',
     distribution: 'Distribution',
+  },
+  search: {
+    andSearch: 'AND search',
+    orSearch: 'OR search',
+    input: 'Family, genus or species',
+    hint: {
+      and: 'Search species matching ALL of the next criteria:',
+      or: 'Search species matching ANY of the next criteria:',
+      color: 'Species with color {{colors}}',
+      lifeForm: 'Species with life form {{lifeForms}}',
+      input: 'Species with family, genus or name containing {{input}}',
+    },
   },
   tropicosSearch: {
     warning: 'This search will connect to the Internet',
@@ -90,26 +103,7 @@ const en = {
     shrub: 'Shrub',
     tree: 'Tree',
   },
-  places: {
-    azuay: 'Azuay',
-    bolivar: 'Bolívar',
-    canar: 'Cañar',
-    carchi: 'Carchi',
-    chimborazo: 'Chimborazo',
-    cotopaxi: 'Cotopaxi',
-    eloro: 'El Oro',
-    esmeraldas: 'Esmeraldas',
-    imbabura: 'Imbabura',
-    loja: 'Loja',
-    losrios: 'Los Ríos',
-    moronasantiago: 'Morona Santiago',
-    napo: 'Napo',
-    pastaza: 'Pastaza',
-    pichincha: 'Pichincha',
-    sucumbios: 'Sucumbíos',
-    tungurahua: 'Tungurahua',
-    zamorachinchipe: 'Zamora Chinchipe',
-  },
+  places,
 };
 
 

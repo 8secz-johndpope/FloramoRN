@@ -17,7 +17,7 @@ type Props = {
 
 const { width } = Dimensions.get('window');
 const buttonWidth = (width - 40) / 5;
-const buttonHeight = scale(60);
+const buttonHeight = scale(50);
 const padding = 10;
 
 const getElement = (element, type) => (

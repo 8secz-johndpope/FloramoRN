@@ -6,7 +6,7 @@ import colors from '../../../styles/colors';
 import fonts from '../../../styles/fonts';
 import I18n from '../../../i18n';
 
-export type fontSizes = 'big' | 'title' | 'regular' | 'small' | 'tiny';
+export type fontSizes = 'big' | 'title' | 'regular' | 'smallish' | 'small' | 'tiny';
 
 type Props = {
   font?: 'barlow' | 'montserrat',
@@ -41,6 +41,8 @@ const getFontSize = (size) => {
       return transformToScale(1.3);
     case 'regular':
       return transformToScale(1);
+    case 'smallish':
+      return transformToScale(0.9);
     case 'small':
       return transformToScale(0.7);
     case 'tiny':

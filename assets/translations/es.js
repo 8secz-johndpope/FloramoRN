@@ -1,6 +1,7 @@
 import plants from './es/plants';
 import credits from './es/credits';
 import about from './es/about';
+import places from './places';
 
 const es = {
   title: 'Flóramo',
@@ -42,6 +43,18 @@ const es = {
     lifeForm: 'Forma de vida',
     distribution: 'Distribución',
   },
+  search: {
+    andSearch: 'Búsqueda AND',
+    orSearch: 'Búsqueda OR',
+    input: 'Familia, género o especie',
+    hint: {
+      and: 'Búsqueda que concuerde con TODOS los siguientes parámetros:',
+      or: 'Búsqueda que concuerde con AL MENOS UNO de los siguientes parámetros:',
+      color: 'Especies con color {{colors}}',
+      lifeForm: 'Especies con forma de vida {{lifeForms}}',
+      input: 'Especies con familia, género o especie que contenga {{input}}',
+    },
+  },
   tropicosSearch: {
     warning: 'Esta búsqueda se conectará al internet',
     info: 'Ingrese al menos uno de los siguientes criterios para buscar en la base de datos de Tropicos®. Se mostrarán hasta {{max}} resultados.',
@@ -60,7 +73,7 @@ const es = {
     },
   },
   bugs: {
-    intro: 'Déjanos saber si encontraste un problema con la app, si tienes comentarios o ideas para nueva functionalidad.\n\n'
+    intro: 'Déjanos saber si encontraste un problema con la app, si tienes comentarios o ideas para nueva funcionalidad.\n\n'
       + 'Si estas reportando un problema, por favor incluye los datos de tu teléfono (marca, modelo, versión de Android/iOS) y una'
       + 'corta explicación de lo que estabas haciendo.',
     fieldHint: 'Comentarios, problemas, ideas',
@@ -90,26 +103,7 @@ const es = {
     shrub: 'Arbusto',
     tree: 'Árbol',
   },
-  places: {
-    azuay: 'Azuay',
-    bolivar: 'Bolívar',
-    canar: 'Cañar',
-    carchi: 'Carchi',
-    chimborazo: 'Chimborazo',
-    cotopaxi: 'Cotopaxi',
-    eloro: 'El Oro',
-    esmeraldas: 'Esmeraldas',
-    imbabura: 'Imbabura',
-    loja: 'Loja',
-    losrios: 'Los Ríos',
-    moronasantiago: 'Morona Santiago',
-    napo: 'Napo',
-    pastaza: 'Pastaza',
-    pichincha: 'Pichincha',
-    sucumbios: 'Sucumbíos',
-    tungurahua: 'Tungurahua',
-    zamorachinchipe: 'Zamora Chinchipe',
-  },
+  places,
 };
 
 
