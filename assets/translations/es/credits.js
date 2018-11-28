@@ -36,7 +36,23 @@ const credits = {
       text: '<a link=http://www.freevectorvip.com/silhouette-of-tree-of-flowers-and-plants.html>Silhouette of tree of flowers and plants\'</a>, licenciados bajo Uso no comercial, de aprendizaje y referencial solamente.\n\n'
         + '<a link=http://www.freevectorvip.com/marine-biology-silhouette.html>\'Marine biology silhouette\'</a>, licenciados bajo Uso no comercial, de aprendizaje y referencial solamente.',
     },
-
+    {
+      title: 'Librerías usadas',
+      text: '<a link=https://github.com/axios/axios>axios</a>\n'
+        + '<a link=https://github.com/fnando/i18n-js>i18n-js</a>\n'
+        + '<a link=https://lodash.com/>lodash</a>\n'
+        + '<a link=https://reactjs.org/>react</a>\n'
+        + '<a link=https://facebook.github.io/react-native/>react-native</a>\n'
+        + '<a link=https://github.com/Kishanjvaghela/react-native-cardview>react-native-cardview</a>\n'
+        + '<a link=https://react-native-training.github.io/react-native-elements/>react-native-elements</a>\n'
+        + '<a link=https://github.com/react-community/react-native-languages#readme>react-native-languages</a>\n'
+        + '<a link=https://www.npmjs.com/package/react-native-linear-gradient>react-native-linear-gradient</a>\n'
+        + '<a link=https://github.com/nirsky/react-native-size-matters#readme>react-native-size-matters</a>\n'
+        + '<a link=https://www.npmjs.com/package/react-native-vector-icons>react-native-vector-icons</a>\n'
+        + '<a link=https://github.com/react-native-community/react-native-webview#readme>react-native-webview</a>\n'
+        + '<a link=https://reactnavigation.org/>react-navigation</a>\n'
+        + '<a link=https://fontawesome.com/>FontAwesome 5</a>\n',
+    },
   ],
   footer: 'Todos los derechos reservados.\n©Missouri Botanical Garden, Science and Conservation Division',
 };
