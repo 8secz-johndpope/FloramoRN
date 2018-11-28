@@ -9,7 +9,6 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "cross-fetch": "2.2.3",
     "i18n-js": "^3.0.11",
     "lodash": "^4.17.11",
     "react": "16.6.0-alpha.8af6728",
@@ -19,7 +18,7 @@
     "react-native-languages": "^3.0.1",
     "react-native-linear-gradient": "^2.4.3",
     "react-native-size-matters": "^0.1.4",
-    "react-native-vector-icons": "git+https://github.com/oblador/react-native-vector-icons.git#68f4a33ca98a543ccd7f3a2fd30223f83375f0ef",
+    "react-native-vector-icons": "^6.1.0",
     "react-native-webview": "^2.5.0",
     "react-navigation": "^2.16.0"
   },

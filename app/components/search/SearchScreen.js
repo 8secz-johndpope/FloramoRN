@@ -11,6 +11,7 @@ import I18n from '../../i18n';
 import NthText from '../_common/NthText/NthText';
 import colors from '../../styles/colors';
 import NthButton from '../_common/NthButton/NthButton';
+import species from '../../../data/species';
 
 type Props = {
   navigation: Object
@@ -180,6 +181,43 @@ class SearchScreen extends Component<Props, State> {
     return hintText(props);
   }
 
+  specieContainsAnySelectedColor(specie: Object) {
+    const { selectedColors } = this.state;
+    let contains = false;
+    selectedColors.forEach((color) => {
+      if (specie.colors.indexOf(color) > -1) {
+        contains = true;
+      }
+    });
+    return contains;
+  }
+
+  specieContainsAllSelectedColor(specie: Object) {
+    const { selectedColors } = this.state;
+    let contains = 0;
+    selectedColors.forEach((color) => {
+      if (specie.colors.indexOf(color) > -1) {
+        contains += 1;
+      }
+    });
+    return contains === selectedColors.length;
+  }
+
+  onSearchPressed() {
+    const {
+      selectedLifeForms, selectedColors, selectedIndex, input,
+    } = this.state;
+    let filteredSpecies = _.cloneDeep(species);
+    if (selectedColors.length > 0) {
+      if (selectedIndex === 0) {
+        filteredSpecies = filteredSpecies.filter(specie => this.specieContainsAnySelectedColor(specie));
+      } else {
+        filteredSpecies = filteredSpecies.filter(specie => this.specieContainsAllSelectedColor(specie));
+      }
+    }
+    console.warn(species.length, filteredSpecies.length);
+  }
+
   render() {
     const { navigation } = this.props;
     return (
@@ -193,7 +231,7 @@ class SearchScreen extends Component<Props, State> {
         {this.lifeFormHint()}
         {this.inputHint()}
         <View style={{ marginTop: 20 }}>
-          <NthButton i18nTitle="search.button" onPress={() => {}} />
+          <NthButton i18nTitle="search.button" onPress={() => this.onSearchPressed()} />
         </View>
       </NthContainer>
     );

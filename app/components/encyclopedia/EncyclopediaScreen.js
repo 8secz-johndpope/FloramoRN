@@ -18,7 +18,7 @@ type State = {
 };
 
 
-const sortPlant = (a, b) => {
+const sortPlantByName = (a, b) => {
   const aFullName = `${a.genus} ${a.species}`;
   const bFullName = `${b.genus} ${b.species}`;
   if (aFullName > bFullName) {
@@ -56,7 +56,7 @@ const getAlphabeticalSections = (tempSections) => {
 
 const makeAlphabeticalSections = () => {
   const sortedSpecies = _.cloneDeep(species);
-  sortedSpecies.sort((a, b) => sortPlant(a, b));
+  sortedSpecies.sort((a, b) => sortPlantByName(a, b));
   const tempSections = getAlphabeticalObject(sortedSpecies);
   return getAlphabeticalSections(tempSections);
 };
