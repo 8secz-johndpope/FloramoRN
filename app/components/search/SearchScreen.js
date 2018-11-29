@@ -36,8 +36,7 @@ const hintText = (props: Object) => (
   />
 );
 
-
-const specieContainsAnySelectedColor = (specie: Object, selectedColors: Array<string>) => {
+const containsAnySelectedColor = (specie: Object, selectedColors: Array<string>) => {
   let contains = false;
   selectedColors.forEach((color) => {
     if (specie.colors.indexOf(color) > -1) {
@@ -47,7 +46,7 @@ const specieContainsAnySelectedColor = (specie: Object, selectedColors: Array<st
   return contains;
 };
 
-const specieContainsAllSelectedColors = (specie: Object, selectedColors: Array<string>) => {
+const containsAllSelectedColors = (specie: Object, selectedColors: Array<string>) => {
   let contains = 0;
   selectedColors.forEach((color) => {
     if (specie.colors.indexOf(color) > -1) {
@@ -57,14 +56,45 @@ const specieContainsAllSelectedColors = (specie: Object, selectedColors: Array<s
   return contains === selectedColors.length;
 };
 
+const containsAnySelectedLifeForm = (specie: Object, selectedLifeForms: Array<string>) => {
+  let contains = false;
+  selectedLifeForms.forEach((lifeForm) => {
+    if (specie.lifeForms.indexOf(lifeForm) > -1) {
+      contains = true;
+    }
+  });
+  return contains;
+};
+
+const containsAllSelectedLifeForms = (specie: Object, selectedLifeForms: Array<string>) => {
+  let contains = 0;
+  selectedLifeForms.forEach((lifeForm) => {
+    if (specie.lifeForms.indexOf(lifeForm) > -1) {
+      contains += 1;
+    }
+  });
+  return contains === selectedLifeForms.length;
+};
 
 const filterByColor = (list: Array<Object>, selectedColors: Array<string>, operation: 'and' | 'or') => {
-  let returnList = [];
+  let returnList = _.cloneDeep(list);
   if (selectedColors.length > 0) {
     if (operation === 'or') {
-      returnList = list.filter(specie => specieContainsAnySelectedColor(specie, selectedColors));
-    } else if (operation === 'and') {
-      returnList = list.filter(specie => specieContainsAllSelectedColors(specie, selectedColors));
+      returnList = list.filter(specie => containsAnySelectedColor(specie, selectedColors));
+    } else {
+      returnList = list.filter(specie => containsAllSelectedColors(specie, selectedColors));
+    }
+  }
+  return returnList;
+};
+
+const filterByLifeForm = (list: Array<Object>, selectedLifeForms: Array<string>, operation: 'and' | 'or') => {
+  let returnList = _.cloneDeep(list);
+  if (selectedLifeForms.length > 0) {
+    if (operation === 'or') {
+      returnList = list.filter(specie => containsAnySelectedLifeForm(specie, selectedLifeForms));
+    } else {
+      returnList = list.filter(specie => containsAllSelectedLifeForms(specie, selectedLifeForms));
     }
   }
   return returnList;
@@ -124,7 +154,15 @@ class SearchScreen extends Component<Props, State> {
     } = this.state;
     let filteredSpecies = _.cloneDeep(species);
     const operation = selectedIndex === 1 ? 'or' : 'and';
-    filteredSpecies = filterByColor(filteredSpecies, selectedColors, operation);
+    if (operation === 'and') {
+      filteredSpecies = filterByColor(filteredSpecies, selectedColors, operation);
+      filteredSpecies = filterByLifeForm(filteredSpecies, selectedLifeForms, operation);
+    } else {
+      const colorSpecies = filterByColor(filteredSpecies, selectedColors, operation);
+      const lifeFormSpecies = filterByLifeForm(filteredSpecies, selectedLifeForms, operation);
+      filteredSpecies = [...colorSpecies, ...lifeFormSpecies];
+      filteredSpecies = _.uniq(filteredSpecies);
+    }
     this.setState({
       results: filteredSpecies,
     });
