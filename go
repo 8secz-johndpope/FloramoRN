@@ -66,6 +66,7 @@ function check_for_tool_npm() {
 
 function task_build_android {
   echo "${android_fg}Building android signed APK${normal}"
+  echo "${android_fg}Did you update the build number and version in android/app/build.gradle??${normal}"
   (cd android && ./gradlew assembleRelease)
   FILENAME="index.android.$(timestamp).bundle"
   echo "${android_fg}Moving apk to root build/${FILENAME} folder${normal}"
