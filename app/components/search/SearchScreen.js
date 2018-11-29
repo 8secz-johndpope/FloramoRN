@@ -24,7 +24,8 @@ type State = {
   selectedColors: Array<string>,
   selectedLifeForms: Array<string>,
   input: string,
-  results: Array<Object>
+  results: Array<Object>,
+  hasSearched: boolean
 };
 
 const hintText = (props: Object) => (
@@ -134,6 +135,7 @@ class SearchScreen extends Component<Props, State> {
       selectedLifeForms: [],
       input: '',
       results: [],
+      hasSearched: false,
     };
   }
 
@@ -192,6 +194,7 @@ class SearchScreen extends Component<Props, State> {
     }
     this.setState({
       results: filteredSpecies,
+      hasSearched: true,
     });
   }
 
@@ -308,6 +311,7 @@ class SearchScreen extends Component<Props, State> {
   resetResults() {
     this.setState({
       results: [],
+      hasSearched: false,
     });
   }
 
@@ -343,21 +347,21 @@ class SearchScreen extends Component<Props, State> {
 
   render() {
     const { navigation } = this.props;
-    const { results } = this.state;
+    const { hasSearched } = this.state;
     const headerProps = {};
     let component = null;
-    if (results.length === 0) {
-      headerProps.onPress = () => navigation.openDrawer();
-      headerProps.i18nHeader = 'navigation.title.tropicosResults';
-      headerProps.type = 'hamburger';
-      headerProps.noPadding = false;
-      component = this.renderForm();
-    } else {
+    if (hasSearched) {
       headerProps.onPress = () => this.resetResults();
       headerProps.i18nHeader = 'navigation.title.search';
       headerProps.type = 'back';
       headerProps.noPadding = true;
       component = this.renderResults();
+    } else {
+      headerProps.onPress = () => navigation.openDrawer();
+      headerProps.i18nHeader = 'navigation.title.tropicosResults';
+      headerProps.type = 'hamburger';
+      headerProps.noPadding = false;
+      component = this.renderForm();
     }
 
     return (

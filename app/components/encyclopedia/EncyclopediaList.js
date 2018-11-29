@@ -3,6 +3,7 @@
 import React from 'react';
 import { SectionList, View } from 'react-native';
 import _ from 'lodash';
+import { verticalScale } from 'react-native-size-matters';
 import NthText from '../_common/NthText/NthText';
 import colors from '../../styles/colors';
 import EncyclopediaItem from './EncyclopediaItem';
@@ -77,7 +78,7 @@ const EncyclopediaList = (props: Props) => {
     plantList, onPlantPressed, i18nHeader, i18nHeaderParams,
   } = props;
   const sortedPlantList = makeAlphabeticalSections(plantList);
-  const listHeaderProps = i18nHeader ? {
+  const listHeaderProps = i18nHeader && plantList.length > 0 ? {
     ListHeaderComponent: (<NthText
       i18n={i18nHeader}
       i18nParams={i18nHeaderParams}
@@ -88,6 +89,11 @@ const EncyclopediaList = (props: Props) => {
     <SectionList
       {...listHeaderProps}
       renderSectionHeader={getSectionHeader}
+      ListEmptyComponent={(
+        <View style={{ paddingVertical: verticalScale(100), paddingHorizontal: '10%' }}>
+          <NthText i18n="search.noResults" weight="extraBold" align="center" />
+        </View>
+      )}
       sections={sortedPlantList}
       renderItem={({ item }) => (
         <EncyclopediaItem

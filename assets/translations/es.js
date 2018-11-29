@@ -48,6 +48,7 @@ const es = {
     orSearch: 'Búsqueda OR',
     input: 'Familia, género o especie',
     header: 'Se encontraron {{count}} resultados para tu búsqueda',
+    noResults: 'No se encontraron resultados para tu búsqueda...\n\nCambia los parámetros y vuelve a intentar',
     hint: {
       and: 'Búsqueda que concuerde con TODOS los siguientes parámetros:',
       or: 'Búsqueda que concuerde con AL MENOS UNO de los siguientes parámetros:',

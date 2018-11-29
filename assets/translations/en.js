@@ -48,6 +48,7 @@ const en = {
     orSearch: 'OR search',
     input: 'Family, genus or species',
     header: 'Found {{count}} results to your search',
+    noResults: 'No results found for your search...\n\nChange your parameters and try again',
     hint: {
       and: 'Search species matching ALL of the next criteria:',
       or: 'Search species matching ANY of the next criteria:',
