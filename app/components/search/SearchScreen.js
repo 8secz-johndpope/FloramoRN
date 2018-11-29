@@ -12,9 +12,9 @@ import NthText from '../_common/NthText/NthText';
 import colors from '../../styles/colors';
 import NthButton from '../_common/NthButton/NthButton';
 import species from '../../../data/species';
-import type { Plant } from '../../../data/plantTypes';
-import appNavigation from '../../navigation/Routes';
-import EncyclopediaList from '../encyclopedia/EncyclopediaList';
+import type {Plant} from "../../../data/plantTypes";
+import appNavigation from "../../navigation/Routes";
+import EncyclopediaList from "../encyclopedia/EncyclopediaList";
 
 type Props = {
   navigation: Object
@@ -246,7 +246,10 @@ class SearchScreen extends Component<Props, State> {
   renderResults() {
     const { results } = this.state;
     return (
-      <NthText text={`Found ${results.length} results`} />
+      <EncyclopediaList
+        plantList={results}
+        onPlantPressed={plant => this.onPlantPress(plant)}
+      />
     );
   }
 
