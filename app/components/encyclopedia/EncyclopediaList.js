@@ -1,5 +1,5 @@
 /* @flow */
-import React, { Component } from 'react';
+import React from 'react';
 import { SectionList, View } from 'react-native';
 import _ from 'lodash';
 import NthText from '../_common/NthText/NthText';
@@ -10,8 +10,6 @@ type Props = {
   plantList: Array<Object>,
   onPlantPressed: (Object) => void
 };
-
-type State = {};
 
 const sortPlantByName = (a, b) => {
   const aFullName = `${a.genus} ${a.species}`;
@@ -56,35 +54,33 @@ const makeAlphabeticalSections = (species) => {
   return getAlphabeticalSections(tempSections);
 };
 
-class EncyclopediaList extends Component<Props, State> {
-  render() {
-    const { plantList, onPlantPressed } = this.props;
-    const sortedPlantList = makeAlphabeticalSections(plantList);
-    return (
-      <SectionList
-        renderSectionHeader={({ section: { title } }) => (
-          <NthText
-            text={title}
-            weight="black"
-            size="title"
-            style={{ backgroundColor: colors.primary200, padding: 12 }}
-          />
-        )}
-        sections={sortedPlantList}
-        renderItem={({ item }) => (
-          <EncyclopediaItem
-            plant={item}
-            onPress={plant => onPlantPressed(plant)}
-          />
-        )}
-        ItemSeparatorComponent={({ highlighted }) => (
-          <View
-            style={[{ backgroundColor: colors.primary200, width: '100%', height: 1 }, highlighted && { marginLeft: 0 }]}
-          />
-        )}
-      />
-    );
-  }
-}
+const EncyclopediaList = (props: Props) => {
+  const { plantList, onPlantPressed } = props;
+  const sortedPlantList = makeAlphabeticalSections(plantList);
+  return (
+    <SectionList
+      renderSectionHeader={({ section: { title } }) => (
+        <NthText
+          text={title}
+          weight="black"
+          size="title"
+          style={{ backgroundColor: colors.primary200, padding: 12 }}
+        />
+      )}
+      sections={sortedPlantList}
+      renderItem={({ item }) => (
+        <EncyclopediaItem
+          plant={item}
+          onPress={plant => onPlantPressed(plant)}
+        />
+      )}
+      ItemSeparatorComponent={({ highlighted }) => (
+        <View
+          style={[{ backgroundColor: colors.primary200, width: '100%', height: 1 }, highlighted && { marginLeft: 0 }]}
+        />
+      )}
+    />
+  );
+};
 
 export default EncyclopediaList;
