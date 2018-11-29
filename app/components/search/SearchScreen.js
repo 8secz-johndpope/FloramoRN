@@ -12,9 +12,9 @@ import NthText from '../_common/NthText/NthText';
 import colors from '../../styles/colors';
 import NthButton from '../_common/NthButton/NthButton';
 import species from '../../../data/species';
-import type {Plant} from "../../../data/plantTypes";
-import appNavigation from "../../navigation/Routes";
-import EncyclopediaList from "../encyclopedia/EncyclopediaList";
+import type { Plant } from '../../../data/plantTypes';
+import appNavigation from '../../navigation/Routes';
+import EncyclopediaList from '../encyclopedia/EncyclopediaList';
 
 type Props = {
   navigation: Object
@@ -35,6 +35,40 @@ const hintText = (props: Object) => (
     size="smallish"
   />
 );
+
+
+const specieContainsAnySelectedColor = (specie: Object, selectedColors: Array<string>) => {
+  let contains = false;
+  selectedColors.forEach((color) => {
+    if (specie.colors.indexOf(color) > -1) {
+      contains = true;
+    }
+  });
+  return contains;
+};
+
+const specieContainsAllSelectedColors = (specie: Object, selectedColors: Array<string>) => {
+  let contains = 0;
+  selectedColors.forEach((color) => {
+    if (specie.colors.indexOf(color) > -1) {
+      contains += 1;
+    }
+  });
+  return contains === selectedColors.length;
+};
+
+
+const filterByColor = (list: Array<Object>, selectedColors: Array<string>, operation: 'and' | 'or') => {
+  let returnList = [];
+  if (selectedColors.length > 0) {
+    if (operation === 'or') {
+      returnList = list.filter(specie => specieContainsAnySelectedColor(specie, selectedColors));
+    } else if (operation === 'and') {
+      returnList = list.filter(specie => specieContainsAllSelectedColors(specie, selectedColors));
+    }
+  }
+  return returnList;
+};
 
 class SearchScreen extends Component<Props, State> {
   constructor(props: Props) {
@@ -74,6 +108,26 @@ class SearchScreen extends Component<Props, State> {
 
   onChange(value: string) {
     this.setState({ input: value });
+  }
+
+  onPlantPress(plant: Plant) {
+    const { navigation } = this.props;
+    navigation.navigate({
+      ...appNavigation.navigationTree.detail,
+      ...{ params: { plant } },
+    });
+  }
+
+  onSearchPressed() {
+    const {
+      selectedLifeForms, selectedColors, selectedIndex, input,
+    } = this.state;
+    let filteredSpecies = _.cloneDeep(species);
+    const operation = selectedIndex === 1 ? 'or' : 'and';
+    filteredSpecies = filterByColor(filteredSpecies, selectedColors, operation);
+    this.setState({
+      results: filteredSpecies,
+    });
   }
 
   traitsSelectors() {
@@ -186,42 +240,9 @@ class SearchScreen extends Component<Props, State> {
     return hintText(props);
   }
 
-  specieContainsAnySelectedColor(specie: Object) {
-    const { selectedColors } = this.state;
-    let contains = false;
-    selectedColors.forEach((color) => {
-      if (specie.colors.indexOf(color) > -1) {
-        contains = true;
-      }
-    });
-    return contains;
-  }
-
-  specieContainsAllSelectedColors(specie: Object) {
-    const { selectedColors } = this.state;
-    let contains = 0;
-    selectedColors.forEach((color) => {
-      if (specie.colors.indexOf(color) > -1) {
-        contains += 1;
-      }
-    });
-    return contains === selectedColors.length;
-  }
-
-  onSearchPressed() {
-    const {
-      selectedLifeForms, selectedColors, selectedIndex, input,
-    } = this.state;
-    let filteredSpecies = _.cloneDeep(species);
-    if (selectedColors.length > 0) {
-      if (selectedIndex === 1) {
-        filteredSpecies = filteredSpecies.filter(specie => this.specieContainsAnySelectedColor(specie));
-      } else {
-        filteredSpecies = filteredSpecies.filter(specie => this.specieContainsAllSelectedColors(specie));
-      }
-    }
+  resetResults() {
     this.setState({
-      results: filteredSpecies,
+      results: [],
     });
   }
 
@@ -251,20 +272,6 @@ class SearchScreen extends Component<Props, State> {
         onPlantPressed={plant => this.onPlantPress(plant)}
       />
     );
-  }
-
-  resetResults() {
-    this.setState({
-      results: [],
-    });
-  }
-
-  onPlantPress(plant: Plant) {
-    const { navigation } = this.props;
-    navigation.navigate({
-      ...appNavigation.navigationTree.detail,
-      ...{ params: { plant } },
-    });
   }
 
   render() {
