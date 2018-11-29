@@ -12,6 +12,9 @@ import NthText from '../_common/NthText/NthText';
 import colors from '../../styles/colors';
 import NthButton from '../_common/NthButton/NthButton';
 import species from '../../../data/species';
+import type { Plant } from '../../../data/plantTypes';
+import appNavigation from '../../navigation/Routes';
+import EncyclopediaList from '../encyclopedia/EncyclopediaList';
 
 type Props = {
   navigation: Object
@@ -20,7 +23,8 @@ type State = {
   selectedIndex: number,
   selectedColors: Array<string>,
   selectedLifeForms: Array<string>,
-  input: string
+  input: string,
+  results: Array<Object>
 };
 
 const hintText = (props: Object) => (
@@ -40,6 +44,7 @@ class SearchScreen extends Component<Props, State> {
       selectedColors: [],
       selectedLifeForms: [],
       input: '',
+      results: [],
     };
   }
 
@@ -192,7 +197,7 @@ class SearchScreen extends Component<Props, State> {
     return contains;
   }
 
-  specieContainsAllSelectedColor(specie: Object) {
+  specieContainsAllSelectedColors(specie: Object) {
     const { selectedColors } = this.state;
     let contains = 0;
     selectedColors.forEach((color) => {
@@ -209,19 +214,20 @@ class SearchScreen extends Component<Props, State> {
     } = this.state;
     let filteredSpecies = _.cloneDeep(species);
     if (selectedColors.length > 0) {
-      if (selectedIndex === 0) {
+      if (selectedIndex === 1) {
         filteredSpecies = filteredSpecies.filter(specie => this.specieContainsAnySelectedColor(specie));
       } else {
-        filteredSpecies = filteredSpecies.filter(specie => this.specieContainsAllSelectedColor(specie));
+        filteredSpecies = filteredSpecies.filter(specie => this.specieContainsAllSelectedColors(specie));
       }
     }
-    console.warn(species.length, filteredSpecies.length);
+    this.setState({
+      results: filteredSpecies,
+    });
   }
 
-  render() {
-    const { navigation } = this.props;
+  renderForm() {
     return (
-      <NthContainer onPress={() => navigation.openDrawer()} i18nHeader="navigation.title.search">
+      <Fragment>
         {this.traitsSelectors()}
         {this.input()}
         {this.andOrToggle()}
@@ -233,6 +239,53 @@ class SearchScreen extends Component<Props, State> {
         <View style={{ marginTop: 20 }}>
           <NthButton i18nTitle="search.button" onPress={() => this.onSearchPressed()} />
         </View>
+      </Fragment>
+    );
+  }
+
+  renderResults() {
+    const { results } = this.state;
+    return (
+      <NthText text={`Found ${results.length} results`} />
+    );
+  }
+
+  resetResults() {
+    this.setState({
+      results: [],
+    });
+  }
+
+  onPlantPress(plant: Plant) {
+    const { navigation } = this.props;
+    navigation.navigate({
+      ...appNavigation.navigationTree.detail,
+      ...{ params: { plant } },
+    });
+  }
+
+  render() {
+    const { navigation } = this.props;
+    const { results } = this.state;
+    const headerProps = {};
+    let component = null;
+    if (results.length === 0) {
+      headerProps.onPress = () => navigation.openDrawer();
+      headerProps.i18nHeader = 'navigation.title.tropicosResults';
+      headerProps.type = 'hamburger';
+      headerProps.noPadding = false;
+      component = this.renderForm();
+    } else {
+      headerProps.onPress = () => this.resetResults();
+      headerProps.i18nHeader = 'navigation.title.search';
+      headerProps.type = 'back';
+      headerProps.noPadding = true;
+      component = this.renderResults();
+    }
+
+    return (
+      <NthContainer {...headerProps}>
+        {component}
       </NthContainer>
     );
   }

@@ -87,7 +87,7 @@ class TropicosSearchScreen extends Component<Props, State> {
             family: '',
           });
         })
-        .catch((error) => {
+        .catch(() => {
           this.resetResults();
         })
         .then(() => {

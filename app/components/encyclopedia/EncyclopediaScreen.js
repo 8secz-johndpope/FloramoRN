@@ -1,14 +1,12 @@
 /* @flow */
 import React, { Component } from 'react';
-import { SectionList, View } from 'react-native';
+import { View } from 'react-native';
 import _ from 'lodash';
 import NthContainer from '../_common/NthHeader/NthContainer';
 import species from '../../../data/species';
-import EncyclopediaItem from './EncyclopediaItem';
-import colors from '../../styles/colors';
 import type { Plant } from '../../../data/plantTypes';
 import appNavigation from '../../navigation/Routes';
-import NthText from '../_common/NthText/NthText';
+import EncyclopediaList from './EncyclopediaList';
 
 type Props = {
   navigation: Object
@@ -84,25 +82,9 @@ class EncyclopediaScreen extends Component<Props, State> {
     return (
       <NthContainer onPress={() => navigation.openDrawer()} i18nHeader="navigation.title.encyclopedia" noPadding>
         <View style={{ flex: 1 }}>
-          <SectionList
-            renderSectionHeader={({ section: { title } }) => (
-              <NthText
-                text={title}
-                weight="black"
-                size="title"
-                style={{ backgroundColor: colors.primary200, padding: 12 }}
-              />
-            )}
-            sections={sortedSpecies}
-            renderItem={({ item }) => (
-              <EncyclopediaItem
-                plant={item}
-                onPress={plant => this.onPlantPress(plant)}
-              />
-            )}
-            ItemSeparatorComponent={({ highlighted }) => (
-              <View style={[{ backgroundColor: colors.primary200, width: '100%', height: 1 }, highlighted && { marginLeft: 0 }]} />
-            )}
+          <EncyclopediaList
+            plantList={sortedSpecies}
+            onPlantPressed={plant => this.onPlantPress(plant)}
           />
         </View>
       </NthContainer>
