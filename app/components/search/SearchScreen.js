@@ -333,6 +333,8 @@ class SearchScreen extends Component<Props, State> {
     const { results } = this.state;
     return (
       <EncyclopediaList
+        i18nHeader="search.header"
+        i18nHeaderParams={{ count: results.length }}
         plantList={results}
         onPlantPressed={plant => this.onPlantPress(plant)}
       />

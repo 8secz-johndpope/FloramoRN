@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* @flow */
 import React from 'react';
 import { SectionList, View } from 'react-native';
@@ -8,6 +9,8 @@ import EncyclopediaItem from './EncyclopediaItem';
 
 type Props = {
   plantList: Array<Object>,
+  i18nHeader?: string,
+  i18nHeaderParams?: Object,
   onPlantPressed: (Object) => void
 };
 
@@ -54,19 +57,37 @@ const makeAlphabeticalSections = (species) => {
   return getAlphabeticalSections(tempSections);
 };
 
+const getSectionHeader = ({ section: { title } }) => (
+  <NthText
+    text={title}
+    weight="black"
+    size="title"
+    style={{ backgroundColor: colors.primary200, padding: 12 }}
+  />
+);
+
+const getItemSeparator = ({ highlighted }) => (
+  <View
+    style={[{ backgroundColor: colors.primary100, width: '100%', height: 1 }, highlighted && { marginLeft: 0 }]}
+  />
+);
+
 const EncyclopediaList = (props: Props) => {
-  const { plantList, onPlantPressed } = props;
+  const {
+    plantList, onPlantPressed, i18nHeader, i18nHeaderParams,
+  } = props;
   const sortedPlantList = makeAlphabeticalSections(plantList);
+  const listHeaderProps = i18nHeader ? {
+    ListHeaderComponent: (<NthText
+      i18n={i18nHeader}
+      i18nParams={i18nHeaderParams}
+      style={{ padding: 16 }}
+    />),
+  } : {};
   return (
     <SectionList
-      renderSectionHeader={({ section: { title } }) => (
-        <NthText
-          text={title}
-          weight="black"
-          size="title"
-          style={{ backgroundColor: colors.primary200, padding: 12 }}
-        />
-      )}
+      {...listHeaderProps}
+      renderSectionHeader={getSectionHeader}
       sections={sortedPlantList}
       renderItem={({ item }) => (
         <EncyclopediaItem
@@ -74,13 +95,14 @@ const EncyclopediaList = (props: Props) => {
           onPress={plant => onPlantPressed(plant)}
         />
       )}
-      ItemSeparatorComponent={({ highlighted }) => (
-        <View
-          style={[{ backgroundColor: colors.primary200, width: '100%', height: 1 }, highlighted && { marginLeft: 0 }]}
-        />
-      )}
+      ItemSeparatorComponent={getItemSeparator}
     />
   );
+};
+
+EncyclopediaList.defaultProps = {
+  i18nHeader: undefined,
+  i18nHeaderParams: {},
 };
 
 export default EncyclopediaList;

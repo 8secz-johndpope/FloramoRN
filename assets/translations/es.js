@@ -47,6 +47,7 @@ const es = {
     andSearch: 'Búsqueda AND',
     orSearch: 'Búsqueda OR',
     input: 'Familia, género o especie',
+    header: 'Se encontraron {{count}} resultados para tu búsqueda',
     hint: {
       and: 'Búsqueda que concuerde con TODOS los siguientes parámetros:',
       or: 'Búsqueda que concuerde con AL MENOS UNO de los siguientes parámetros:',
