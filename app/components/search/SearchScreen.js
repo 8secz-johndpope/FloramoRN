@@ -76,8 +76,18 @@ const containsAllSelectedLifeForms = (specie: Object, selectedLifeForms: Array<s
   return contains === selectedLifeForms.length;
 };
 
+const containsInput = (specie: Object, input: string) => {
+  const containsInSpecies = specie.species.toLowerCase().includes(input);
+  const containsInGenus = specie.genus.toLowerCase().includes(input);
+  const containsInFamily = specie.family.toLowerCase().includes(input);
+  return containsInSpecies || containsInGenus || containsInFamily;
+};
+
 const filterByColor = (list: Array<Object>, selectedColors: Array<string>, operation: 'and' | 'or') => {
   let returnList = _.cloneDeep(list);
+  if (operation === 'or') {
+    returnList = [];
+  }
   if (selectedColors.length > 0) {
     if (operation === 'or') {
       returnList = list.filter(specie => containsAnySelectedColor(specie, selectedColors));
@@ -90,12 +100,27 @@ const filterByColor = (list: Array<Object>, selectedColors: Array<string>, opera
 
 const filterByLifeForm = (list: Array<Object>, selectedLifeForms: Array<string>, operation: 'and' | 'or') => {
   let returnList = _.cloneDeep(list);
+  if (operation === 'or') {
+    returnList = [];
+  }
   if (selectedLifeForms.length > 0) {
     if (operation === 'or') {
       returnList = list.filter(specie => containsAnySelectedLifeForm(specie, selectedLifeForms));
     } else {
       returnList = list.filter(specie => containsAllSelectedLifeForms(specie, selectedLifeForms));
     }
+  }
+  return returnList;
+};
+
+const filterByName = (list: Array<Object>, input: string, operation: 'and' | 'or') => {
+  let returnList = _.cloneDeep(list);
+  if (operation === 'or') {
+    returnList = [];
+  }
+  const trimmedInput = input.trim().toLowerCase();
+  if (trimmedInput.length > 0) {
+    returnList = list.filter(specie => containsInput(specie, trimmedInput));
   }
   return returnList;
 };
@@ -157,10 +182,12 @@ class SearchScreen extends Component<Props, State> {
     if (operation === 'and') {
       filteredSpecies = filterByColor(filteredSpecies, selectedColors, operation);
       filteredSpecies = filterByLifeForm(filteredSpecies, selectedLifeForms, operation);
+      filteredSpecies = filterByName(filteredSpecies, input, operation);
     } else {
       const colorSpecies = filterByColor(filteredSpecies, selectedColors, operation);
       const lifeFormSpecies = filterByLifeForm(filteredSpecies, selectedLifeForms, operation);
-      filteredSpecies = [...colorSpecies, ...lifeFormSpecies];
+      const inputSpecies = filterByName(filteredSpecies, input, operation);
+      filteredSpecies = [...colorSpecies, ...lifeFormSpecies, ...inputSpecies];
       filteredSpecies = _.uniq(filteredSpecies);
     }
     this.setState({
