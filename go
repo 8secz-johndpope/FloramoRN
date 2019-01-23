@@ -16,9 +16,8 @@ green=$(foregroundColor 2)
 utils_fg=$(foregroundColor 9)
 android_fg=$(foregroundColor 4)
 ios_fg=$(foregroundColor 5)
-lint_fg=$(foregroundColor 10)
-hockey_fg=$(foregroundColor 166)
 react_fg=$(foregroundColor 180)
+store_fg=$(foregroundColor 140)
 
 # From now on fail on errors
 set -eu
@@ -185,9 +184,13 @@ function task_restart_ios_devices {
 
 function task_react_generate_icon {
     local pathIcon=${1-"assets/icon/icon.png"}
+    echo "${react_fg}Generating app icon from ${pathIcon}${normal}"
     check_for_tool_brew "imagemagick" "brew install imagemagick"
     check_for_tool_npm "yo" "npm install -g yo"
     check_for_tool_npm "generator-rn-toolbox" "npm install -g generator-rn-toolbox"
+    echo "${react_fg}Resizing ${pathIcon} to 512px and moving it to Android fastlane folder${normal}"
+    convert assets/icon/icon.png -resize 500 android/fastlane/metadata/android/en-US/images/icon.png
+    echo "${react_fg}Generating all Android and iOS icons from ${pathIcon}${normal}"
     yo rn-toolbox:assets --icon ${pathIcon}
 }
 
@@ -228,6 +231,135 @@ function task_flow {
     exit ${RESULT}
 }
 
+function task_deploy_to_store_ios {
+    read -p "Build number? (default: 1): " BUILD_NUMBER
+    [ -z "${BUILD_NUMBER}" ] && BUILD_NUMBER='1'
+    read -p "App version? (default: 0.1): " APP_VERSION
+    [ -z "${APP_VERSION}" ] && APP_VERSION='0.1'
+
+    export BUILD_NUMBER=$BUILD_NUMBER
+    export APP_VERSION=$APP_VERSION
+
+      echo "${store_fg} Getting DEV hash secret${normal}"
+      export HASH_SECRET_DEV=$(gopass environments/dev/hash_secret)
+
+    export ENABLE_EMAIL_VALIDATION=true
+
+    TAG_NAME="b${BUILD_NUMBER}_v${APP_VERSION}"
+    TAG_MESSAGE="Beta release Build ${BUILD_NUMBER}, version ${APP_VERSION}"
+
+    echo "${store_fg} Creating ios application version ${APP_VERSION}, build number ${BUILD_NUMBER} ${normal}"
+
+    check_for_tool_brew_cask "fastlane" "brew cask install fastlane"
+
+    if [ $ENV = "PROD" ]
+    then
+      echo "${store_fg} Extracting PROD google services from gopass${normal}"
+      gopass binary cp apple-sign/GoogleService-Info.plist ios/GoogleService-Info.plist
+    fi
+
+    echo "env: $ENV; build: $BUILD_NUMBER; appVersion: $APP_VERSION;"
+
+    task_clean_ci
+    cd ios
+    echo "${store_fg} Building an ios application for the store${normal}"
+    fastlane build_prod_app
+    echo "${store_fg} Trying to upload to the ios store app version ${APP_VERSION}, build number ${BUILD_NUMBER} ${normal}"
+    fastlane pilot upload --skip_waiting_for_build_processing --ipa "./output/release/floramo-app.ipa" --changelog "Beta release Build ${BUILD_NUMBER}, version ${APP_VERSION}"
+    echo "${store_fg} Tagging the code and pushing ${normal}"
+    git tag -a "${TAG_NAME}" -m "${TAG_MESSAGE}"
+    git push origin --tags
+
+    if [ $ENV = "PROD" ]
+    then
+      echo "${store_fg} Restoring DEV google services from gopass${normal}"
+      gopass binary cp apple-sign/GoogleService-Info-dev.plist ios/GoogleService-Info.plist
+    fi
+}
+
+function task_deploy_to_store_android {
+    read -p "Environment? (default: QA): " ENV
+    [ -z "${ENV}" ] && ENV='QA'
+    read -p "Build number? (default: 190): " BUILD_NUMBER
+    [ -z "${BUILD_NUMBER}" ] && BUILD_NUMBER='190'
+    read -p "Track? (default: internal): " TRACK
+    [ -z "${TRACK}" ] && TRACK='internal'
+
+    export ENV=$ENV
+    export BUILD_NUMBER=$BUILD_NUMBER
+    export TRACK=$TRACK
+
+    if [ $ENV = "DEV" ]
+    then
+      echo "${store_fg} Getting DEV hash secret${normal}"
+      export HASH_SECRET_DEV=$(gopass environments/dev/hash_secret)
+    fi
+
+    if [ $ENV = "QA" ]
+    then
+      echo "${store_fg} Getting QA hash secret${normal}"
+      export HASH_SECRET_QA=$(gopass environments/qa/hash_secret)
+    fi
+
+    if [ $ENV = "STG" ]
+    then
+      echo "${store_fg} Getting STG hash secret${normal}"
+      export HASH_SECRET_STG=$(gopass environments/stg/hash_secret)
+    fi
+
+    if [ $ENV = "PROD" ]
+    then
+      echo "${store_fg} Getting PROD hash secret${normal}"
+      export HASH_SECRET_PROD=$(gopass environments/prod/hash_secret)
+    fi
+
+    export APP_VERSION="0.0.${BUILD_NUMBER}-${TRACK}-${ENV}"
+    export VERSION=$APP_VERSION
+    export ENABLE_EMAIL_VALIDATION=true
+
+    export MYAPP_RELEASE_STORE_PASSWORD=$(gopass google-sign/store_password)
+    export MYAPP_RELEASE_KEY_PASSWORD=$(gopass google-sign/key_password)
+    export MYAPP_RELEASE_STORE_FILE="release.keystore"
+    export MYAPP_RELEASE_KEY_ALIAS="release-key"
+
+    TAG_NAME="b${BUILD_NUMBER}_v${APP_VERSION}"
+    TAG_MESSAGE="Beta release Build ${BUILD_NUMBER}, version ${APP_VERSION}"
+
+    echo "${store_fg} Creating android application version ${APP_VERSION}, build number ${BUILD_NUMBER} ${normal}"
+
+    check_for_tool_brew_cask "fastlane" "brew cask install fastlane"
+
+    echo "${store_fg} Extracting key.json from gopass${normal}"
+    gopass binary cp google-sign/key.json android/app/key.json
+
+    echo "${store_fg} Extracting release keystore from gopass${normal}"
+    gopass binary cp google-sign/release.keystore android/app/release.keystore
+
+    if [ $ENV = "PROD" ]
+    then
+      echo "${store_fg} Extracting PROD google services from gopass${normal}"
+      gopass binary cp google-sign/google-services.json android/app/google-services.json
+    fi
+
+    echo "env: $ENV; build: $BUILD_NUMBER; track: $TRACK; appVersion: $APP_VERSION; version: $VERSION"
+
+    task_clean_ci
+    cd android
+    echo "${store_fg} Building an android application for the store${normal}"
+    fastlane build
+    echo "${store_fg} Trying to upload to the android store app version ${APP_VERSION}, build number ${BUILD_NUMBER} ${normal}"
+    fastlane supply --apk app/build/outputs/apk/release/app-release.apk --track ${TRACK}
+    echo "${store_fg} Tagging the code and pushing ${normal}"
+    git tag -a "${TAG_NAME}" -m "${TAG_MESSAGE}"
+    git push origin --tags
+
+    if [ $ENV = "PROD" ]
+    then
+      echo "${store_fg} Restoring DEV google services from gopass${normal}"
+      gopass binary cp google-sign/google-services-dev.json android/app/google-services.json
+    fi
+}
+
 function task_help {
   help_message="usage"
   help_message+=" ${utils_fg}clean${normal}"
@@ -251,6 +383,9 @@ function task_help {
   help_message+=" | ${ios_fg}restart_ios_devices${normal}"
 
   help_message+=" | ${react_fg}react_generate_icon [PATH_TO_ICON]${normal}"
+
+  help_message+=" | ${store_fg}deploy_to_store_ios${normal}"
+  help_message+=" | ${store_fg}deploy_to_store_android${normal}"
   echo "${help_message}"
 }
 
@@ -277,6 +412,10 @@ function execute_task {
       restart_ios_devices) task_restart_ios_devices ;;
 
       react_generate_icon) task_react_generate_icon "$@" ;;
+
+      deploy_to_store_ios) task_deploy_to_store_ios ;;
+      deploy_to_store_android) task_deploy_to_store_android ;;
+
       lint) task_lint ;;
       flow) task_flow ;;
       *) task_help ;;

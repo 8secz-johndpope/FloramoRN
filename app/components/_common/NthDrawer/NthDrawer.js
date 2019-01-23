@@ -1,13 +1,13 @@
 /* eslint-disable global-require,import/no-unresolved */
 /* @flow */
 import React, { Component } from 'react';
+import { ScrollView, View } from 'react-native';
 import { NavigationActions } from 'react-navigation';
-import { View } from 'react-native';
+import colors from '../../../styles/colors';
 import NthText from '../NthText/NthText';
 import DrawerHeader from './DrawerHeader';
 import DrawerItem from './DrawerItem';
 import type { DrawerItemConfig } from './DrawerItem';
-import colors from '../../../styles/colors';
 
 type Props = {
   navigation: Object
@@ -73,16 +73,18 @@ class NthDrawer extends Component<Props, {}> {
     return (
       <View style={{ flex: 1, backgroundColor: colors.primary50 }}>
         <DrawerHeader />
-        <View style={{ flex: 1 }}>
-          {navigationItems.map((item, index) => (
-            <DrawerItem
-              key={`drawer_${item.key}`}
-              item={item}
-              selected={index === selectedIndex}
-              onPress={this.navigateToScreen(item.key)}
-            />
-          ))}
-        </View>
+        <ScrollView>
+          <View style={{ flex: 1 }}>
+            {navigationItems.map((item, index) => (
+              <DrawerItem
+                key={`drawer_${item.key}`}
+                item={item}
+                selected={index === selectedIndex}
+                onPress={this.navigateToScreen(item.key)}
+              />
+            ))}
+          </View>
+        </ScrollView>
         <NthText text="Footer" font="barlow" size="tiny" align="right" style={{ padding: 15 }} />
       </View>
     );

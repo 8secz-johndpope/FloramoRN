@@ -1,20 +1,20 @@
 /* @flow */
-import React, { Component, Fragment } from 'react';
 import _ from 'lodash';
+import React, { Component, Fragment } from 'react';
+import { ScrollView, View } from 'react-native';
 import { ButtonGroup } from 'react-native-elements';
-import { View } from 'react-native';
-import NthContainer from '../_common/NthHeader/NthContainer';
-import TraitSelector from './ButtonSelector';
 import plantTypes from '../../../data/plantTypes';
-import NthInput from '../_common/NthInput/NthInput';
+import type { Plant } from '../../../data/plantTypes';
+import species from '../../../data/species';
 import I18n from '../../i18n';
-import NthText from '../_common/NthText/NthText';
+import appNavigation from '../../navigation/Routes';
 import colors from '../../styles/colors';
 import NthButton from '../_common/NthButton/NthButton';
-import species from '../../../data/species';
-import type { Plant } from '../../../data/plantTypes';
-import appNavigation from '../../navigation/Routes';
+import NthContainer from '../_common/NthHeader/NthContainer';
+import NthInput from '../_common/NthInput/NthInput';
+import NthText from '../_common/NthText/NthText';
 import EncyclopediaList from '../encyclopedia/EncyclopediaList';
+import TraitSelector from './ButtonSelector';
 
 type Props = {
   navigation: Object
@@ -318,17 +318,21 @@ class SearchScreen extends Component<Props, State> {
   renderForm() {
     return (
       <Fragment>
-        {this.traitsSelectors()}
-        {this.input()}
-        {this.andOrToggle()}
+        <ScrollView>
+          <View>
+            {this.traitsSelectors()}
+            {this.input()}
+            {this.andOrToggle()}
 
-        {this.andOrHint()}
-        {this.colorHint()}
-        {this.lifeFormHint()}
-        {this.inputHint()}
-        <View style={{ marginTop: 20 }}>
-          <NthButton i18nTitle="search.button" onPress={() => this.onSearchPressed()} />
-        </View>
+            {this.andOrHint()}
+            {this.colorHint()}
+            {this.lifeFormHint()}
+            {this.inputHint()}
+            <View style={{ marginTop: 20 }}>
+              <NthButton i18nTitle="search.button" onPress={() => this.onSearchPressed()} />
+            </View>
+          </View>
+        </ScrollView>
       </Fragment>
     );
   }

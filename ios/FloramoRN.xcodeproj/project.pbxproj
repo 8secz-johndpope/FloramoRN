@@ -988,6 +988,10 @@
 						CreatedOnToolsVersion = 6.2;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
+					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = GMR565J447;
+						ProvisioningStyle = Manual;
+					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
@@ -1655,8 +1659,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = GMR565J447;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-languages/ios",
@@ -1673,6 +1680,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lzm.Cajas;
 				PRODUCT_NAME = FloramoRN;
+				PROVISIONING_PROFILE_SPECIFIER = deployFloramo;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1681,7 +1689,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GMR565J447;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-languages/ios",
@@ -1698,6 +1709,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lzm.Cajas;
 				PRODUCT_NAME = FloramoRN;
+				PROVISIONING_PROFILE_SPECIFIER = deployFloramo;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
