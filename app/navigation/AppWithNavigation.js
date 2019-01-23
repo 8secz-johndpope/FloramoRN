@@ -5,7 +5,7 @@
 import React, { Component } from 'react';
 import { View, StatusBar } from 'react-native';
 import RNLanguages from 'react-native-languages';
-import { createDrawerNavigator } from 'react-navigation';
+import { createDrawerNavigator, createAppContainer } from 'react-navigation';
 import { ThemeProvider } from 'react-native-elements';
 import colors from '../styles/colors';
 import i18n from '../i18n';
@@ -18,11 +18,13 @@ const theme = {
     secondary: colors.secondary200,
   },
 };
-const DrawerNavigation = createDrawerNavigator(appNavigation.routes,
-  {
-    initialRouteName: appNavigation.initialScreen,
-    contentComponent: NthDrawer,
-  });
+const DrawerNavigation = createAppContainer(
+  createDrawerNavigator(appNavigation.routes,
+    {
+      initialRouteName: appNavigation.initialScreen,
+      contentComponent: NthDrawer,
+    }),
+);
 
 class AppWithNavigation extends Component<{}, {}> {
   componentWillMount() {
