@@ -15,8 +15,7 @@ type Props = {
   type: PlantTraits
 };
 
-const { width } = Dimensions.get('window');
-const buttonWidth = (width - 40) / 5;
+const buttonWidth = scale(100);
 const buttonHeight = scale(50);
 const padding = 10;
 
@@ -58,6 +57,7 @@ class ButtonSelector extends Component<Props, {}> {
     return (
       <View style={{
         alignItems: 'center',
+        justifyContent: 'center',
         flexDirection: 'row',
         flexWrap: 'wrap',
         marginBottom: 10,

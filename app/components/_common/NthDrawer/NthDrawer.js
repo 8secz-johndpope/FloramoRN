@@ -85,7 +85,7 @@ class NthDrawer extends Component<Props, {}> {
             ))}
           </View>
         </ScrollView>
-        <NthText text="Footer" font="barlow" size="tiny" align="right" style={{ padding: 15 }} />
+        <NthText text="v.0.1-beta" font="barlow" size="tiny" align="right" style={{ padding: 15 }} />
       </View>
     );
   }
