@@ -1,0 +1,5 @@
+clean true
+workspace "floramoApp.xcworkspace"
+export_method 'app-store'
+output_directory("./output/release")
+output_name("floramo-app")

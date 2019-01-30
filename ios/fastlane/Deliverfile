@@ -1,0 +1,5 @@
+app_identifier "com.lzm.Cajas"
+username "wonderlab@nyumc.org"
+ipa "./output/release/floramo-app.ipa"
+submit_for_review false
+automatic_release false
