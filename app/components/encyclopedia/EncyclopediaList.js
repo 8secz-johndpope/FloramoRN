@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 /* @flow */
 import React from 'react';
-import { SectionList, View } from 'react-native';
+import { FlatList, View } from 'react-native';
 import _ from 'lodash';
 import { verticalScale } from 'react-native-size-matters';
 import NthText from '../_common/NthText/NthText';
@@ -27,35 +27,10 @@ const sortPlantByName = (a, b) => {
   return 0;
 };
 
-const getAlphabeticalObject = (sortedSpecies) => {
-  const tempSections = {};
-  sortedSpecies.forEach((plant) => {
-    const firstLetter = plant.genus[0];
-    if (!tempSections[firstLetter]) {
-      tempSections[firstLetter] = [];
-    }
-    tempSections[firstLetter].push(plant);
-  });
-  return tempSections;
-};
-
-const getAlphabeticalSections = (tempSections) => {
-  const sections = [];
-  Object.keys(tempSections).forEach((key) => {
-    const obj = {
-      title: key,
-      data: tempSections[key],
-    };
-    sections.push(obj);
-  });
-  return sections;
-};
-
 const makeAlphabeticalSections = (species) => {
   const sortedSpecies = _.cloneDeep(species);
   sortedSpecies.sort((a, b) => sortPlantByName(a, b));
-  const tempSections = getAlphabeticalObject(sortedSpecies);
-  return getAlphabeticalSections(tempSections);
+  return sortedSpecies;
 };
 
 const getSectionHeader = ({ section: { title } }) => (
@@ -86,22 +61,22 @@ const EncyclopediaList = (props: Props) => {
     />),
   } : {};
   return (
-    <SectionList
+    <FlatList
       {...listHeaderProps}
+      ItemSeparatorComponent={getItemSeparator}
       renderSectionHeader={getSectionHeader}
       ListEmptyComponent={(
         <View style={{ paddingVertical: verticalScale(100), paddingHorizontal: '10%' }}>
           <NthText i18n="search.noResults" weight="extraBold" align="center" />
         </View>
       )}
-      sections={sortedPlantList}
       renderItem={({ item }) => (
         <EncyclopediaItem
           plant={item}
           onPress={plant => onPlantPressed(plant)}
         />
       )}
-      ItemSeparatorComponent={getItemSeparator}
+      data={sortedPlantList}
     />
   );
 };
