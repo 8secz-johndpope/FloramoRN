@@ -67,10 +67,10 @@ function task_build_android {
   echo "${android_fg}Building android signed APK${normal}"
   echo "${android_fg}Did you update the build number and version in android/app/build.gradle??${normal}"
   (cd android && ./gradlew assembleRelease)
-  FILENAME="index.android.$(timestamp).bundle"
+  FILENAME="app-release-$(timestamp).apk"
   echo "${android_fg}Moving apk to root build/${FILENAME} folder${normal}"
   mkdir -p build
-  mv android/app/build/intermediates/assets/release/index.android.bundle build/${FILENAME}
+  mv android/app/build/outputs/apk/release/app-release.apk build/${FILENAME}
 }
 
 function task_clean {
