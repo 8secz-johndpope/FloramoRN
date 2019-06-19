@@ -1,7 +1,6 @@
 /* @flow */
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import _ from 'lodash';
 import NthContainer from '../_common/NthHeader/NthContainer';
 import species from '../../../data/species';
 import type { Plant } from '../../../data/plantTypes';

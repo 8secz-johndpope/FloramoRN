@@ -16,7 +16,7 @@ const es = {
       tropicosResults: 'Resultados de Tropicos®',
       paramo: 'Páramo',
       cajas: 'Cajas',
-      dmq: 'DMQ',
+      dmq: 'Quito',
       app: 'Esta app',
       bugs: 'Reporte de bugs, feedback',
       credits: 'Créditos',

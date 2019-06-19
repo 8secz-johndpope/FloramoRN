@@ -34,11 +34,11 @@ const navigationItems: Array<DrawerItemConfig> = [
   },
   {
     key: 'cajas',
-    icon: 'tree-alt',
+    icon: 'badge',
   },
   {
     key: 'dmq',
-    icon: 'city',
+    icon: 'flower',
   },
   {
     key: 'app',
