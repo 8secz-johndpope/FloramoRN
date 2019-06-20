@@ -4,18 +4,18 @@ import React, { Component } from 'react';
 import {
   Dimensions, Image, ScrollView, TouchableOpacity, View,
 } from 'react-native';
-import FontAwesome5Pro from 'react-native-vector-icons/FontAwesome5Pro';
 import { scale } from 'react-native-size-matters';
-import NthText from '../_common/NthText/NthText';
-import NthContainer from '../_common/NthHeader/NthContainer';
-import colors from '../../styles/colors';
 import type { Plant } from '../../../data/plantTypes';
-import styles from './encyclopediaStyles';
-import DetailImage from '../_common/DetailImage/DetailImage';
-import NthCardView from '../_common/NthCardView/NthCardView';
 import appConfig from '../../appConfig';
 import appNavigation from '../../navigation/Routes';
+import colors from '../../styles/colors';
+import DetailImage from '../_common/DetailImage/DetailImage';
+import NthCardView from '../_common/NthCardView/NthCardView';
+import NthContainer from '../_common/NthHeader/NthContainer';
+import NthIcon from '../_common/NthIcon/NthIcon';
+import NthText from '../_common/NthText/NthText';
 import PlantTrait from '../_common/plantTrait/PlantTrait';
+import styles from './encyclopediaStyles';
 
 type Props = {
   navigation: Object
@@ -154,7 +154,7 @@ class DetailScreen extends Component<Props, State> {
           style={{ position: 'absolute', right: 15, top: 15 }}
           onPress={() => this.closeOverlay()}
         >
-          <FontAwesome5Pro
+          <NthIcon
             name="times"
             color={colors.primary300}
             size={60}

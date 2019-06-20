@@ -1,9 +1,9 @@
 /* @flow */
 import React, { Component } from 'react';
-import { TouchableOpacity, Image, View } from 'react-native';
-import FontAwesome5Pro from 'react-native-vector-icons/FontAwesome5Pro';
-import NthText from '../NthText/NthText';
+import { Image, TouchableOpacity, View } from 'react-native';
 import colors from '../../../styles/colors';
+import NthIcon from '../NthIcon/NthIcon';
+import NthText from '../NthText/NthText';
 
 export type DrawerItemConfig = {
   key: string,
@@ -23,7 +23,7 @@ const selectedColor = colors.primary700;
 const nonSelectedColor = colors.primary900;
 
 const getFontAwesomeIcon = (icon: string, selected: boolean) => (
-  <FontAwesome5Pro
+  <NthIcon
     name={icon}
     color={selected ? selectedColor : nonSelectedColor}
     size={24}

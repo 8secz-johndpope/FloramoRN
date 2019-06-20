@@ -1,16 +1,17 @@
 /* @flow */
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import FontAwesome5Pro from 'react-native-vector-icons/FontAwesome5Pro';
 import colors from '../../styles/colors';
-import NthText from '../_common/NthText/NthText';
-import NthInput from '../_common/NthInput/NthInput';
 import NthButton from '../_common/NthButton/NthButton';
+import NthIcon from '../_common/NthIcon/NthIcon';
+import NthInput from '../_common/NthInput/NthInput';
+import NthText from '../_common/NthText/NthText';
 
 type Props = {
   name: string,
   commonName: string,
   family: string,
+  // noinspection JSDuplicatedDeclaration
   onChange: (string, string)=>void,
   onSearchPressed: ()=>void,
   hasError: boolean
@@ -25,7 +26,7 @@ class TropicosSearchForm extends Component<Props, State> {
     return (
       <View>
         <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 8 }}>
-          <FontAwesome5Pro
+          <NthIcon
             name="info-circle"
             color={colors.primary800}
             size={20}

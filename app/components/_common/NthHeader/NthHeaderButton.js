@@ -1,10 +1,10 @@
 /* @flow */
 import React from 'react';
 import { TouchableOpacity } from 'react-native';
-import FontAwesome5Pro from 'react-native-vector-icons/FontAwesome5Pro';
-import styles from './nthHeaderStyles';
 import colors from '../../../styles/colors';
 import deviceHelper from '../../../util/deviceHelper';
+import NthIcon from '../NthIcon/NthIcon';
+import styles from './nthHeaderStyles';
 
 export type HeaderType = 'back' | 'hamburger';
 
@@ -22,7 +22,7 @@ const NthHeaderButton = (props: Props) => {
       style={[styles.backButton, { paddingTop }]}
       onPress={() => props.onPress()}
     >
-      <FontAwesome5Pro
+      <NthIcon
         name={icon}
         color={colors.secondary50}
         size={30}

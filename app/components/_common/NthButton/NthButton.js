@@ -1,9 +1,9 @@
 /* @flow */
 import React from 'react';
-import FontAwesome5Pro from 'react-native-vector-icons/FontAwesome5Pro';
 import { Button } from 'react-native-elements';
-import colors from '../../../styles/colors';
 import I18n from '../../../i18n';
+import colors from '../../../styles/colors';
+import NthIcon from '../NthIcon/NthIcon';
 
 type Props = {
   icon?: ?string,
@@ -17,7 +17,7 @@ const NthButton = (props: Props) => {
     <Button
       iconRight
       icon={(
-        <FontAwesome5Pro
+        <NthIcon
           name={icon}
           color={colors.secondary50}
           size={20}

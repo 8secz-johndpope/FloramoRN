@@ -1,12 +1,11 @@
 /* @flow */
 import React, { Component } from 'react';
-import { WebView } from 'react-native-webview';
-import FontAwesome5Pro from 'react-native-vector-icons/FontAwesome5Pro';
 import { Linking, TouchableOpacity } from 'react-native';
-import NthContainer from '../_common/NthHeader/NthContainer';
-import appNavigation from '../../navigation/Routes';
-import NthText from '../_common/NthText/NthText';
+import { WebView } from 'react-native-webview';
 import colors from '../../styles/colors';
+import NthContainer from '../_common/NthHeader/NthContainer';
+import NthIcon from '../_common/NthIcon/NthIcon';
+import NthText from '../_common/NthText/NthText';
 import TropicosLoading from '../tropicosLoading/TropicosLoading';
 
 type Props = {
@@ -26,7 +25,7 @@ const renderTopMessage = url => (
       padding: 20, flexDirection: 'row', alignItems: 'center',
     }}
   >
-    <FontAwesome5Pro
+    <NthIcon
       name="browser"
       color={colors.secondary500}
       size={20}
