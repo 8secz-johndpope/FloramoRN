@@ -86,6 +86,10 @@ function task_clean {
     echo "${utils_fg}CLEANING REACT NATIVE${normal}"
     echo -e "${utils_fg}\tClearing react temp files${normal}"
     rm -rf $TMPDIR/react-*
+    rm -rf $TMPDIR/metro*
+    rm -rf $TMPDIR/haste-*
+    rm -rf $TMPDIR/react-native-packager-cache-*
+    rm -rf $TMPDIR/metro-bundler-cache-*
     echo -e "${utils_fg}\tClearing watchman watches${normal}"
     watchman watch-del-all
     echo -e "${utils_fg}\tDeleting node modules...${normal}"

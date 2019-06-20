@@ -1,7 +1,7 @@
 /* eslint-disable import/no-unresolved,global-require */
 // @flow
-export type Color = "blue" | "brown" | "cone" | "green" | "orange" | "pink" | "purple" | "red" | "white" | "yellow";
-export type LifeForm = "aquatic" | "cushion" | "grass" | "herb" | "liana" | "rosette" | "shrub" | "tree";
+export type Color = "blue" | "brown" | "green" | "orange" | "pink" | "purple" | "red" | "white" | "yellow";
+export type LifeForm = "aquatic" | "cushion" | "fern" | "grass" | "herb" | "liana" | "rosette" | "shrub" | "tree";
 export type Plant = {
   id: number,
   tropicosId: string,
@@ -20,7 +20,6 @@ export type Plant = {
 const colors = {
   blue: { image: require('../assets/images/encyclopedia/colors/blue.png') },
   brown: { image: require('../assets/images/encyclopedia/colors/brown.png') },
-  cone: { image: require('../assets/images/encyclopedia/colors/cone.png') },
   green: { image: require('../assets/images/encyclopedia/colors/green.png') },
   orange: { image: require('../assets/images/encyclopedia/colors/orange.png') },
   pink: { image: require('../assets/images/encyclopedia/colors/pink.png') },
@@ -33,6 +32,7 @@ const colors = {
 const lifeForms = {
   aquatic: { image: require('../assets/images/encyclopedia/lifeForms/aquatic.png') },
   cushion: { image: require('../assets/images/encyclopedia/lifeForms/cushion.png') },
+  fern: { image: require('../assets/images/encyclopedia/lifeForms/fern.png') },
   grass: { image: require('../assets/images/encyclopedia/lifeForms/grass.png') },
   herb: { image: require('../assets/images/encyclopedia/lifeForms/herb.png') },
   liana: { image: require('../assets/images/encyclopedia/lifeForms/liana.png') },

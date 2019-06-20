@@ -90,7 +90,6 @@ const en = {
   colors: {
     blue: 'Blue',
     brown: 'Brown',
-    cone: 'Fern/Other',
     green: 'Green',
     orange: 'Orange',
     pink: 'Pink',
@@ -102,6 +101,7 @@ const en = {
   lifeForms: {
     aquatic: 'Aquatic',
     cushion: 'Cushion',
+    fern: 'Fern',
     grass: 'Grass',
     herb: 'Herb',
     liana: 'Liana',

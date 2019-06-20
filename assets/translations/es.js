@@ -90,7 +90,6 @@ const es = {
   colors: {
     blue: 'Azul',
     brown: 'Café',
-    cone: 'Helecho/Otro',
     green: 'Verde',
     orange: 'Naranja',
     pink: 'Rosa',
@@ -102,6 +101,7 @@ const es = {
   lifeForms: {
     aquatic: 'Acuática',
     cushion: 'Almohadilla',
+    fern: 'Helecho',
     grass: 'Hierba',
     herb: 'Pasto',
     liana: 'Trepadora',
