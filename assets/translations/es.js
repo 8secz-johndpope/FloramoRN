@@ -29,7 +29,7 @@ const es = {
       separator2: '',
       paramo: 'Páramo',
       cajas: 'Cajas',
-      dmq: 'DMQ',
+      dmq: 'Quito',
       app: 'Esta app',
       bugs: 'Reporte de bugs, feedback',
       credits: 'Créditos',

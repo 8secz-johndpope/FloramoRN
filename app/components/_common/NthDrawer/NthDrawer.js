@@ -61,20 +61,29 @@ class NthDrawer extends Component<Props, {}> {
       const navigateAction = NavigationActions.navigate({
         routeName: route,
       });
-      const { navigation } = this.props;
+      const {navigation} = this.props;
       navigation.dispatch(navigateAction);
     });
 
   render() {
-    const { navigation } = this.props;
-    const selectedIndex = navigation.state.index > 0
-      ? navigation.state.index - 1
-      : navigation.state.index;
+    const {navigation} = this.props;
+    const {index: navigationIndex} = navigation.state;
+    let selectedIndex = navigationIndex;
+    if(navigationIndex > 0){
+      selectedIndex = navigationIndex - 1;
+    }
+    if(navigationIndex > 3){
+      selectedIndex = navigationIndex - 2;
+    }
+    // const selectedIndex = navigationIndex > 0
+    //       ? navigationIndex - 1
+    //       : navigationIndex;
+    // const {index: selectedIndex} = navigation.state;
     return (
-      <View style={{ flex: 1, backgroundColor: colors.primary50 }}>
+      <View style={{flex: 1, backgroundColor: colors.primary50}}>
         <DrawerHeader />
         <ScrollView>
-          <View style={{ flex: 1 }}>
+          <View style={{flex: 1}}>
             {navigationItems.map((item, index) => (
               <DrawerItem
                 key={`drawer_${item.key}`}
@@ -85,7 +94,7 @@ class NthDrawer extends Component<Props, {}> {
             ))}
           </View>
         </ScrollView>
-        <NthText text="v.0.1-beta" font="barlow" size="tiny" align="right" style={{ padding: 15 }} />
+        <NthText text="v.0.1-beta" font="barlow" size="tiny" align="right" style={{padding: 15}} />
       </View>
     );
   }
