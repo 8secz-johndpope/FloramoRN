@@ -172,11 +172,11 @@ android {
 dependencies {
     implementation project(':react-native-svg')
     implementation project(':react-native-vector-icons')
-    compile project(':react-native-gesture-handler')
-    compile project(':react-native-webview')
-    compile project(':react-native-cardview')
-    compile project(':react-native-linear-gradient')
-    compile project(':react-native-languages')
+    implementation project(':react-native-gesture-handler')
+    implementation project(':react-native-webview')
+    implementation project(':react-native-cardview')
+    implementation project(':react-native-linear-gradient')
+    implementation project(':react-native-languages')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
     implementation "com.facebook.react:react-native:+"  // From node_modules
