@@ -51,7 +51,7 @@ const navigationItems: Array<DrawerItemConfig> = [
   },
   {
     key: 'credits',
-    icon: 'users',
+    icon: 'user-friends',
   },
 ];
 

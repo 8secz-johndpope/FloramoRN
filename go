@@ -140,8 +140,8 @@ function task_clean_android_start {
   set -eu
   echo "${android_fg}Cleaning everything first${normal}"
   task_clean
-  echo "${android_fg}Uninstalling from android device${normal}"
-  (cd android && ./gradlew uninstallDebug)
+#  echo "${android_fg}Uninstalling from android device${normal}"
+#  (cd android && ./gradlew uninstallDebug)
   echo "${android_fg}Installing app${normal}"
   task_start_android
 }

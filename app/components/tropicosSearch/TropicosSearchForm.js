@@ -30,8 +30,8 @@ class TropicosSearchForm extends Component<Props, State> {
             name="info-circle"
             color={colors.primary800}
             size={20}
-            light
             style={{ marginRight: 6 }}
+            light
           />
           <NthText i18n="tropicosSearch.warning" font="barlow" weight="semiBold" italic multiline size="small" />
         </View>

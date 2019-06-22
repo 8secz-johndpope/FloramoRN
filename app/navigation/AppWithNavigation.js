@@ -5,12 +5,60 @@
 import React, { Component } from 'react';
 import { View, StatusBar } from 'react-native';
 import RNLanguages from 'react-native-languages';
+import { library } from '@fortawesome/fontawesome-svg-core'
 import { createDrawerNavigator, createAppContainer } from 'react-navigation';
 import { ThemeProvider } from 'react-native-elements';
 import colors from '../styles/colors';
 import i18n from '../i18n';
 import appNavigation from './Routes';
 import NthDrawer from '../components/_common/NthDrawer/NthDrawer';
+
+import {
+  faBars as farBars,
+  faLongArrowLeft as farLongArrowLeft,
+  faTimes as farTimes,
+  faBrowser as farBrowser,
+  faInfoCircle as farInfoCircle,
+  faPaperPlane as farPaperPlane,
+
+  faBookOpen as farBookOpen,
+  faSearch as farSearch,
+  faMountains as farMountains,
+  faBadge as farBadge,
+  faFlower as farFlower,
+  faWindowAlt as farWindowAlt,
+  faSpiderBlackWidow as farSpiderBlackWidow,
+  faUserFriends as farUserFriends
+} from '@fortawesome/pro-regular-svg-icons'
+
+import {
+  faBookOpen as fasBookOpen,
+  faSearch as fasSearch,
+  faMountains as fasMountains,
+  faBadge as fasBadge,
+  faFlower as fasFlower,
+  faWindowAlt as fasWindowAlt,
+  faSpiderBlackWidow as fasSpiderBlackWidow,
+  faUserFriends as fasUserFriends
+} from '@fortawesome/pro-solid-svg-icons'
+
+library.add(
+  farBars,
+  farLongArrowLeft,
+  farTimes,
+  farBrowser,
+  farInfoCircle,
+  farPaperPlane,
+
+  farBookOpen, fasBookOpen,
+  farSearch, fasSearch,
+  farMountains, fasMountains,
+  farBadge, fasBadge,
+  farFlower, fasFlower,
+  farWindowAlt, fasWindowAlt,
+  farSpiderBlackWidow, fasSpiderBlackWidow,
+  farUserFriends, fasUserFriends
+);
 
 const theme = {
   colors: {
@@ -35,7 +83,7 @@ class AppWithNavigation extends Component<{}, {}> {
     RNLanguages.removeEventListener('change', this.onLanguagesChange);
   }
 
-  onLanguagesChange = ({ language }: Object) => {
+  onLanguagesChange = ({language}: Object) => {
     i18n.locale = language;
   };
 
@@ -48,10 +96,11 @@ class AppWithNavigation extends Component<{}, {}> {
           backgroundColor={colors.primary900}
           translucent
         />
-        <View style={{
-          flex: 1,
-          backgroundColor: colors.primary50,
-        }}
+        <View
+          style={{
+            flex: 1,
+            backgroundColor: colors.primary50,
+          }}
         >
           <DrawerNavigation />
         </View>

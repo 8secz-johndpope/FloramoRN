@@ -54,7 +54,6 @@ class BugsScreen extends Component<Props, State> {
           />
         </View>
         <NthButton
-          icon="paper-plane"
           i18nTitle="bugs.button"
           onPress={() => {
             const subject = I18n.t('bugs.subject');

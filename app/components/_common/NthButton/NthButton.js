@@ -12,18 +12,24 @@ type Props = {
 };
 
 const NthButton = (props: Props) => {
-  const { icon, i18nTitle, onPress } = props;
+  const {icon, i18nTitle, onPress} = props;
+
+  const iconObj = {};
+  if (icon) {
+    iconObj.icon = (
+      <NthIcon
+        name={icon}
+        color={colors.secondary50}
+        size={20}
+        light
+      />
+    )
+  }
+
   return (
     <Button
       iconRight
-      icon={(
-        <NthIcon
-          name={icon}
-          color={colors.secondary50}
-          size={20}
-          light
-        />
-      )}
+      {...iconObj}
       title={I18n.t(i18nTitle)}
       buttonStyle={{
         height: 50,
