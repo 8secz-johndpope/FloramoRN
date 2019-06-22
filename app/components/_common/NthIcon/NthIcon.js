@@ -1,14 +1,12 @@
 /* @flow */
 import React from 'react';
-import FontAwesome5Pro from 'react-native-vector-icons/FontAwesome5Pro';
+import { Text } from "react-native-elements";
 
 type Props = {
 };
 
 const NthIcon = (props: Props) => (
-  <FontAwesome5Pro
-    {...props}
-  />
+  <Text>i</Text>
 );
 
 export default NthIcon;
