@@ -95,6 +95,10 @@ class PlantWebView extends Component<Props, State> {
   onBackPressed() {
     const {navigation} = this.props;
     const {plant, from} = navigation.state.params;
+    if (from === 'tropicos') {
+      navigation.navigate(appNavigation.navigationTree.tropicos);
+      return;
+    }
     navigation.navigate({
       ...appNavigation.navigationTree.detail,
       ...{params: {plant, from}},

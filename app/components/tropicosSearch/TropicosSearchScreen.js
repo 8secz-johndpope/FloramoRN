@@ -1,5 +1,6 @@
 /* @flow */
 import React, { Component } from 'react';
+import { BackHandler } from 'react-native';
 import NthContainer from '../_common/NthHeader/NthContainer';
 import appConfig from '../../appConfig';
 import TropicosSearchForm from './TropicosSearchForm';
@@ -38,6 +39,9 @@ const getParams = (name: string, commonName: string, family: string) => {
 };
 
 class TropicosSearchScreen extends Component<Props, State> {
+  _didFocusSubscription;
+  _willBlurSubscription;
+
   constructor(props: Props) {
     super(props);
     this.state = {
@@ -48,6 +52,35 @@ class TropicosSearchScreen extends Component<Props, State> {
       isLoading: false,
       results: undefined,
     };
+
+    this._didFocusSubscription = props.navigation.addListener('didFocus', () =>
+      BackHandler.addEventListener('hardwareBackPress', this.onBackButtonPressAndroid)
+    );
+  }
+
+  componentDidMount() {
+    this._willBlurSubscription = this.props.navigation.addListener('willBlur', () =>
+      BackHandler.removeEventListener('hardwareBackPress', this.onBackButtonPressAndroid)
+    );
+  }
+
+  onBackButtonPressAndroid = () => {
+    this.onBackPressed();
+    return true;
+  };
+
+  componentWillUnmount() {
+    this._didFocusSubscription && this._didFocusSubscription.remove();
+    this._willBlurSubscription && this._willBlurSubscription.remove();
+  }
+
+  onBackPressed() {
+    const {results} = this.state;
+    if(results === undefined) {
+      const {navigation} = this.props;
+      navigation.goBack();
+    }
+    this.resetResults()
   }
 
   onChange(field: string, value: string) {
@@ -57,12 +90,12 @@ class TropicosSearchScreen extends Component<Props, State> {
   }
 
   onSearchPressed() {
-    const { name, commonName, family } = this.state;
+    const {name, commonName, family} = this.state;
     const trimmedName = name.trim();
     const trimmedCommonName = commonName.trim();
     const trimmedFamily = family.trim();
     if (trimmedName === '' && trimmedCommonName === '' && trimmedFamily === '') {
-      this.setState({ hasError: true });
+      this.setState({hasError: true});
     } else {
       const url = appConfig.search_url;
       const key = appConfig.tropicos;
@@ -97,11 +130,11 @@ class TropicosSearchScreen extends Component<Props, State> {
   }
 
   onPlantPressed(nameId: string) {
-    const { navigation } = this.props;
+    const {navigation} = this.props;
     const url = `${appConfig.base_url}${nameId}`;
     navigation.navigate({
       ...appNavigation.navigationTree.plantWebView,
-      ...{ params: { url } },
+      ...{params: {url, from: 'tropicos'}},
     });
   }
 
@@ -113,7 +146,7 @@ class TropicosSearchScreen extends Component<Props, State> {
   }
 
   render() {
-    const { navigation } = this.props;
+    const {navigation} = this.props;
     const {
       name, commonName, family, hasError, results, isLoading,
     } = this.state;
@@ -126,7 +159,7 @@ class TropicosSearchScreen extends Component<Props, State> {
           onPress={nameId => this.onPlantPressed(nameId)}
         />
       );
-      headerProps.onPress = () => this.resetResults();
+      headerProps.onPress = () => this.onBackPressed();
       headerProps.i18nHeader = 'navigation.title.tropicosResults';
       headerProps.type = 'back';
       headerProps.noPadding = true;

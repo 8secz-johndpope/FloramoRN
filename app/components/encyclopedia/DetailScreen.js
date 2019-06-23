@@ -2,6 +2,7 @@
 /* eslint-disable react/no-array-index-key */
 import React, { Component } from 'react';
 import { BackHandler, Dimensions, Image, ScrollView, TouchableOpacity, View } from 'react-native';
+import _ from 'lodash';
 import { scale } from 'react-native-size-matters';
 import type { Plant } from '../../../data/plantTypes';
 import appConfig from '../../appConfig';
@@ -90,7 +91,7 @@ class DetailScreen extends Component<Props, State> {
     this.state = {
       overlayShown: false,
       index: 0,
-      totalPhotos: plant.photos.length
+      totalPhotos: _.get(plant.photos, 'length', 0)
     };
 
     this._didFocusSubscription = props.navigation.addListener('didFocus', () =>
@@ -123,7 +124,7 @@ class DetailScreen extends Component<Props, State> {
     const {navigation} = nextProps;
     const {plant} = navigation.state.params;
     return {
-      totalPhotos: plant.photos.length
+      totalPhotos: _.get(plant.photos, 'length', 0)
     };
   }
 

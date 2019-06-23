@@ -33,9 +33,9 @@ class TropicosSearchForm extends Component<Props, State> {
             style={{ marginRight: 6 }}
             light
           />
-          <NthText i18n="tropicosSearch.warning" font="barlow" weight="semiBold" italic multiline size="small" />
+          <NthText i18n="tropicosSearch.warning" font="barlow" weight="semiBold" italic multiline size="regular" />
         </View>
-        <NthText i18n="tropicosSearch.info" i18nParams={{ max: 100 }} font="barlow" multiline size="small" />
+        <NthText i18n="tropicosSearch.info" i18nParams={{ max: 100 }} font="barlow" multiline size="regular" />
         <View style={{ marginTop: 16 }}>
           <NthInput
             i18nLabel="tropicosSearch.name"
