@@ -36,11 +36,9 @@ import {
 } from '@fortawesome/pro-solid-svg-icons'
 
 import React, { Component } from 'react';
-import AsyncStorage from '@react-native-community/async-storage';
-import {  I18nManager, StatusBar, View } from 'react-native';
+import { StatusBar, View } from 'react-native';
 import { ThemeProvider } from 'react-native-elements';
 import * as RNLocalize from "react-native-localize";
-import RNRestart from "react-native-restart";
 import { createAppContainer, createDrawerNavigator } from 'react-navigation';
 import NthDrawer from '../components/_common/NthDrawer/NthDrawer';
 import i18n from '../i18n';
@@ -90,17 +88,6 @@ class AppWithNavigation extends Component<{}, {}> {
 
   componentWillUnmount() {
     RNLocalize.removeEventListener('change', this.onLanguagesChange);
-  }
-
-  componentDidMount() {
-    AsyncStorage.getItem("lang")
-      .then(language => {
-        I18nManager.forceRTL(false);
-        if (I18nManager.isRTL) {
-          RNRestart.Restart();
-        }
-        i18n.locale = language;
-      });
   }
 
   onLanguagesChange = ({language}: Object) => {
