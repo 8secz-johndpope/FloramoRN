@@ -58,14 +58,14 @@ const i18nRow = (label: string, value: string) => (
   </View>
 );
 
-const colorRow = plantColors => (
+const colorRow = plantColors => plantColors.length > 0 ? (
   <View key="colors" style={styles.detailRow}>
     {getLabel('color')}
     {plantColors.map(color => (
       <PlantTrait type="colors" trait={color} key={`color_${color}`} />
     ))}
   </View>
-);
+) : null;
 
 const lifeFormRow = plantLifeForms => (
   <View key="lifeForms" style={styles.detailRow}>
