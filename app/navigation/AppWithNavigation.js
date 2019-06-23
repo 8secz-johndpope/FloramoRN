@@ -32,6 +32,8 @@ import {
 } from '@fortawesome/pro-regular-svg-icons'
 
 import {
+  faLeaf as fasLeaf,
+
   faBookOpen as fasBookOpen,
   faSearch as fasSearch,
   faMountains as fasMountains,
@@ -43,6 +45,7 @@ import {
 } from '@fortawesome/pro-solid-svg-icons'
 
 library.add(
+  fasLeaf,
   farBars,
   farLongArrowLeft,
   farTimes,
