@@ -19,7 +19,7 @@ class EncyclopediaScreen extends Component<Props, State> {
     const { navigation } = this.props;
     navigation.navigate({
       ...appNavigation.navigationTree.detail,
-      ...{ params: { plant } },
+      ...{ params: { plant, from: 'encyclopedia' } },
     });
   }
 

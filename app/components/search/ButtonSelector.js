@@ -1,7 +1,6 @@
 /* @flow */
 import React, { Component } from 'react';
-import _ from 'lodash';
-import { Dimensions, TouchableOpacity, View } from 'react-native';
+import { TouchableOpacity, View } from 'react-native';
 import { scale } from 'react-native-size-matters';
 import CardView from 'react-native-cardview';
 import colors from '../../styles/colors';

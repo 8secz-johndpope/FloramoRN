@@ -70,14 +70,14 @@ class PlantWebView extends Component<Props, State> {
 
   render() {
     const { navigation } = this.props;
-    const { url, plant } = navigation.state.params;
+    const { url, plant, from } = navigation.state.params;
     const { isLoading, loaded, loadedOnce } = this.state;
     return (
       <NthContainer
         onPress={() => {
           navigation.navigate({
             ...appNavigation.navigationTree.detail,
-            ...{ params: { plant } },
+            ...{ params: { plant, from } },
           });
         }}
         i18nHeader="navigation.title.tropicosResults"

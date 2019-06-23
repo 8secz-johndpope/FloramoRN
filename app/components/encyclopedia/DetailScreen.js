@@ -104,11 +104,11 @@ class DetailScreen extends Component<Props, State> {
 
   onPlantPressed() {
     const {navigation} = this.props;
-    const {plant} = navigation.state.params;
+    const {plant, from} = navigation.state.params;
     const url = `${appConfig.base_url}${plant.tropicosId}`;
     navigation.navigate({
       ...appNavigation.navigationTree.plantWebView,
-      ...{params: {url, plant}},
+      ...{params: {url, plant, from}},
     });
   }
 
@@ -213,12 +213,24 @@ class DetailScreen extends Component<Props, State> {
     );
   }
 
+  onBackPressed() {
+    const {navigation} = this.props;
+    const {from} = navigation.state.params;
+    if (from === 'search') {
+      navigation.navigate(appNavigation.navigationTree.search);
+      return;
+    }
+    if (from === 'encyclopedia') {
+      navigation.navigate(appNavigation.navigationTree.encyclopedia);
+    }
+  }
+
   render() {
     const {navigation} = this.props;
     const {overlayShown} = this.state;
     const {plant} = navigation.state.params;
     return (
-      <NthContainer onPress={() => navigation.goBack()} header={getFullName(plant)} type="back" noPadding>
+      <NthContainer onPress={() => this.onBackPressed()} header={getFullName(plant)} type="back" noPadding>
         {overlayShown ? this.renderOverlay(plant) : null}
         <View style={styles.flex1}>
           <ScrollView>
