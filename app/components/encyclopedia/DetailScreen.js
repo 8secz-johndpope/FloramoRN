@@ -1,7 +1,7 @@
 /* @flow */
 /* eslint-disable react/no-array-index-key */
 import React, { Component } from 'react';
-import { Dimensions, Image, ScrollView, TouchableOpacity, View, } from 'react-native';
+import { BackHandler, Dimensions, Image, ScrollView, TouchableOpacity, View } from 'react-native';
 import { scale } from 'react-native-size-matters';
 import type { Plant } from '../../../data/plantTypes';
 import appConfig from '../../appConfig';
@@ -80,6 +80,9 @@ const lifeFormRow = plantLifeForms => (
 );
 
 class DetailScreen extends Component<Props, State> {
+  _didFocusSubscription;
+  _willBlurSubscription;
+
   constructor(props: Props) {
     super(props);
     const {navigation} = this.props;
@@ -89,6 +92,31 @@ class DetailScreen extends Component<Props, State> {
       index: 0,
       totalPhotos: plant.photos.length
     };
+
+    this._didFocusSubscription = props.navigation.addListener('didFocus', () =>
+      BackHandler.addEventListener('hardwareBackPress', this.onBackButtonPressAndroid)
+    );
+  }
+
+  componentDidMount() {
+    this._willBlurSubscription = this.props.navigation.addListener('willBlur', () =>
+      BackHandler.removeEventListener('hardwareBackPress', this.onBackButtonPressAndroid)
+    );
+  }
+
+  onBackButtonPressAndroid = () => {
+    const {overlayShown} = this.state;
+    if (overlayShown) {
+      this.closeOverlay();
+      return true;
+    }
+    this.onBackPressed();
+    return true;
+  };
+
+  componentWillUnmount() {
+    this._didFocusSubscription && this._didFocusSubscription.remove();
+    this._willBlurSubscription && this._willBlurSubscription.remove();
   }
 
   static getDerivedStateFromProps(nextProps) {
@@ -234,7 +262,6 @@ class DetailScreen extends Component<Props, State> {
     const {plant} = navigation.state.params;
     return (
       <NthContainer onPress={() => this.onBackPressed()} header={getFullName(plant)} type="back" noPadding>
-        {overlayShown ? this.renderOverlay(plant) : null}
         <View style={styles.flex1}>
           <ScrollView>
             <DetailImage
@@ -262,6 +289,7 @@ class DetailScreen extends Component<Props, State> {
             {this.detailGallery(plant.photos)}
           </ScrollView>
         </View>
+        {overlayShown ? this.renderOverlay(plant) : null}
       </NthContainer>
     );
   }
