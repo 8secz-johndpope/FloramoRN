@@ -52,7 +52,7 @@ const i18nRow = (label: string, value: string) => (
     <NthText
       i18n={value}
       font="barlow"
-      style={{flex: 1}}
+      style={styles.flex1}
       multiline
     />
   </View>
@@ -125,14 +125,7 @@ class DetailScreen extends Component<Props, State> {
         key={`photo_${i}`}
         onPress={() => this.openOverlay(i)}
       >
-        <Image
-          source={photo}
-          style={{
-            width: 128,
-            height: 128,
-            marginRight: 16,
-          }}
-        />
+        <Image source={photo} style={styles.galleryPhoto} />
       </TouchableOpacity>
     )
   }
@@ -140,7 +133,7 @@ class DetailScreen extends Component<Props, State> {
   detailGallery(photos: Array<number>) {
     return (
       <NthCardView margin={{bottom: scale(20)}}>
-        <ScrollView horizontal style={{flexDirection: 'row'}}>
+        <ScrollView horizontal style={styles.flexRow}>
           {photos.map((photo, i) => this.galleryPhoto(i, photo))}
         </ScrollView>
       </NthCardView>
@@ -150,7 +143,7 @@ class DetailScreen extends Component<Props, State> {
   closeOverlayButton() {
     return (
       <TouchableOpacity
-        style={{position: 'absolute', right: 15, top: 15}}
+        style={[styles.overlayButton, styles.overlayButtonTop, styles.overlayButtonRight]}
         onPress={() => this.closeOverlay()}
       >
         <NthIcon
@@ -165,24 +158,24 @@ class DetailScreen extends Component<Props, State> {
 
   nextPhotoButton(index, totalPhotos) {
     return index < totalPhotos - 1 ? (
-        <TouchableOpacity
-          style={{position: 'absolute', right: 15, bottom: 30}}
-          onPress={() => this.openOverlay(index + 1)}
-        >
-          <NthIcon
-            name="arrow-square-right"
-            color={colors.primary300}
-            size={50}
-            solid
-          />
-        </TouchableOpacity>
-      ) : null;
+      <TouchableOpacity
+        style={[styles.overlayButton, styles.overlayButtonBottom, styles.overlayButtonRight]}
+        onPress={() => this.openOverlay(index + 1)}
+      >
+        <NthIcon
+          name="arrow-square-right"
+          color={colors.primary300}
+          size={50}
+          solid
+        />
+      </TouchableOpacity>
+    ) : null;
   }
 
   prevPhotoButton(index) {
     return index > 0 ? (
       <TouchableOpacity
-        style={{position: 'absolute', left: 15, bottom: 30}}
+        style={[styles.overlayButton, styles.overlayButtonBottom, styles.overlayButtonLeft]}
         onPress={() => this.openOverlay(index - 1)}
       >
         <NthIcon
@@ -200,26 +193,14 @@ class DetailScreen extends Component<Props, State> {
     const imageSize = width - 20;
 
     return (
-      <View
-        style={{
-          backgroundColor: colors.overlayBackground,
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          bottom: 0,
-          right: 0,
-          zIndex: 100,
-          width: '100%',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
-      >
+      <View style={styles.overlay}>
         {this.closeOverlayButton()}
         <NthText
           i18n="plantDetails.photoIndex"
           weight="semiBold"
+          color={colors.secondary100}
           i18nParams={{current: index + 1, total: totalPhotos}}
-          style={{color: colors.secondary100, marginBottom: 8}}
+          style={{marginBottom: 8}}
         />
         <Image
           resizeMode="cover"
@@ -239,7 +220,7 @@ class DetailScreen extends Component<Props, State> {
     return (
       <NthContainer onPress={() => navigation.goBack()} header={getFullName(plant)} type="back" noPadding>
         {overlayShown ? this.renderOverlay(plant) : null}
-        <View style={{flex: 1}}>
+        <View style={styles.flex1}>
           <ScrollView>
             <DetailImage
               image={plant.detailImage}
@@ -247,9 +228,9 @@ class DetailScreen extends Component<Props, State> {
             />
             <TouchableOpacity
               onPress={() => this.onPlantPressed(plant)}
-              style={{padding: 8, backgroundColor: colors.primary100, flexDirection: 'row', alignItems: 'center'}}
+              style={styles.tropicosButton}
             >
-              <Image source={tropicosLogo} style={{width: 24, height: 24, marginRight: 10}} />
+              <Image source={tropicosLogo} style={styles.tropicosLogo} />
               <NthText i18n="plantDetails.tropicos" />
             </TouchableOpacity>
             <NthCardView margin={{bottom: 0}}>
