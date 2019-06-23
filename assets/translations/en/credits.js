@@ -33,7 +33,11 @@ const credits = {
     {
       title: 'Icons',
       text: '<a link=http://www.freevectorvip.com/silhouette-of-tree-of-flowers-and-plants.html>\'Silhouette of tree of flowers and plants\'</a>, licenced under Non commercial use, learning and reference use only.\n\n'
-        + '<a link=http://www.freevectorvip.com/marine-biology-silhouette.html>\'Marine biology silhouette\'</a>, licenced under Non commercial use, learning and reference use only.',
+        + '<a link=http://www.freevectorvip.com/marine-biology-silhouette.html>\'Marine biology silhouette\'</a>, licenced under Non commercial use, learning and reference use only.\n\n'
+        + '<a link=https://www.flaticon.com/free-icon/flower_346218>\'Flower\'</a>, by <a link=https://www.freepik.com/>Freepik</a> from <a link=https://www.flaticon.com/>www.flaticon.com</a>, licenced licensed by <a link=http://creativecommons.org/licenses/by/3.0/>CC 3.0 BY</a>\n\n'
+        + '<a link=https://www.flaticon.com/free-icon/sea-waves_3491>\'Sea waves\'</a>, by <a link=https://www.flaticon.com/authors/daniel-bruce/>Daniel Bruce<</a> from <a link=https://www.flaticon.com/>www.flaticon.com</a>, licenced licensed by <a link=http://creativecommons.org/licenses/by/3.0/>CC 3.0 BY</a>\n\n'
+        + '<a link=https://www.flaticon.com/free-icon/grass_785136>\'Grass\'</a>, by  <a link=https://www.freepik.com/>Freepik</a> from <a link=https://www.flaticon.com/>www.flaticon.com</a>, licenced licensed by <a link=http://creativecommons.org/licenses/by/3.0/>CC 3.0 BY</a>\n\n'
+        + '<a link=https://www.flaticon.com/free-icon/branch_1843203>\'Branch\'</a>, by  <a link=https://www.freepik.com/>Freepik</a> from <a link=https://www.flaticon.com/>www.flaticon.com</a>, licenced licensed by <a link=http://creativecommons.org/licenses/by/3.0/>CC 3.0 BY</a>'
     },
     {
       title: 'Libraries used',

@@ -37,7 +37,7 @@ const EncyclopediaItem = (props: Props) => {
           <NthText text={plant.family} weight="light" italic />
           <View style={{ flexDirection: 'row', marginTop: 8 }}>
             {plant.lifeForms.map((lifeForm, i) => (
-              <PlantTrait type="lifeForms" trait={lifeForm} key={`lifeForm_${i}_${plant.id}`} withBorder />
+              <PlantTrait type="lifeForms" trait={lifeForm} key={`lifeForm_${i}_${plant.id}`} />
             ))}
             {plant.colors.map((color, i) => (
               <PlantTrait type="colors" trait={color} key={`color_${i}_${plant.id}`} />
