@@ -58,14 +58,17 @@ const i18nRow = (label: string, value: string) => (
   </View>
 );
 
-const colorRow = plantColors => plantColors.length > 0 ? (
-  <View key="colors" style={styles.detailRow}>
-    {getLabel('color')}
-    {plantColors.map(color => (
-      <PlantTrait type="colors" trait={color} key={`color_${color}`} />
-    ))}
-  </View>
-) : null;
+const colorRow = (plantColors, plantLifeForms) => {
+  const shouldShowColor = plantColors.length > 0 && plantLifeForms.indexOf('fern') === -1;
+  return shouldShowColor ? (
+    <View key="colors" style={styles.detailRow}>
+      {getLabel('color')}
+      {plantColors.map(color => (
+        <PlantTrait type="colors" trait={color} key={`color_${color}`} />
+      ))}
+    </View>
+  ) : null;
+};
 
 const lifeFormRow = plantLifeForms => (
   <View key="lifeForms" style={styles.detailRow}>
@@ -249,7 +252,7 @@ class DetailScreen extends Component<Props, State> {
               {textRow('family', plant.family)}
               {textRow('genus', plant.genus)}
               {textRow('species', plant.species)}
-              {colorRow(plant.colors)}
+              {colorRow(plant.colors, plant.lifeForms)}
               {lifeFormRow(plant.lifeForms)}
               {i18nRow('distribution', `plants.${plant.key}.distribution`)}
             </NthCardView>
