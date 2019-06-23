@@ -4,7 +4,7 @@
 */
 import React, { Component } from 'react';
 import { View, StatusBar } from 'react-native';
-import RNLanguages from 'react-native-languages';
+import * as RNLocalize from "react-native-localize";
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { createDrawerNavigator, createAppContainer } from 'react-navigation';
 import { ThemeProvider } from 'react-native-elements';
@@ -83,11 +83,11 @@ const DrawerNavigation = createAppContainer(
 
 class AppWithNavigation extends Component<{}, {}> {
   componentWillMount() {
-    RNLanguages.addEventListener('change', this.onLanguagesChange);
+    RNLocalize.addEventListener('change', this.onLanguagesChange);
   }
 
   componentWillUnmount() {
-    RNLanguages.removeEventListener('change', this.onLanguagesChange);
+    RNLocalize.removeEventListener('change', this.onLanguagesChange);
   }
 
   onLanguagesChange = ({language}: Object) => {
