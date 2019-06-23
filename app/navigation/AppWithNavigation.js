@@ -33,6 +33,8 @@ import {
 
 import {
   faLeaf as fasLeaf,
+  faArrowSquareLeft as fasArrowSquareLeft,
+  faArrowSquareRight as fasArrowSquareRight,
 
   faBookOpen as fasBookOpen,
   faSearch as fasSearch,
@@ -46,6 +48,8 @@ import {
 
 library.add(
   fasLeaf,
+  fasArrowSquareLeft,
+  fasArrowSquareRight,
   farBars,
   farLongArrowLeft,
   farTimes,

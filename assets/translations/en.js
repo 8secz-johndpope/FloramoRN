@@ -42,7 +42,8 @@ const en = {
     color: 'Color',
     lifeForm: 'Life form',
     distribution: 'Distribution',
-    tropicos: 'See this plant in Tropicos®'
+    tropicos: 'See this plant in Tropicos®',
+    photoIndex: 'Photo {{current}} of {{total}}',
   },
   search: {
     andSearch: 'AND search',

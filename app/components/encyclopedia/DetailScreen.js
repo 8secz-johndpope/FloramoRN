@@ -1,9 +1,7 @@
 /* @flow */
 /* eslint-disable react/no-array-index-key */
 import React, { Component } from 'react';
-import {
-  Dimensions, Image, ScrollView, TouchableOpacity, View,
-} from 'react-native';
+import { Dimensions, Image, ScrollView, TouchableOpacity, View, } from 'react-native';
 import { scale } from 'react-native-size-matters';
 import type { Plant } from '../../../data/plantTypes';
 import appConfig from '../../appConfig';
@@ -78,38 +76,24 @@ const lifeFormRow = plantLifeForms => (
   </View>
 );
 
-
 class DetailScreen extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
+    const {navigation} = this.props;
+    const {plant} = navigation.state.params;
     this.state = {
       overlayShown: false,
       index: 0,
+      totalPhotos: plant.photos.length
     };
   }
 
-  detailGallery(photos: Array<number>) {
-    return (
-      <NthCardView margin={{bottom: scale(20)}}>
-        <View style={{flexDirection: 'row'}}>
-          {photos.map((photo, i) => (
-            <TouchableOpacity
-              key={`photo_${i}`}
-              onPress={() => this.openOverlay(i)}
-            >
-              <Image
-                source={photo}
-                style={{
-                  width: 128,
-                  height: 128,
-                  marginRight: 16,
-                }}
-              />
-            </TouchableOpacity>
-          ))}
-        </View>
-      </NthCardView>
-    );
+  static getDerivedStateFromProps(nextProps) {
+    const {navigation} = nextProps;
+    const {plant} = navigation.state.params;
+    return {
+      totalPhotos: plant.photos.length
+    };
   }
 
   closeOverlay() {
@@ -135,9 +119,86 @@ class DetailScreen extends Component<Props, State> {
     });
   }
 
+  galleryPhoto(i, photo) {
+    return (
+      <TouchableOpacity
+        key={`photo_${i}`}
+        onPress={() => this.openOverlay(i)}
+      >
+        <Image
+          source={photo}
+          style={{
+            width: 128,
+            height: 128,
+            marginRight: 16,
+          }}
+        />
+      </TouchableOpacity>
+    )
+  }
+
+  detailGallery(photos: Array<number>) {
+    return (
+      <NthCardView margin={{bottom: scale(20)}}>
+        <ScrollView horizontal style={{flexDirection: 'row'}}>
+          {photos.map((photo, i) => this.galleryPhoto(i, photo))}
+        </ScrollView>
+      </NthCardView>
+    );
+  };
+
+  closeOverlayButton() {
+    return (
+      <TouchableOpacity
+        style={{position: 'absolute', right: 15, top: 15}}
+        onPress={() => this.closeOverlay()}
+      >
+        <NthIcon
+          name="times"
+          color={colors.primary300}
+          size={60}
+          light
+        />
+      </TouchableOpacity>
+    );
+  }
+
+  nextPhotoButton(index, totalPhotos) {
+    return index < totalPhotos - 1 ? (
+        <TouchableOpacity
+          style={{position: 'absolute', right: 15, bottom: 30}}
+          onPress={() => this.openOverlay(index + 1)}
+        >
+          <NthIcon
+            name="arrow-square-right"
+            color={colors.primary300}
+            size={50}
+            solid
+          />
+        </TouchableOpacity>
+      ) : null;
+  }
+
+  prevPhotoButton(index) {
+    return index > 0 ? (
+      <TouchableOpacity
+        style={{position: 'absolute', left: 15, bottom: 30}}
+        onPress={() => this.openOverlay(index - 1)}
+      >
+        <NthIcon
+          name="arrow-square-left"
+          color={colors.primary300}
+          size={50}
+          solid
+        />
+      </TouchableOpacity>
+    ) : null;
+  }
+
   renderOverlay(plant: Plant) {
-    const {index} = this.state;
+    const {index, totalPhotos} = this.state;
     const imageSize = width - 20;
+
     return (
       <View
         style={{
@@ -153,22 +214,20 @@ class DetailScreen extends Component<Props, State> {
           justifyContent: 'center',
         }}
       >
-        <TouchableOpacity
-          style={{position: 'absolute', right: 15, top: 15}}
-          onPress={() => this.closeOverlay()}
-        >
-          <NthIcon
-            name="times"
-            color={colors.primary300}
-            size={60}
-            light
-          />
-        </TouchableOpacity>
+        {this.closeOverlayButton()}
+        <NthText
+          i18n="plantDetails.photoIndex"
+          weight="semiBold"
+          i18nParams={{current: index + 1, total: totalPhotos}}
+          style={{color: colors.secondary100, marginBottom: 8}}
+        />
         <Image
           resizeMode="cover"
           source={plant.photos[index]}
           style={{width: imageSize, height: imageSize}}
         />
+        {this.prevPhotoButton(index)}
+        {this.nextPhotoButton(index, totalPhotos)}
       </View>
     );
   }
