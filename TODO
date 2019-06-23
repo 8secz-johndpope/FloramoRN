@@ -1,5 +1,5 @@
-[ ] en detalles no hay logo mobot para tropicos
-[ ] logo de mobot no sale bien
+[x] en detalles no hay logo mobot para tropicos
+[ ] logo de mobot no sale bien en el drawer
 [ ] buscar Espeletia pycnophylla
 
 [x] FERN --> life form
@@ -29,7 +29,17 @@
 [x] Halenia serpyllifolia: + yellow
 [x] Loricaria ilinissae: + white
 [x] Loricaria thuyoides: - brow, + yellow
-
+[x] Jamesonia goudotii: - green, + fern
 [x] Disterigma empetrifolium: nueva foto
 [x] Brachyotum alpinum: cover photo la de las flores
-[ ] Jamesonia goudotii: - green, + fern
+
+[x] Traducción OK?
+    Herb => pasto
+    Grass => hierba
+
+[ ] cuando no hay color quitar la linea en detalles
+
+SW Back button
+[ ] busco algo, abro planta, boton atras en planta regresa a enciclopedia
+        (deberia regresar a la lista de resultados)
+
