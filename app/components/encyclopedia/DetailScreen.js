@@ -124,7 +124,7 @@ class DetailScreen extends Component<Props, State> {
     const url = `${appConfig.base_url}${plant.tropicosId}`;
     navigation.navigate({
       ...appNavigation.navigationTree.plantWebView,
-      ...{params: {url}},
+      ...{params: {url, plant}},
     });
   }
 
@@ -187,7 +187,7 @@ class DetailScreen extends Component<Props, State> {
               imageTitle={getFullName(plant)}
             />
             <TouchableOpacity
-              onPress={() => this.onPlantPressed()}
+              onPress={() => this.onPlantPressed(plant)}
               style={{padding: 8, backgroundColor: colors.primary100, flexDirection: 'row', alignItems: 'center'}}
             >
               <Image source={tropicosLogo} style={{width: 24, height: 24, marginRight: 10}} />

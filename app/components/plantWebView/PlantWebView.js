@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { Linking, TouchableOpacity } from 'react-native';
 import { WebView } from 'react-native-webview';
+import appNavigation from "../../navigation/Routes";
 import colors from '../../styles/colors';
 import NthContainer from '../_common/NthHeader/NthContainer';
 import NthIcon from '../_common/NthIcon/NthIcon';
@@ -69,11 +70,16 @@ class PlantWebView extends Component<Props, State> {
 
   render() {
     const { navigation } = this.props;
-    const { url } = navigation.state.params;
+    const { url, plant } = navigation.state.params;
     const { isLoading, loaded, loadedOnce } = this.state;
     return (
       <NthContainer
-        onPress={() => navigation.goBack()}
+        onPress={() => {
+          navigation.navigate({
+            ...appNavigation.navigationTree.detail,
+            ...{ params: { plant } },
+          });
+        }}
         i18nHeader="navigation.title.tropicosResults"
         type="back"
         noPadding
