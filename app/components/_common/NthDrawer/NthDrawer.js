@@ -75,10 +75,6 @@ class NthDrawer extends Component<Props, {}> {
     if(navigationIndex > 3){
       selectedIndex = navigationIndex - 2;
     }
-    // const selectedIndex = navigationIndex > 0
-    //       ? navigationIndex - 1
-    //       : navigationIndex;
-    // const {index: selectedIndex} = navigation.state;
     return (
       <View style={{flex: 1, backgroundColor: colors.primary50}}>
         <DrawerHeader />

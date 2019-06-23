@@ -1,6 +1,6 @@
 /* @flow */
 import React from 'react';
-import { Image, TouchableOpacity } from 'react-native';
+import { Image, View } from 'react-native';
 import { verticalScale } from 'react-native-size-matters';
 import NthText from '../NthText/NthText';
 import colors from '../../../styles/colors';
@@ -8,16 +8,12 @@ import colors from '../../../styles/colors';
 type Props = {
   image: number,
   imageTitle?: string,
-  onPress: ()=>void,
 };
 
 const DetailImage = (props: Props) => {
-  const { image, imageTitle, onPress } = props;
+  const { image, imageTitle } = props;
   return (
-    <TouchableOpacity
-      onPress={onPress}
-      style={{ height: verticalScale(200), justifyContent: 'flex-end' }}
-    >
+    <View style={{ height: verticalScale(200), justifyContent: 'flex-end' }}>
       <Image
         resizeMode="cover"
         source={image}
@@ -38,7 +34,7 @@ const DetailImage = (props: Props) => {
           right: 10,
         }}
       />
-    </TouchableOpacity>
+    </View>
   );
 };
 

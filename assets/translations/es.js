@@ -42,6 +42,7 @@ const es = {
     color: 'Color',
     lifeForm: 'Forma de vida',
     distribution: 'Distribución',
+    tropicos: 'Ver esta planta en Tropicos®'
   },
   search: {
     andSearch: 'Búsqueda AND',

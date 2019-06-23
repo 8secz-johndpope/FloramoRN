@@ -17,6 +17,8 @@ import NthText from '../_common/NthText/NthText';
 import PlantTrait from '../_common/plantTrait/PlantTrait';
 import styles from './encyclopediaStyles';
 
+const tropicosLogo = require('../../../assets/images/drawer/solid/tropicos.png');
+
 type Props = {
   navigation: Object
 };
@@ -25,7 +27,7 @@ type State = {
   index: number
 }
 
-const { width } = Dimensions.get('window');
+const {width} = Dimensions.get('window');
 const labelWidth = 95;
 
 const getFullName = (plant: Plant) => `${plant.genus} ${plant.species}`;
@@ -35,7 +37,7 @@ const getLabel = label => (
     i18n={`plantDetails.${label}`}
     weight="semiBold"
     font="barlow"
-    style={{ width: labelWidth }}
+    style={{width: labelWidth}}
   />
 );
 
@@ -52,7 +54,7 @@ const i18nRow = (label: string, value: string) => (
     <NthText
       i18n={value}
       font="barlow"
-      style={{ flex: 1 }}
+      style={{flex: 1}}
       multiline
     />
   </View>
@@ -88,8 +90,8 @@ class DetailScreen extends Component<Props, State> {
 
   detailGallery(photos: Array<number>) {
     return (
-      <NthCardView margin={{ bottom: scale(20) }}>
-        <View style={{ flexDirection: 'row' }}>
+      <NthCardView margin={{bottom: scale(20)}}>
+        <View style={{flexDirection: 'row'}}>
           {photos.map((photo, i) => (
             <TouchableOpacity
               key={`photo_${i}`}
@@ -117,12 +119,12 @@ class DetailScreen extends Component<Props, State> {
   }
 
   onPlantPressed() {
-    const { navigation } = this.props;
-    const { plant } = navigation.state.params;
+    const {navigation} = this.props;
+    const {plant} = navigation.state.params;
     const url = `${appConfig.base_url}${plant.tropicosId}`;
     navigation.navigate({
       ...appNavigation.navigationTree.plantWebView,
-      ...{ params: { url } },
+      ...{params: {url}},
     });
   }
 
@@ -134,24 +136,25 @@ class DetailScreen extends Component<Props, State> {
   }
 
   renderOverlay(plant: Plant) {
-    const { index } = this.state;
+    const {index} = this.state;
     const imageSize = width - 20;
     return (
-      <View style={{
-        backgroundColor: colors.overlayBackground,
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        bottom: 0,
-        right: 0,
-        zIndex: 100,
-        width: '100%',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
+      <View
+        style={{
+          backgroundColor: colors.overlayBackground,
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          bottom: 0,
+          right: 0,
+          zIndex: 100,
+          width: '100%',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
       >
         <TouchableOpacity
-          style={{ position: 'absolute', right: 15, top: 15 }}
+          style={{position: 'absolute', right: 15, top: 15}}
           onPress={() => this.closeOverlay()}
         >
           <NthIcon
@@ -164,27 +167,33 @@ class DetailScreen extends Component<Props, State> {
         <Image
           resizeMode="cover"
           source={plant.photos[index]}
-          style={{ width: imageSize, height: imageSize }}
+          style={{width: imageSize, height: imageSize}}
         />
       </View>
     );
   }
 
   render() {
-    const { navigation } = this.props;
-    const { overlayShown } = this.state;
-    const { plant } = navigation.state.params;
+    const {navigation} = this.props;
+    const {overlayShown} = this.state;
+    const {plant} = navigation.state.params;
     return (
       <NthContainer onPress={() => navigation.goBack()} header={getFullName(plant)} type="back" noPadding>
         {overlayShown ? this.renderOverlay(plant) : null}
-        <View style={{ flex: 1 }}>
+        <View style={{flex: 1}}>
           <ScrollView>
             <DetailImage
               image={plant.detailImage}
               imageTitle={getFullName(plant)}
-              onPress={() => this.onPlantPressed()}
             />
-            <NthCardView margin={{ bottom: 0 }}>
+            <TouchableOpacity
+              onPress={() => this.onPlantPressed()}
+              style={{padding: 8, backgroundColor: colors.primary100, flexDirection: 'row', alignItems: 'center'}}
+            >
+              <Image source={tropicosLogo} style={{width: 24, height: 24, marginRight: 10}} />
+              <NthText i18n="plantDetails.tropicos" />
+            </TouchableOpacity>
+            <NthCardView margin={{bottom: 0}}>
               {textRow('family', plant.family)}
               {textRow('genus', plant.genus)}
               {textRow('species', plant.species)}
@@ -192,7 +201,7 @@ class DetailScreen extends Component<Props, State> {
               {lifeFormRow(plant.lifeForms)}
               {i18nRow('distribution', `plants.${plant.key}.distribution`)}
             </NthCardView>
-            <NthCardView margin={{ bottom: 0 }}>
+            <NthCardView margin={{bottom: 0}}>
               <NthText i18n={`plants.${plant.key}.description`} multiline lineHeight={1.4} font="barlow" />
             </NthCardView>
             {this.detailGallery(plant.photos)}

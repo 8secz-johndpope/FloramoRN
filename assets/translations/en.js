@@ -42,6 +42,7 @@ const en = {
     color: 'Color',
     lifeForm: 'Life form',
     distribution: 'Distribution',
+    tropicos: 'See this plant in Tropicos®'
   },
   search: {
     andSearch: 'AND search',
