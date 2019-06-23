@@ -53,6 +53,10 @@ const navigationItems: Array<DrawerItemConfig> = [
     key: 'credits',
     icon: 'user-friends',
   },
+  {
+    key: 'config',
+    icon: 'cogs',
+  },
 ];
 
 class NthDrawer extends Component<Props, {}> {

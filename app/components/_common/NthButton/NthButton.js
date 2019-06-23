@@ -8,11 +8,13 @@ import NthIcon from '../NthIcon/NthIcon';
 type Props = {
   icon?: ?string,
   i18nTitle: string,
+  i18nParams?: Object,
+  marginBottom?: number,
   onPress: ()=>void
 };
 
 const NthButton = (props: Props) => {
-  const {icon, i18nTitle, onPress} = props;
+  const {icon, i18nTitle, i18nParams, onPress, marginBottom} = props;
 
   const iconObj = {};
   if (icon) {
@@ -30,10 +32,11 @@ const NthButton = (props: Props) => {
     <Button
       iconRight
       {...iconObj}
-      title={I18n.t(i18nTitle)}
+      title={I18n.t(i18nTitle, i18nParams)}
       buttonStyle={{
         height: 50,
         borderRadius: 5,
+        marginBottom
       }}
       titleStyle={{
         color: colors.secondary50,
@@ -44,5 +47,7 @@ const NthButton = (props: Props) => {
 };
 NthButton.defaultProps = {
   icon: undefined,
+  marginBottom: 0,
+  i18nParams: {},
 };
 export default NthButton;

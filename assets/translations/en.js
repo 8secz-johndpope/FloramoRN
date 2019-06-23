@@ -12,6 +12,7 @@ const en = {
     title: {
       encyclopedia: 'Encyclopedia',
       search: 'Search',
+      searchResults: 'Search results',
       tropicos: 'Tropicos® Search',
       tropicosResults: 'Tropicos® Results',
       paramo: 'Páramo',
@@ -20,6 +21,7 @@ const en = {
       app: 'This app',
       bugs: 'Bug reports, feedback',
       credits: 'Credits',
+      config: 'Settings',
     },
     drawer: {
       encyclopedia: 'Encyclopedia',
@@ -33,6 +35,7 @@ const en = {
       app: 'This app',
       bugs: 'Bug reports, feedback',
       credits: 'Credits',
+      config: 'Settings',
     },
   },
   plantDetails: {
@@ -89,6 +92,10 @@ const en = {
     email: 'nth.development@gmail.com',
     button: 'Send',
   },
+  config: {
+    language: 'Choose the language for the app',
+    current: 'Current language set to {{lang}}',
+  },
   colors: {
     blue: 'Blue',
     brown: 'Brown',
@@ -110,6 +117,11 @@ const en = {
     rosette: 'Rosette',
     shrub: 'Shrub',
     tree: 'Tree',
+  },
+  languages: {
+    en: 'English',
+    es: 'Spanish',
+    best: 'Default ({{lang}})',
   },
   places,
 };

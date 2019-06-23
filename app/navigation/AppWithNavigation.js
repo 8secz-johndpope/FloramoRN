@@ -2,49 +2,50 @@
 * @format
 * @flow
 */
-import React, { Component } from 'react';
-import { View, StatusBar } from 'react-native';
-import * as RNLocalize from "react-native-localize";
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { createDrawerNavigator, createAppContainer } from 'react-navigation';
-import { ThemeProvider } from 'react-native-elements';
-import colors from '../styles/colors';
-import i18n from '../i18n';
-import appNavigation from './Routes';
-import NthDrawer from '../components/_common/NthDrawer/NthDrawer';
-
 import {
-  faBars as farBars,
-  faLongArrowLeft as farLongArrowLeft,
-  faTimes as farTimes,
-  faBrowser as farBrowser,
-  faInfoCircle as farInfoCircle,
-  faPaperPlane as farPaperPlane,
-
-  faBookOpen as farBookOpen,
-  faSearch as farSearch,
-  faMountains as farMountains,
   faBadge as farBadge,
+  faBars as farBars,
+  faBookOpen as farBookOpen,
+  faBrowser as farBrowser,
+  faCogs as farCogs,
   faFlower as farFlower,
-  faWindowAlt as farWindowAlt,
+  faInfoCircle as farInfoCircle,
+  faLongArrowLeft as farLongArrowLeft,
+  faMountains as farMountains,
+  faPaperPlane as farPaperPlane,
+  faSearch as farSearch,
   faSpiderBlackWidow as farSpiderBlackWidow,
-  faUserFriends as farUserFriends
+  faTimes as farTimes,
+  faUserFriends as farUserFriends,
+  faWindowAlt as farWindowAlt,
 } from '@fortawesome/pro-regular-svg-icons'
-
 import {
-  faLeaf as fasLeaf,
   faArrowSquareLeft as fasArrowSquareLeft,
   faArrowSquareRight as fasArrowSquareRight,
-
-  faBookOpen as fasBookOpen,
-  faSearch as fasSearch,
-  faMountains as fasMountains,
   faBadge as fasBadge,
+  faBookOpen as fasBookOpen,
+  faCogs as fasCogs,
   faFlower as fasFlower,
-  faWindowAlt as fasWindowAlt,
+  faLeaf as fasLeaf,
+  faMountains as fasMountains,
+  faSearch as fasSearch,
   faSpiderBlackWidow as fasSpiderBlackWidow,
-  faUserFriends as fasUserFriends
+  faUserFriends as fasUserFriends,
+  faWindowAlt as fasWindowAlt,
 } from '@fortawesome/pro-solid-svg-icons'
+
+import React, { Component } from 'react';
+import AsyncStorage from '@react-native-community/async-storage';
+import {  I18nManager, StatusBar, View } from 'react-native';
+import { ThemeProvider } from 'react-native-elements';
+import * as RNLocalize from "react-native-localize";
+import RNRestart from "react-native-restart";
+import { createAppContainer, createDrawerNavigator } from 'react-navigation';
+import NthDrawer from '../components/_common/NthDrawer/NthDrawer';
+import i18n from '../i18n';
+import colors from '../styles/colors';
+import appNavigation from './Routes';
 
 library.add(
   fasLeaf,
@@ -64,7 +65,8 @@ library.add(
   farFlower, fasFlower,
   farWindowAlt, fasWindowAlt,
   farSpiderBlackWidow, fasSpiderBlackWidow,
-  farUserFriends, fasUserFriends
+  farUserFriends, fasUserFriends,
+  farCogs, fasCogs,
 );
 
 const theme = {
@@ -88,6 +90,17 @@ class AppWithNavigation extends Component<{}, {}> {
 
   componentWillUnmount() {
     RNLocalize.removeEventListener('change', this.onLanguagesChange);
+  }
+
+  componentDidMount() {
+    AsyncStorage.getItem("lang")
+      .then(language => {
+        I18nManager.forceRTL(false);
+        if (I18nManager.isRTL) {
+          RNRestart.Restart();
+        }
+        i18n.locale = language;
+      });
   }
 
   onLanguagesChange = ({language}: Object) => {

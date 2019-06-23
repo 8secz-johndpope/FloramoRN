@@ -356,13 +356,13 @@ class SearchScreen extends Component<Props, State> {
     let component = null;
     if (hasSearched) {
       headerProps.onPress = () => this.resetResults();
-      headerProps.i18nHeader = 'navigation.title.search';
+      headerProps.i18nHeader = 'navigation.title.searchResults';
       headerProps.type = 'back';
       headerProps.noPadding = true;
       component = this.renderResults();
     } else {
       headerProps.onPress = () => navigation.openDrawer();
-      headerProps.i18nHeader = 'navigation.title.tropicosResults';
+      headerProps.i18nHeader = 'navigation.title.search';
       headerProps.type = 'hamburger';
       headerProps.noPadding = false;
       component = this.renderForm();
