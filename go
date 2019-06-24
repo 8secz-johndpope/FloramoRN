@@ -63,14 +63,23 @@ function check_for_tool_npm() {
   fi
 }
 
+#function task_build_android {
+#  echo "${android_fg}Building android signed APK${normal}"
+#  echo "${android_fg}Did you update the build number and version in android/app/build.gradle??${normal}"
+#  (cd android && ./gradlew app:assembleRelease)
+#  FILENAME="app-release-$(timestamp).apk"
+#  echo "${android_fg}Moving apk to root build/${FILENAME} folder${normal}"
+#  mkdir -p build
+#  mv android/app/build/outputs/apk/release/app-release.apk build/${FILENAME}
+#}
 function task_build_android {
-  echo "${android_fg}Building android signed APK${normal}"
+  echo "${android_fg}Building android signed AAB${normal}"
   echo "${android_fg}Did you update the build number and version in android/app/build.gradle??${normal}"
-  (cd android && ./gradlew assembleRelease)
-  FILENAME="app-release-$(timestamp).apk"
-  echo "${android_fg}Moving apk to root build/${FILENAME} folder${normal}"
+  (cd android && ./gradlew app:bundleRelease)
+  FILENAME="app-bundle-$(timestamp).aab"
+  echo "${android_fg}Moving aab to root build/${FILENAME} folder${normal}"
   mkdir -p build
-  mv android/app/build/outputs/apk/release/app-release.apk build/${FILENAME}
+  mv android/app/build/outputs/bundle/release/app.aab build/${FILENAME}
 }
 
 function task_clean {
