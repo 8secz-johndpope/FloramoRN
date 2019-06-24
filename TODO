@@ -37,9 +37,9 @@
     Herb => pasto
     Grass => hierba
 
-[ ] cuando no hay color quitar la linea en detalles
+[x] cuando no hay color quitar la linea en detalles
 
 SW Back button
-[ ] busco algo, abro planta, boton atras en planta regresa a enciclopedia
+[x] busco algo, abro planta, boton atras en planta regresa a enciclopedia
         (deberia regresar a la lista de resultados)
 
