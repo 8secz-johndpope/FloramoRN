@@ -823,10 +823,6 @@ const plants = {
     description: 'Shrubs or trees up to 8 m tall. Bark finely fissured. Young twigs with dense stellate trichomes giving a woolly appearance. Leaves simple, opposite, lanceolate or oblong-lanceolate, 12-18 x 3-6 cm, leathery, base obtuse, margins crenulated, apex acute, leaf surface bullate above, greyish, tomentose, lanate with stellate trichomes below; venetion prominent. Inflorescence a cymose panicle, terminal, with 4-5 branching axes, 5-15 cm long, ending in heads, each head with 6-18 flowers; bracteoles ligulate, 1-2 cm long. Flowers ca. 3.5 mm long; calyx 5-lobed, 1.5-2.5 mm long, cream colored, with whitish pubescence; corolla 2.5-3.4 mm long, cream colored or yellow when mature, with 4 reflexed lobes; stamens 4.',
     distribution: 'Colombia to Peru.',
   },
-  calceolariaceae_calceolaria_perfoliata: {
-    description: 'Scandent robust herbs, up to 5 m tall, with whitish trichomes throughout the plant. Inflorescence cymose, up to 20 cm long, with numerous flowers. Leaves opposite, triangular-ovate, 3-12 x 2.5-8 cm, papery, base truncate to cordate, margins twice serrate, light green above, white-wooly below; petioles clasping the stem. Flowers conspicous; sepals ovate, up to 15 mm, lemon-yellow, pilose, ciliate; corolla globose, up to 18 mm, bright yellow, bilabiate, lower lip inflated; stamens 2, anthers large, brown. Fruit a capsule, ovoid, up to 7 mm wide, pilous to villous, lemon-yellow when immature.',
-    distribution: 'Costa Rica to Bolivia.',
-  },
   ericaceae_ceratostema_alatum: {
     description: 'Shrubs 1-1.5 m tall, rarely epiphytic, stems striated, glabrous, bark grayish with fine cracks. Leaves alternate, thick, leathery, 2-5 x 1-3 cm elliptical, cuneate or rounded broadly base, rounded to acute apex, margins entire to lightly crenate or minutely serrated; petiole short, erect, thick. Inflorescences axillary, racemose, with 4-7 flowers, glabrous. Flowers tubular, conspicuous; calyx 6-9 mm long; corolla pentagonal, dilated basally, 35-54 x 12-16 mm diameter at base, fleshy, dark scarlet crimson, and markedly deflexed extended lobes, stamens and style exposed; pedicels thick, articulated with the calyx. Berries pentagonal, ca. 1.5 x 2 cm in diameter, green turning reddish, slightly sweet, pedicel thick, reddish.',
     distribution: '',
@@ -934,6 +930,95 @@ const plants = {
   gentianaceae_halenia_pulchella: {
     description: 'Shrubs or trees, up to 6 m tall. Branches opposite-decussate. Stems, leaves and flowers covered with a gray-white dense woolly tomentum. Leaves simple, opposite, lanceolate, 4-7 x 0.5-2.5 cm, leathery, base obtuse or acute, margins crenulated, apex acuminate, bullous above, lanate below, grayish, with stellate trichomes, venation raised above. Inflorescence a cymose panicle, terminal, ca. 8 cm long, with  2-3 branching levels, and ending in several compact heads, each flower head with 15 to 24 flowers. Corolla 3-5 mm long, yellow to orange, with recurved lobes; calyx 5-7 mm long, densely woolly. Fruit capsular, ovoid, 6-10 mm long, bivalved, with persistent floral whorls.',
     distribution: 'Colombia, Ecuador and Bolivia.',
+  },
+  // Added on 15-07-2019
+  scrophulariaceae_alonsoa_meridionalis: {
+    description: 'Erect perennial herbs, up to 1 m tall. Foliage glabrous to glandular-puberulent. Stems 4-angled and winged. Leaves petiolate, up to 8 cm long, broadly lanceolate to ovate, acute apically, cuneate to rounded basally, serrate to dentate. Inflorescences, racemes with opposite flowers below, becoming alternate above, sparsely glandular-pilose. Pedicels upcurved. Flowers resupinate. Corolla up to 12 mm long, 3 upper lobes larger than the 2 lower lobes; orange to red or white with a small yellow patch on the lower lip.',
+    distribution: 'Mexico to Chile',
+  },
+  fabaceae_astragalus_geminiflorus: {
+    description: 'Cushion-forming or prostrate herb, woody at base, often decumbent or caespitose, densely branched, up to 25 cm long. Stems, leaves, and stipules white-silver pubescent. Stems with short internodes, covered with stipules. Stipules triangular, scarious, persistent, imbricate. Leaves imparipinnate, alternate, up to 3.5 cm long, leaflets up to 27, oblong-ovate, up to 4 mm long. Flowers pink-violet, 1.5 cm long, solitary or in groups up to 3, lobes triangular, corolla papilionaceous. Fruit a legume, ovate, mucronate, densely pubescent.',
+    distribution: 'Ecuador',
+  },
+  ericaceae_bejaria_resinosa: {
+    description: 'Densely branched shrubs up to 6 m high, glabrous to rusty tomentose. Leaves ovate to elliptic, rounded at base, gradually acuminate, up to 25 mm long, coriaceous. Inflorescence a raceme, up to 15 flowers. Pedicels densely tomentose. Petals imbricate, red to dark pink, up to 6 cm long, sticky; stamen, white, exerted. Fruit a capsule.',
+    distribution: 'Venezuela to Peru',
+  },
+  eriocaulaceae_eriocaulon_microcephalum: {
+    description: 'Acaulescent, semisubmerged herbs forming compact cushions. Leaves narrowly triangular-acuminate, up to 4 cm long, translucent, tessellate, white in the submerged part and densely pubescent, green above. Inflorescences solitary, on a thin long scape, a globose terminal compact head, suberect, emergent amongst leaves, 5 mm diám., surrounded by papiraceous bracts. Flowers male and female, small, 3 mm, sepals grey, petals white, ciliate.',
+    distribution: 'Mexico and Colombia to Peru',
+  },
+  gentianaceae_gentianella_rupicola: {
+    description: 'Dwarf herbs, patch-forming. Flowering stems up to 3 cm. Leaves closely spaced throughout, elliptic-oblong to oblong-spatulate up to 12 mm long. Flowers up to 3, erect. Calyx lobes oblong to narrowly triangular, abruptly sub-acute or acute, marron. Corolla up to 28 mm, urceolate to nearly globose, scarcely opening, pinkish-red, scarlet, orange-red, or rarely yellow.',
+    distribution: 'Ecuador',
+  },
+  fabaceae_lupinus_alopecuroides: {
+    description: 'Perennial herb, up to 1.5 m tall, erect, not branched, forming large basal rosettes. Stem short, thick, hollowed, wooly-pubescent, with hairs up to 8 mm long. Leaves densely crowded basally, abundant and densely white villous on both sides. Petiole thick, hollowed, up to 20 mm, densely wooly-villous. Leaves palmaticompound, with up to 12 leaflets, up to 12 cm long, 2 cm wide, obtuse, flat, suberect, villous. Inflorescence a raceme up to 80 cm tall, densely lanose, with numerous crowded flowers. Flowers blueish-violet or purplish, up to 16 mm long, somewhat hidden by the bracts and dense hairs. Fruit a legume,ca.  45 × 7 mm wide, reddish, densely wooly-villous.',
+    distribution: 'Venezuela to Peru',
+  },
+  ranunculaceae_ranunculus_gusmannii: {
+    description: 'Robust herbs, prostrate to erect, sometimes caespistose, densely pubescent, up to 30 cm high. Leaves thick, 3-5 lobed, in a rosette or cauline, up to 9 cm long, the lobes deeply toothed. Inflorescence a cyme or flowers solitary. Flowers up to 6 cm diam., globose, often more than one, sepals and petals mostly 5, densely white pubescent. Sepals red or pink, petals yellow to orange, pistils numerous, yellow.',
+    distribution: 'Colombia to Peru',
+  },
+  polygonaceae_rumex_tolimensis: {
+    description: 'Erect robust herbs up to 2 m high with thick horizontal rhizomes. Stems striate-sulcate, when young papillose to pilose above, becoming glabrate with age. Ocreae conspicuous, up to 30 cm long, chartaceous, pale brownish to pinkish, tightly enclosing the young leaves and filled with a mucous substance. Basal leaves, petioles up to 10 cm, blades up to 25 cm long, lanceolate to oblong-lanceolate, apically acute, basally cordate to rounded or acute, margin slightly undulate, above glabrous, below densely papillose to glabrate. Smaller similar stem leaves. Inflorescences terminal and axillary from upper stem leaves, hasta 20 cm long, with numerous small greenish-white flowers, densely to laxly distributed along axis.',
+    distribution: 'Colombia to Ecuador',
+  },
+  cunoniaceae_weinmannia_microphylla: {
+    description: 'Shrubs up to 2 m, sometimes trees up to 10 m high. Leaves imparipinnate, up to 5 cm long, with 6-8 pairs of leaflets, the rhachis hirsute, winged; lateral leaflets opposite, coriaceous, bright green above, dull green beneath oblong to elliptic-oblong, up to 1 cm long, margins serrate-dentate. Racemes usually in pairs, up to 6 cm long. Flowers small, calyx lobes reddish, 0.8 mm, petals pink or white, 1.2 mm long, ovary reddish. Fruit a capsule oblong-ovoid, up to 3.5 mm long, reddish.',
+    distribution: 'Venezuela to Bolivia',
+  },
+  ericaceae_bejaria_aestuans: {
+    description: 'Shrub to small tree, up to 6 m tall. Stem glabrous, tomentose or hispid to glandular-hispid. Bark smooth or cracking longitudinally, gray-brown. Leaves flat, elliptic to lanceolate or oblanceolate, up to 4.5 cm long, base cuneate and decurrent, apex acute, both surfaces glabrous, often glaucous beneath. Inflorescence terminal or axillary, short-racemose, up to 14 flowered; rachis subterete, coarsely angled up to 2.5 cm long, pubescent. Flowers 7-merous, erect, calyx up to 6.1 mm long; corolla spreading-campanulate, the petals obovate, up to 27 mm long, densely ciliate at tips, light to dark pink. Fruit a capsule.',
+    distribution: 'Mexico to Bolivia and Venezuela',
+  },
+  columelliaceae_desfontainia_spinosa: {
+    description: 'Shrubs or rarely small trees up to 4 m high. Leaves opposite or decussate, more or less shining and dark green above, paler beneath, coriaceous, obovate or elliptic, very variable in shape and size, the margins spinose. Flowers 5-merous, solitary or occasionally several together. Corolla long-tubular, up to 45 mm long, fleshy, orange-red outside, with pale yellow limb lobes, glabrous.',
+    distribution: 'Costa Rica, Colombia to Argentina',
+  },
+  asteraceae_espeletia_pycnophylla: {
+    description: 'Giant herbs with a simple, erect trunk up to 3 m tall. Leaves up to 35 cm long, densely lanate, forming a stem-rosette, oblong-elliptic, acute at apex, gradually attenuate at base into a basal sheath. Inflorescences composed of large nodding heads, the heads robust, densely lanate, 10 cm diam. External flowers strapped-shaped, yellow, up to 16 mm long, the internal flowers tubular, dark yellow. Known as frailejón.',
+    distribution: 'Colombia to Ecuador',
+  },
+  chloranthaceae_hedyosmum_purpurascens: {
+    description: 'Aromatic shrubs or small trees up to 4 m tall. Young stems quadrate, purple, smooth, glabrous. Leaves narrowly elliptic to narrowly obovate, up to 6.5 cm long, with acuminate tips, coriaceous, smooth; margins crenulate; free portion of petioles green or purple, the base with sheaths surrounding the stem. Staminate inflorescences up to 4 cm long, composed of 1-3 spikes. Pistillate inflorescences up to 3.2 cm long with 4-6 flowers in a geen bract matrix enclosing the female flowers. Fruiting cymules purple to black, globose, up to 1.2 cm in diam.',
+    distribution: 'Ecuador',
+  },
+  apiaceae_lilaeopsis_schaffneriana: {
+    description: 'Perennial, glabrous, tufted herbs, semi-aquatic from long creeping rootstocks. Leaves cylindrical, up to 30 cm long, acute at apex, scarious-sheathing at base, 7-15-septate. Green umbels 3-4 flowered. Involucral bracts 2-4, ovate, scarious, up to 3 mm long. Flores diminutas. Fruits globose, up to 2 mm in diám., with 5-ribbed, corky. ',
+    distribution: 'USA, Mexico, West Indies, Colombia to Bolivia',
+  },
+  gentianaceae_macrocarpaea_noctiluca: {
+    description: 'Tree or large shrub up to 6 m tall. Leaves broadly ovate, oblong to elliptic, up to 43 cm, coriaceous. Inflorescence up to 34 cm long, up to 18 flowers per branch. Flowers robust, pedicellate, erect to horizontal. Calyx narrowly to broadly campanulate, up to 10 mm, green. Corolla funnel-shaped, up to 50 mm, creamy white to yellow to yellowish green.',
+    distribution: 'Ecuador',
+  },
+  apiaceae_ottoa_oenanthoides: {
+    description: 'Herbs 20-60 cm tall, markedly dark green. Leaves (raquis) mostly basal, up to 60 cm long, largas y muy angostas, up to 8 mm diam., tapering toward apex, septate, sheathing at base. Inflorescence of long-pedunculate umbels; peduncles up to 40 cm long. Rays up to 15, up to 4.5 cm long, spreading-ascending, unequal. Flowers small, white. Fruit up to 7 ×3 mm, brown.',
+    distribution: 'Mexico to Ecuador',
+  },
+  araceae_anthurium_yanacochense: {
+    description: 'Epiphytic herb; cataphylls reddish brown, up to 24 cm long, becoming loosely fibrous. Petioles up to 70 cm long. Leaves ovate-cordate-sagittate, up to 72.5 × 45 cm, dark green and glossy above, paler below, coriaceous, with strong venation. Inflorescence with peduncle up to 66 cm long; spathe erect, purplish violet on inner surface, greenish outside, up to 18 cm long, oblong-lanceolate. Spadix dark violet-purple, long-cylindroid, up to 17 cm long; flowers 6-8 per spiral, up to 3 mm long. Berries reddish-purple, 4.5 mm diam.',
+    distribution: 'Ecuador',
+  },
+  calceolariaceae_calceolaria_perfoliata: {
+    description: 'Scandent herbs, stems up to 5 m long, pilose with purplish hairs. Leaf blades triangular to triangular-ovate up to 12 cm long, acute, cordate to truncate at base, pilose to lanate with whitish hairs, the margins doubly serrate. Inflorescences en cimas con numerosas flores. Sepals yellow green to yellow up to 14 mm long; corolla globosa, bright yellow, upper lip up to 9 mm long, lower lip up to 18 mm long. Capsule ovoid, up to 7 mm long pilose to villous.',
+    distribution: 'Costa Rica, Colombia to Chile',
+  },
+  fabaceae_lupinus_mutabilis: {
+    description: 'Woody herb, densely branching, up to 2 m tall. Leaves palmate, digitate, folioles 5 cm long, villous. Inflorescence 15 cm long, with many flowers. Flowers papillionaceous, mostly blue and white, sometimes pinkish. Fruit a legume, elliptic or oblong, acute at both ends, numerous per plant; legumes with about 8 seed, rounded or ovate, lenticulate, up to 15 mm long, covered with a hardened tegument. Known in Ecuador as chocho.',
+    distribution: 'Venezuela to Bolivia',
+  },
+  asteraceae_mutisia_microphylla: {
+    description: 'Robust climber, climbing for various meters on vegetation. Leaves pinnate, 5-6-paired, more or less arachnoid-pubescent, terminating in a tendril; leaflets up to 3 cm long, subsessile to short-petiolulate, opposite or alternate, broadly ovate, apex acute, mucronate, base rounded, margins revolute, glabrous to slightly arachnoid above, densely ochraceous-lanate beneath. Inflorescence an elongated head with 8 strapped-shaped external flowers, the limb red to purple, up to 35 mm long, internal flowers 16-18, tubular, bilabiate, up to 50 mm long.',
+    distribution: 'Ecuador',
+  },
+  proteaceae_oreocallis_grandiflora: {
+    description: 'Shrubs or trees up to 8 m tall. Leaves up to 16 × 8 cm, obovate to elliptic, apex obtuse, margins entire, coriaceous, pruinose. Inflorescence a showy pyramidal raceme with numerous flowers. Flowers long tubular, yellowish, purple or pink, 4-7 cm long, with small ovate lobes forming a globose apical structure, the tube curved and opening at anthesis; anthers in the perianth lobes, the style long with a globose stigma. Fruit a large follicle, 10 × 2 cm, leathery, with numerous winged seeds. Known in Ecuador as cucharillo, gañal.',
+    distribution: 'Ecuador to Peru',
+  },
+  asteraceae_culcitium_canescens: {
+    description: 'Herbs forming large rosettes, densely grayish-white lanose on leaves and inflorescences. Leaves to  40 × 10 cm, long espatulate, sheathing at base. Inflorescences on long peduncles, with nodding heads ca. 5 cm diám. Flowers numerous, tubular, ca. 8 mm long, yellowish.',
+    distribution: 'Colombia to Bolivia',
   },
 };
 export default plants;

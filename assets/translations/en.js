@@ -110,7 +110,7 @@ const en = {
   lifeForms: {
     aquatic: 'Aquatic',
     cushion: 'Cushion',
-    fern: 'Fern',
+    fern: 'Fern/Other',
     grass: 'Grass',
     herb: 'Herb',
     liana: 'Liana',

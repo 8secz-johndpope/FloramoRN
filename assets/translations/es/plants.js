@@ -823,10 +823,6 @@ const plants = {
     description: 'Arbustos o árboles hasta 8 m de altura. Corteza finamente agrietada. Ramitas jóvenes con tricomas estrellados densos que dan un aspecto lanuginoso o lanoso. Hojas simples, opuestas, lanceoladas u oblongas-lanceoladas, 12-18 x 3-6 cm, coriáceas, la base obtusa, los márgenes crenulados, el ápice agudo, el haz bullado; el envés grisáceo, tomentoso, lanuginoso o lanoso, con tricomas estrellados; nervaduras prominentes. Inflorescencia una panícula cimosa, terminal, con 4-5 ejes de ramificación, 5-15 cm de largo, terminando en cabezas, cada cabeza con 6-18 flores; bractéolas ligulares, 1-2 cm de largo. Flores ca. 3.5 mm de largo; cáliz con 5 lóbulos, 1.5-2.5 mm de largo, crema, con pubescencia blanquecina; corola 2.5-3.4 mm de largo, crema o amarilla al madurar, con 4 lóbulos reflexos; estambres 4.',
     distribution: 'Colombia a Perú.',
   },
-  calceolariaceae_calceolaria_perfoliata: {
-    description: 'Hierbas robustas escandentes, hasta 5 m de altura, con tricomas blanquecinos en toda la planta. Inflorescencia cimosa, hasta 20 cm de largo, con numerosas flores. Hojas opuestas, triangular-ovadas, 3-12 x 2.5-8 cm, cartáceas, la base cordata a truncada, los márgenes doblemente serrados, el haz verde claro, el envés blanco-lanado; pecíolos unidos alrededor del tallo. Flores vistosas; sépalos ovados, hasta 15 mm, amarillo-limón, pilosos, ciliados; corola globosa, hasta 18 mm, amarillo brillante, bilabiada, el labio inferior inflado; estambres 2, las anteras grandes, cafés. Fruto una cápsula, ovoide, hasta 7 mm de ancho, pilosa a vellosa, amarillo-limón cuando inmadura.',
-    distribution: 'Costa Rica a Bolivia.',
-  },
   ericaceae_ceratostema_alatum: {
     description: 'Arbustos de 1-1.5 m de alto, raramente epífitos, los tallos estriados, glabros, la corteza grisácea con finos agrietamientos. Hojas alternas, gruesas, coriáceas, elípticas 2-5 x 1-3 cm, la base anchamente cuneada o redondeada, el ápice agudo a redondeado, los márgenes enteros a ligeramente crenados o menudamente serrados; pecíolo corto, erecto, grueso. Inflorescencias axilares, racimosas, con 4-7 flores, glabras. Flores tubulares, conspicuas; cáliz 6-9 mm de largo; corola pentagonal, basalmente dilatada, 35-54 x 12-16 mm de diámetro basal, carnosa, de un carmesí escarlata oscuro, los lóbulos extendidos y marcadamente deflexos, los estambres y el estilo expuestos; pedicelos gruesos, articulados con el cáliz. Frutos bayas pentagonales, ca. 1.5 x 2 cm de diámetro, verde tornando rojizo, ligeramente dulces, el pedicelo craso, rojizo.',
     distribution: '',
@@ -934,6 +930,95 @@ const plants = {
   gentianaceae_halenia_pulchella: {
     description: 'Hierbas perennes; los tallos decumbentes o estoloníferos, hasta 18 cm de alto, simples o con pocas ramas. Tallos florales hasta 13 cm de alto. Flores nutantes, en pedicelos ascendentes de hasta 20 mm. Inflorescencia en una cima umbeloide de 3-9, solitarias o en conjunto. Hojas opuestas, verticiladas, numerosas, amontonadas, 8-30 x 4-9 mm, en las partes bajas y en los tallos vegetativos son más juntas, ascendentes, angostas, espatuladas, elípticas a obovadas, obtusas a agudas, en las partes más altas elípticas u oblanceoladas a espatuladas-obovadas, agudas o acuminadas. Cáliz cortamente tubular, 4.5-8.5 mm, los lóbulos oblongo-lanceolados, erectos, hasta 2 mm de ancho, agudos a apiculados; corola hasta 12 mm, de un verde amarillento a amarillo, los lóbulos ovados, hasta 4 mm de ancho, con dientes cerca del ápice, subagudos a agudos, con espolones delgados, recurvados y péndulos, hasta 3.5 x 1.5 mm.',
     distribution: 'Ecuador.',
+  },
+  // Added on 15-07-2019
+  scrophulariaceae_alonsoa_meridionalis: {
+    description: 'Hierbas perennes, erectas, de hasta 1 m de alto, glabras a glanduloso-puberulentas. Tallos 4-angulados y alados. Hojas pecioladas, hasta 8 cm de largo, anchamente lanceoladas a ovadas, apicalmente agudas, base cuneada a redondeada, aserradas a dentadas. Inflorescencias en racimos con flores opuestas basalmente, volviéndose alternas apicalmente, escasamente glanduloso-pilosas. Pedicelos recurvados hacia arriba. Flores resupinadas. Corola hasta 12 mm de largo, los 3 lóbulos superiores más grandes que los 2 lóbulos inferiores, anaranjadas a rojas o blancas con una mancha amarilla en el labio inferior.',
+    distribution: 'Mexico a Chile',
+  },
+  fabaceae_astragalus_geminiflorus: {
+    description: 'Almohadillas o hierbas postradas, leñosas en la base, usualmente decumbentes o cespitosas, densamente ramificadas, de hasta 25 cm de largo. Tallos, hojas y estípulas con pubescencia blanco-plateada. Tallos con entrenudos cortos, cubiertos con estípulas. Estípulas triangulares, escariosas, persistentes, imbricadas. Hojas imparpinnadas, alternas, de hasta 3.5 cm de largo, foliolos hasta 27, oblongo-ovados, de hasta 4 mm de largo. Flores rosado-violeta, 1.5 cm de largo, solitarias o en grupos de hasta 3, lóbulos triangulares, corola papilionácea. Fruto una legumbre, ovada, mucronata, densamente pubescente.',
+    distribution: ' Ecuador',
+  },
+  ericaceae_bejaria_resinosa: {
+    description: 'Arbustos muy ramificados de hasta 6 m de alto, glabros a rojizo-tomentosos. Las ramitas jóvenes densamente tomentosas. Hojas ovadas a elípticas, redondeadas en la base, gradualmente acuminadas, de hasta 25 mm, coriáceas.  Inflorescencias en racimos, hasta 25 flores. Pedicelos densamente tomentosos. Pétalos imbricados, rosado oscuros o rojos, hasta de 6 cm, pegajosos; estambres exertos, blancos. Fruto una cápsula.',
+    distribution: 'Venezuela a Perú',
+  },
+  eriocaulaceae_eriocaulon_microcephalum: {
+    description: 'Hierbas acuáticas, acaulescentes, semisumergidas, formando almohadillas. Hojas triangular-acuminadas, de hasta 4 cm de largo, translúcidas, teseladas, blancas en la parte sumergida y densamente pubescentes, verdes arriba. Inflorescencias solitarias y terminales, sobre un escape largo y delgado, una cabezuela compacta, emergente entre las hojas, 5 mm diámetro, rodeada por brácteas papiráceas. Flores masculinas y femeninas pequeñas, blancas, 3 mm, sépalos grises, pétalos blancos, ciliados.',
+    distribution: 'México y Colombia a Perú',
+  },
+  gentianaceae_gentianella_rupicola: {
+    description: 'Hierbas enanas, formando tapetes. Tallos florales de hasta 3 cm. Hojas esparcidas, elíptico-oblongas a oblongo-espatuladas, de hasta 12 mm de largo. Flores hasta 3, erectas. Cáliz con los lóbulos oblongos a estrechamente triangular, abruptamente sub-agudos o agudos, café-rojizos. Corola de hasta 28 mm, urceolada a casi globosa, apenas abierta, rojo-rosácea, escarlata, rojo anaranjada o rara vez amarilla.',
+    distribution: 'Ecuador',
+  },
+  fabaceae_lupinus_alopecuroides: {
+    description: 'Planta perenne, herbácea, de hasta 1 m de altura, erecta no ramosa, formando rosetas basales grandes. Tallo muy corto, grueso, fistuloso, lanoso-pubescente y velloso, pelos de hasta 8 mm de largo. Hojas densamente reunidas en la base, abundante y densamente blanco-vellosas por ambas caras. Pecíolo grueso, hueco, de hasta 20 mm, densamente lanoso-velloso. Hojas palmaticompuestas, hasta 12 folíolos de 12 cm de longitud y 2 cm de ancho, obtusos, complanados, suberectos, vellosos. Inflorescencias en racimos de hasta 80 cm de largo, lanosas, con muchas flores amontonadas. Flores violáceo-azuladas o purpúreas de hasta 16 mm de longitud, escondidas entre las brácteas y pelos denso. Fruto en legumbre de aprox. 45 × 7 mm, rojizo, densamente lanoso-velloso. ',
+    distribution: 'Venezuela a Perú',
+  },
+  ranunculaceae_ranunculus_gusmannii: {
+    description: 'Hierbas robustas, postradas a erectas, a veces cespitosas, densamente pubescentes, de hasta 30 cm de alto. Hojas gruesas, 3-5-lobuladas, en roseta o caulinares, de hasta 9 cm de largo, los lóbulos profundamente dentados. Inflorescencias cimosas o flores solitarias. Flores de hasta 6 cm de diám., globosas, a menudo más de una. Sépalos y pétalos en general 5, densamente blanco-pubescentes. Sépalos rojos a rosados, pétalos amarillos a anaranjados, pistilos numerosos, amarillos.',
+    distribution: 'Colombia a Perú',
+  },
+  polygonaceae_rumex_tolimensis: {
+    description: 'Hierbas robustas de hasta 2 m de alto con gruesos rizomas horizontales. Tallos estriado-surcados, papilosos a pilosos apicalmente de jóvenes, volviéndose glabros con el tiempo. Ócrea conspicua, de hasta 30 cm de largo, cartácea, café pálido a rosácea, encerrando apretadamente las hojas jóvenes y llenas de una sustancia mucosa. Hojas basales, peciolos de hasta 10 cm, hojas de hasta 25 cm de largo, lanceoladas a oblongas-lanceoladas, apicalmente agudas, basalmente cordadas a redondeadas o agudas, márgenes ligeramente ondulados, glabras arriba, abajo densamente papilosas a glabrescentes. Hojas de los tallos similares, pero más pequeñas. Inflorescencias terminales y axilares desde las hojas superiores del tallo, de hasta 20 cm de largo, con numerosas flores blanco-verdosas, pequeñas, densa a laxamente distribuidos según el eje.',
+    distribution: 'Colombia y Ecuador',
+  },
+  cunoniaceae_weinmannia_microphylla: {
+    description: 'Arbustos de hasta 2 m, a veces árboles de hasta 10 m de alto. Hojas imparpinadas, hasta 5 cm de largo, con 6-8 pares de folíolos, el raquis hirsuto, alado; folíolos laterales opuestos, coriáceos, verde brillantes en el haz, verde pálido en el envés, de hasta 1 cm de largo, los márgenes serrado-dentados. Racimos en pares, de hasta 6 cm de largo. Flores pequeñas, lóbulos del cáliz rojizos, 0.8 mm de largo, pétalos rosas o blancos, 1.2 mm de largo, ovarios rojizos. Fruto en cápsula oblongo-ovoide, de hasta 3.5 mm de largo, rojiza.',
+    distribution: 'Venezuela a Bolivia',
+  },
+  ericaceae_bejaria_aestuans: {
+    description: 'Arbustos o árboles pequeños de hasta 6 m de alto. Tallo glabroso, tomentoso o híspido a glandular-híspido. Corteza lisa o craqueada longitudinalmente, gris-café. Hojas planas, elípticas a lanceoladas o oblanceoladas, de hasta 4.5 cm de largo, base cuneada o decurrente, ápice agudo, ambas superficies glabrosas, con frecuencia glaucosas abajo. Inflorescencia terminal o axilar, corta-racemosa, de hasta 14 flores; raquis subterete, engrosándose hasta 2.5 cm de largo, pubescente. Flores 7-meras, erectas, cáliz de hasta 6.1 mm de largo; corola extendida-campanulada, pétalos obovados, de hasta 27 mm de largo, densamente ciliados en las puntas, rosadas a rojas. Fruto en cápsula.',
+    distribution: 'México a Bolivia y Venezuela',
+  },
+  columelliaceae_desfontainia_spinosa: {
+    description: 'Arbustos o rara vez árboles pequeños de hasta 4 m de alto. Hojas opuestas o decusadas, más o menos brillantes y verde oscuras arriba, más pálidas abajo, coriáceas, obovadas o elípticas, muy variables en forma y tamaño, los márgenes espinosos. Flores 5-meras, solitarias u ocasionalmente muchas juntas en las axilas de las hojas. Corola largamente tubular, hasta 45 mm de largo, carnosa, rojo-anaranjado por fuera, con los lobules del limbo amarillo pálido, glabra',
+    distribution: 'Costa Rica, Colombia a Argentina',
+  },
+  asteraceae_espeletia_pycnophylla: {
+    description: 'Hierbas gigantes con un tronco simple, erecto, de hasta 3 m de alto. Hojas de hasta 35 cm de largo, densamente lanosas, en caulirosetas, oblongas-elípticas, agudas en el ápice, gradualmente atenuadas en la base en una vaina. Inflorescencias compuestas de cabezuelas nutantes, las cabezuelas robustas, desnamente lanosas, 10 cm de diám.  Flores externas con una lengüeta, amarillas, de hasta 16 mm de largo, las flores internas tubulares, amarillo oscuro. Se conoce como frailejón.',
+    distribution: 'Colombia a Ecuador',
+  },
+  chloranthaceae_hedyosmum_purpurascens: {
+    description: 'Arbustos o pequeños árboles aromáticos, de hasta 4 m de alto. Tallos jóvenes cuadrangulares, púrpuras, lisos. Hojas angostamente elípticas a angostamente obovadas, de hasta 6.5 cm de largo, acuminadas, coriáceas, lisas, los márgenes crenulados; porción libre de peciolos verde o púrpura, la base envainante y rodeando al tallo. Inflorescencias estaminadas de hasta 4 cm de largo, compuestas de 1-3 espigas cortas. Inflorescencias pistiladas de hasta 3.2 cm de largo con 4-6 flores en una matriz de brácteas verdes encerrando las flores femeninas. Frutos en cimas pequeñas, púrpuras a negras, globosas, de hasta 1.2 cm en diámetro.',
+    distribution: 'Ecuador',
+  },
+  apiaceae_lilaeopsis_schaffneriana: {
+    description: 'Hierbas fasciculadas, semiacuáticas, con largos rizomas, rastreros. Hojas cilíndricas, hasta 30 cm de largo, agudas en el ápice, escarioso-envainadas en la base, 7-15 septadas. Umbelas verdes, 3-4 flores. Brácteas involucrales de 2-4, ovadas, escariosas, de hasta 3 mm de largo. Flores diminutas. Frutos globosos, de hasta 2 mm de diám., con 5 costillas, corchoso.',
+    distribution: 'Estados Unidos, México, Antillas, Colombia a Bolivia',
+  },
+  gentianaceae_macrocarpaea_noctiluca: {
+    description: 'Árboles o arbustos grandes de hasta 6 m de algo.  Hojas ampliamente ovadas, oblongas a elípticas, de hasta 43 cm, coriáceas. Inflorescencias de hasta 34 cm de largo, hasta 18 flores por rama. Flores robustas, pediceladas, erectas a horizontales. Cáliz angosta a ampliamente campanulado, de hasta 10 mm, verde. Corola en forma de embudo, de hasta 50 mm, blanca cremosa a amarilla o verde amarillento.',
+    distribution: 'Ecuador',
+  },
+  apiaceae_ottoa_oenanthoides: {
+    description: 'Hierbas 20-60 cm de alto, notablemente verde oscuro. Hojas (raquis) principalmente basales, de hasta 60 cm de largo, largas y muy angostas, de hasta 8 mm diám., estrechándose hacia el ápice, septadas. Inflorescencias en umbelas; pedúnculos largos, de hasta 40 cm de largo. Rayos hasta 15, de hasta 4.5 cm de largo, extendiéndose, ascendiendo, desiguales. Flores pequeñas, blancas. Fruto hasta 7 × 3 mm, café.',
+    distribution: 'México a Ecuador',
+  },
+  araceae_anthurium_yanacochense: {
+    description: 'Hierbas epífitas; catafilos café-rojizos, de hasta 24 cm de largo, volviéndose fibrosos. Pecíolos de hasta 70 cm de largo. Hojas ovado-cordado-sagitadas, de hasta 72.5 × 45 cm, verde oscuro y lustrosas arriba, moderadamente pálidas abajo, coriáceas, con nervios gruesos. Inflorescencia con pedúnculo de hasta 66 cm de largo; espata erecta, violeta purpúrea por dentro, verdosa por fuera, de hasta 18 cm de largo, oblongo-lanceolada. Espádice violeta-púrpura oscuro, largamente cilindroide, hasta 17 cm. Flores 6-8 por espiral, de hasta 3 mm de largo. Bayas purpúreo-rojizas, 4.5 mm diám.',
+    distribution: 'Ecuador',
+  },
+  calceolariaceae_calceolaria_perfoliata: {
+    description: 'Hierbas escandentes, tallos de hasta 5 m de alto, pilosas con pelos púrpura. Hojas triangulares a triangular-ovadas de hasta 12 cm de largo, agudas, cordatas a truncadas en la base, pilosas a lanadas con pelos blancos, márgenes doblemente serrados. Inflorescencias en cimas con numerosas flores. Sépalos amarillo-verdes a amarillos hasta 14 mm de largo; corolla globosa, amarillo brillante, el labio superior de hasta 9 mm de largo, el labio inferior de hasta 18 mm de largo. Cápsula ovoide, de hasta 7 mm de largo, pilosa a vellosa.',
+    distribution: 'Costa Rica, Colombia a Chile',
+  },
+  fabaceae_lupinus_mutabilis: {
+    description: 'Hierbas robustas, muy ramificadas, de hasta 2 m de alto. Hojas palmeadas, digitadas, los folíolos 5 cm de largo, vellosos. Inflorecencias 15 cm de largo, con numerosas flores. Flores papilionáceas, principalmente azules con blanco, a veces rosadas. Fruto en legumbre, elíptico u oblongo, agudo en ambos extremos, numerosos por plant; legumbres con hasta 8 semillas, redondeadas u ovadas, lenticulares de hasta 15 mm de largo, recubiertas por un tegumento endurecido. Conocida en Ecuador como chocho',
+    distribution: 'Venezuela a Bolivia',
+  },
+  asteraceae_mutisia_microphylla: {
+    description: ' Bejuco robusto, trepando entre la vegetación por varios metros. Hojas pinnadas, en pares de 5-6, con pubescencia aracnoideo, terminando en un zarcillo. Folíolos de hasta 3 cm de largo, subsésiles a cortamente petiolulados, opuestos o alternos, ampliamente ovados, ápice agudo, mucronado, base redondeada, márgenes revolutos, glabrosos a ligeramente aracnoideos arriba, densamente lanados, color ocre abajo. Inflorecencia una cabezuela alargada con 8 flores externas con foma de lengüeta, rojas a púrpura, el limbo de hasta 35 mm de largo,  las flores internas tubulares, 16-18, bilabiadaS, de hasta 50 mm de largo.',
+    distribution: 'Ecuador',
+  },
+  proteaceae_oreocallis_grandiflora: {
+    description: 'Arbustos o árboles hasta de 8 m de altura. Hojas de hasta 16 × 8 cm, obovadas a elípticas, ápice obtuso, márgenes enteros, coriáceas, pruinosas. Inflorescencia un racimo pyramidal, vistoso, con numerosas flores. Flores tubulares, largas, amarillentas, púrpureas o rosadas, 4-7 cm de largo, con lóbulos pequeños ovados formando una estructura globosa apical, el tubo recurvado y abriéndose por un costado en la floración; anteras en los lóbulos del perianto, el estilo largo con estigma globoso. Fruto un folículo grande, 10 × 2 cm, coriáceo, con numerosas semillas aladas. En Ecuador se conoce como cucharillo, gañal.',
+    distribution: 'Ecuador a Perú',
+  },
+  asteraceae_culcitium_canescens: {
+    description: 'Hierbas en rosetas grandes, densamente blanco-grisáceo lanosas en hojas e inflorescencias. Hojas hasta 40 × 10 cm, largamente espatuladas, envainadoras en la base. Inflorescencias en pedúnculos largos, con cabezuelas nutantes de ca. 5 cm de diám. Flores numerosas, tubulares, ca. 8 mm de largo, amarillentas.',
+    distribution: 'Colombia a Bolivia',
   },
 };
 

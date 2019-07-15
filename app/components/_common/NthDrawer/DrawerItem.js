@@ -41,9 +41,9 @@ class DrawerItem extends Component<Props, {}> {
     }
     const style = { width: 24, height: 24, marginRight: 20 };
     if (selected) {
-      return <Image resizeMode="center" source={item.imageSolid} style={style} />;
+      return <Image resizeMode="contain" source={item.imageSolid} style={style} />;
     }
-    return <Image resizeMode="center" source={item.imageLight} style={style} />;
+    return <Image resizeMode="contain" source={item.imageLight} style={style} />;
   }
 
   render() {

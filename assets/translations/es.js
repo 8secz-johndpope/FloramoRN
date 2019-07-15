@@ -110,7 +110,7 @@ const es = {
   lifeForms: {
     aquatic: 'Acuática',
     cushion: 'Almohadilla',
-    fern: 'Helecho',
+    fern: 'Helecho/Otro',
     grass: 'Pasto',
     herb: 'Hierba',
     liana: 'Trepadora',

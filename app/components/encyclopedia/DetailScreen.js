@@ -157,7 +157,7 @@ class DetailScreen extends Component<Props, State> {
         key={`photo_${i}`}
         onPress={() => this.openOverlay(i)}
       >
-        <Image source={photo} style={styles.galleryPhoto} />
+        <Image resizeMode="contain" source={photo} style={styles.galleryPhoto} />
       </TouchableOpacity>
     )
   }
@@ -235,7 +235,7 @@ class DetailScreen extends Component<Props, State> {
           style={{marginBottom: 8}}
         />
         <Image
-          resizeMode="cover"
+          resizeMode="contain"
           source={plant.photos[index]}
           style={{width: imageSize, height: imageSize}}
         />
