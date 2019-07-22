@@ -119,10 +119,10 @@ android {
         applicationId "com.lzm.Cajas"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 45
-        versionName "3.0.7-alpha"
+        versionCode 47
+        versionName "3.0.8-alpha"
         ndk {
-            abiFilters "armeabi-v7a", "x86"
+            abiFilters 'armeabi-v7a','arm64-v8a','x86','x86_64'
         }
     }
     signingConfigs {
