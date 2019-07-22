@@ -1,12 +1,12 @@
 import { StyleSheet } from 'react-native';
-import colors from "../../styles/colors";
+import colors from '../../styles/colors';
 
 const encyclopediaStyles = StyleSheet.create({
   flex1: {
-    flex: 1
+    flex: 1,
   },
   flexRow: {
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
   detailRow: {
     flexDirection: 'row',
@@ -32,19 +32,19 @@ const encyclopediaStyles = StyleSheet.create({
     marginRight: 16,
   },
   overlayButton: {
-    position: 'absolute'
+    position: 'absolute',
   },
   overlayButtonTop: {
-    top: 15
+    top: 15,
   },
   overlayButtonBottom: {
-    bottom: 15
+    bottom: 15,
   },
   overlayButtonRight: {
-    right: 15
+    right: 15,
   },
   overlayButtonLeft: {
-    left: 15
+    left: 15,
   },
   overlay: {
     backgroundColor: colors.overlayBackground,
@@ -67,8 +67,8 @@ const encyclopediaStyles = StyleSheet.create({
   tropicosLogo: {
     width: 24,
     height: 24,
-    marginRight: 10
-  }
+    marginRight: 10,
+  },
 });
 
 export default encyclopediaStyles;

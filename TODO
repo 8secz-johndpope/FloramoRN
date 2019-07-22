@@ -1,4 +1,34 @@
-[ ] logo de mobot no sale bien en el drawer
+Acknowledgments
+[x] change order: move “the Nat. Geo. Soc.” after Christoph..
+[x] NEW FOTOS FROM EMAIL
+[x] add require('../assets/images/encyclopedia/full_size/Rumex_toli_4.jpg') to  'polygonaceae_rumex_tolimensis'
+[x] Bomarea glaucenscens: + yellow
+[x] Brachyotum jamesonii: + pink
+[x] Buddleja pichinchensis: make the yellow flowers the thumb
+[x] Geranium sibbaldioides:
+    [x] fix distribution translation
+    [x] delete subsp. sibbaldioides
+    [x] link only to Geranium sibbaldioides (find new link in Tropicos)
+        ^ please check that this is the right one
+[x] Hedyosmum purpurascens: fix description:
+    [x] correct spelling to read: green... (in bracts)... Change at end to read: Fruiting cymules white, (delete purple to black)
+    [x] tmbn en español borrar ‘ púrpuras a negras’ y poner blancas ...
+[x] Mutisia microphylla: fix description:
+    [x] corregir a s minúscula en la palabra “bilabiadaS”
+    [x] corregir a q se lea Inflorescencia (es con sc)
+[x] Ottoa oenanthoides: + rosette
+[x] Ranunculus gusmannii: fix casing so it's in the right order
+[x] Columellia oblonga subsp. sericea: fix distribution translation
+[x] Bejaria resinosa: photo 3/3: crop the hand
+[x] Gaultheria amoena: photo 2/2 zoom in
+[x] Gentianella hirculus: add photo we use for the app
+[x] delete search for Common name in tropicos search
+[x] about: change "identify some 240 species" to "identify over 250 species"
+    [x] en
+    [x] es
+
+
+[x] logo de mobot no sale bien en el drawer
 [x] fern: Fern/Other | Helecho/Otro
 
 [x] Ranunculus limoselloides: +yellow

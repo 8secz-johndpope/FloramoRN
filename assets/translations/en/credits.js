@@ -31,7 +31,7 @@ const credits = {
       title: 'Acknowledgments',
       text: 'We thank the support of the Prometeo program of Ecuador’s Secretaría de Educación Superior, Ciencia, Tecnología e Innovación '
         + 'for a fellowship to C. Ulloa Ulloa, Ph.D. at Ecuador’s National Herbarium of the National Institute of Biodiversity and at the Herbarium of Universidad del Azuay. '
-        + 'We thank the support from the National Geographic Society and from Dr. C. Davidson and S. Cristoph. '
+        + 'We thank the support from Dr. C. Davidson and S. Cristoph. and from the National Geographic Society. '
         + 'To the Ministerio del Ambiente del Ecuador and Province offices, to the project Mapa de Vegetación del Ecuador, and to Etapa-Parque Nacional Cajas. '
         + 'M. Unda helped with updates and translation.',
       type: 'text',

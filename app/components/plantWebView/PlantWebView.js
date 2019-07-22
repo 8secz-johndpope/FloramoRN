@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { BackHandler, Linking, TouchableOpacity } from 'react-native';
 import { WebView } from 'react-native-webview';
-import appNavigation from "../../navigation/Routes";
+import appNavigation from '../../navigation/Routes';
 import colors from '../../styles/colors';
 import NthContainer from '../_common/NthHeader/NthContainer';
 import NthIcon from '../_common/NthIcon/NthIcon';
@@ -31,7 +31,7 @@ const renderTopMessage = url => (
       color={colors.secondary500}
       size={20}
       light
-      style={{marginRight: 8}}
+      style={{ marginRight: 8 }}
     />
     <NthText
       text="Open this page in my browser"
@@ -42,6 +42,7 @@ const renderTopMessage = url => (
 
 class PlantWebView extends Component<Props, State> {
   _didFocusSubscription;
+
   _willBlurSubscription;
 
   constructor(props: Props) {
@@ -52,15 +53,11 @@ class PlantWebView extends Component<Props, State> {
       loaded: 0,
     };
 
-    this._didFocusSubscription = props.navigation.addListener('didFocus', () =>
-      BackHandler.addEventListener('hardwareBackPress', this.onBackButtonPressAndroid)
-    );
+    this._didFocusSubscription = props.navigation.addListener('didFocus', () => BackHandler.addEventListener('hardwareBackPress', this.onBackButtonPressAndroid));
   }
 
   componentDidMount() {
-    this._willBlurSubscription = this.props.navigation.addListener('willBlur', () =>
-      BackHandler.removeEventListener('hardwareBackPress', this.onBackButtonPressAndroid)
-    );
+    this._willBlurSubscription = this.props.navigation.addListener('willBlur', () => BackHandler.removeEventListener('hardwareBackPress', this.onBackButtonPressAndroid));
   }
 
   onBackButtonPressAndroid = () => {
@@ -81,34 +78,34 @@ class PlantWebView extends Component<Props, State> {
   renderWebView(url: string) {
     return (
       <WebView
-        source={{uri: url}}
-        onLoadStart={() => this.setState({isLoading: true, loadedOnce: true})}
-        onLoadEnd={() => this.setState({isLoading: false})}
+        source={{ uri: url }}
+        onLoadStart={() => this.setState({ isLoading: true, loadedOnce: true })}
+        onLoadEnd={() => this.setState({ isLoading: false })}
         onLoadProgress={(e) => {
           const loaded = e.nativeEvent.progress;
-          this.setState({loaded, isLoading: loaded < 1});
+          this.setState({ loaded, isLoading: loaded < 1 });
         }}
       />
     );
   }
 
   onBackPressed() {
-    const {navigation} = this.props;
-    const {plant, from} = navigation.state.params;
+    const { navigation } = this.props;
+    const { plant, from } = navigation.state.params;
     if (from === 'tropicos') {
       navigation.navigate(appNavigation.navigationTree.tropicos);
       return;
     }
     navigation.navigate({
       ...appNavigation.navigationTree.detail,
-      ...{params: {plant, from}},
+      ...{ params: { plant, from } },
     });
   }
 
   render() {
-    const {navigation} = this.props;
-    const {url} = navigation.state.params;
-    const {isLoading, loaded, loadedOnce} = this.state;
+    const { navigation } = this.props;
+    const { url } = navigation.state.params;
+    const { isLoading, loaded, loadedOnce } = this.state;
     return (
       <NthContainer
         onPress={() => this.onBackPressed()}

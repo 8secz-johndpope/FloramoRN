@@ -32,7 +32,7 @@ const credits = {
       text: 'Agradecemos el patrocinio del proyecto Prometeo de la Secretaría de Educación Superior, Ciencia, Tecnología e Innovación de la República del Ecuador '
         + 'a través de la vinculación de C. Ulloa Ulloa, Ph.D. como investigadora Prometeo a en el Herbario Nacional del '
         + 'Museo Ecuatoriano de Ciencias Naturales-Instituto Nacional de Biodiversidad y en el Herbario de la Universidad del Azuay. '
-        + 'Agradecemos el apoyo de la National Geographic Society y de Dr. C. Davidson y S. Christoph. '
+        + 'Agradecemos el apoyo de Dr. C. Davidson y S. Christoph. y de la National Geographic Society. '
         + 'Al Ministerio del Ambiente del Ecuador y sus direcciones provinciales, al proyecto Mapa de Vegetación del Ecuador, a Etapa-Parque Nacional Cajas. '
         + 'M. Unda ayudó con la actualización de datos y traducciones.',
       type: 'text',

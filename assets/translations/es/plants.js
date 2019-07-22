@@ -531,7 +531,7 @@ const plants = {
     description: 'Hierbas pequeñas, arrosetadas, hasta de 4 cm de diámetro, crecen solitarias o en pequeños grupos. Hojas largamente lanceoladas, hasta 18 x 3 mm, muy angostas, el haz azul-morado, los márgenes ciliados. Flores numerosas en el centro de la roseta, pequeñas, hasta 8 mm de largo; corola blanca con 5 lóbulos; estambres unidos en un tubo de 5 mm, las anteras negras. Fruto en cápsula.',
     distribution: 'Endémica del Ecuador, con distribución restringida a la provincia del Azuay.',
   },
-  'campanulaceae_lysipomia_sphagnophila subsp. variabilis': {
+  'campanulaceae_lysipomia_sphagnophila_subsp_variabilis': {
     description: 'Hierbas pequeñas con rizomas subterráneos profundos, los tallos cortos, hasta 2 cm. Hojas en una roseta basal, elípticas a oblanceoladas, hasta de 15 mm de largo, ovadas, ligeramente calloso-crenuladas, gruesas, con tintes morados, ciliadas. Flores numerosas en el centro de la roseta, hasta de 5 mm de largo, el cáliz morado, ciliado, la corola blanca o amarillo pálido, con 2 lóbulos diminutos dorsales y 3 ventrales, triangulares; estambres fusionados en una columna central. Especies similares: Lysipomia oellgaardii.',
     distribution: 'Lysipomia sphagnophila se distribuye en los páramos desde el sur de Colombia hasta el norte del Perú, no obstante, la subespecie variabilis es endémica del sur del Ecuador y ha sido registrada en los páramos de Azuay y Loja.',
   },
@@ -735,7 +735,7 @@ const plants = {
     description: 'Macollas robustas de 30-50 cm de alto; hojas basales con vainas fibrosas que envuelven la base de los tallos y en su parte apical están cubiertas por una densa masa de tricomas largos, blancos, que cubren también la base de la lámina; culmos simples, erectos con una hilera de tricomas barbados bajo los nudos. Hojas involutas, 5-20 cm x 2-3 mm, los márgenes escabrosos. Panículas contraídas, elípticas, 4-10 x 2-3 cm, con ramificaciones cortas y cubiertas por tricomas blancos largos y cortos. Espiguillas lateramente comprimidas con 2 a 3 flósculos; glumas 3-nervias, lanceoladas, color crema, 2,4 cm de largo, que cubren totalmente los flósculos; lema estrechamente lanceolada, 6 mm de largo, con el ápice bífido y una arista apical de 5 mm, originada en la mitad de los lóbulos; pálea lanceolada, 5 mm de largo, con 2 quillas laterales ciliadas; callo cubierto con tricomas blancos, 4-5 mm de largo. Especies similares: Cortaderia bífida Pilg.',
     distribution: 'En los Andes desde Colombia hasta Perú. En el Ecuador se distribuye en los páramos entre 3300 y 4300 m s.n.m.',
   },
-  'poaceae_festuca_parciflora subsp. parcifora': {
+  poaceae_festuca_parciflora_subsp_parcifora: {
     description: 'Macollas delgadas, 25-40 cm de alto, con rizomas cortos; culmos levemente escabrosos, 0,4-0,5 mm de diámetro. Hojas basales, las vainas membranosas; lígula membranosa de 0,8 mm de largo; lámina conduplicada, 6-15 x 0,4 cm, glabra en su mayor parte. Panículas contraídas, 3-8 cm x 3-4 mm, el raquis escabroso; espiguillas lanceoladas, púrpuras, 0,6-0,7 mm de largo, con 2 a 3 flósculos; glumas persistentes membranosas, púrpuras o blancas cuando maduras, la gluma inferior lanceolada, 2,4-2,6 mm de largo, la gluma superior ovada, alrededor de 3 mm de largo; lema membranácea, 6 mm de largo con una arista apical de 1 mm de largo; pálea 0,5 mm de largo, lanceolada de margen alado, densamente piloso. Especies similares: Calamagrostis fibrovaginata.',
     distribution: 'Festuca parciflora es endémica de los Andes del sur del Ecuador, específicamente en los páramos de las provincias del Azuay y Loja, entre 3600 y 4200 m s.n.m. La subespecie Festuca parciflora subsp. parciflora está restringida a los páramos del macizo del Cajas entre 3500 y 4000 m s.n.m.',
   },
@@ -827,7 +827,7 @@ const plants = {
     description: 'Arbustos de 1-1.5 m de alto, raramente epífitos, los tallos estriados, glabros, la corteza grisácea con finos agrietamientos. Hojas alternas, gruesas, coriáceas, elípticas 2-5 x 1-3 cm, la base anchamente cuneada o redondeada, el ápice agudo a redondeado, los márgenes enteros a ligeramente crenados o menudamente serrados; pecíolo corto, erecto, grueso. Inflorescencias axilares, racimosas, con 4-7 flores, glabras. Flores tubulares, conspicuas; cáliz 6-9 mm de largo; corola pentagonal, basalmente dilatada, 35-54 x 12-16 mm de diámetro basal, carnosa, de un carmesí escarlata oscuro, los lóbulos extendidos y marcadamente deflexos, los estambres y el estilo expuestos; pedicelos gruesos, articulados con el cáliz. Frutos bayas pentagonales, ca. 1.5 x 2 cm de diámetro, verde tornando rojizo, ligeramente dulces, el pedicelo craso, rojizo.',
     distribution: '',
   },
-  'columelliaceae_columellia_oblonga subsp. sericea': {
+  columelliaceae_columellia_oblonga_subsp_sericea: {
     description: 'Arbustos o árboles de hasta 5 m de altura y 15 cm de diámetro. Ramitas jóvenes amarillentas, con tricomas seríceos. Corteza externa grisácea, frecuentemente papirácea. Hojas simples, opuestas, obovadas a espatuladas, 2.5-3 x 0.8-1.5 cm,  semicoriáceas, la base decurrente sobre el pecíolo, los márgenes enteros, el ápice obtuso y mucronado, el haz glabro, lustroso, el envés pubescente, seríceo y blanquecino; pecíolo ca. 10 mm de largo. Inflorescencias en cimas cortas, terminales; los pedicelos ca. 5 mm de largo. Flores vistosas; cáliz verde, densamente pubescente, lóbulos lanceolados, 2-3 mm de largo; corola tubular, amarilla, con 5 lóbulos; estambres 2, amarillos, las anteras conspicuamente plegadas; estigma verde, bilobulado. Fruto una cápsula bilocular, septicida, verde, con numerosas semillas.',
     distribution: 'Ecuador a Bolivia.',
   },
@@ -981,7 +981,7 @@ const plants = {
     distribution: 'Colombia a Ecuador',
   },
   chloranthaceae_hedyosmum_purpurascens: {
-    description: 'Arbustos o pequeños árboles aromáticos, de hasta 4 m de alto. Tallos jóvenes cuadrangulares, púrpuras, lisos. Hojas angostamente elípticas a angostamente obovadas, de hasta 6.5 cm de largo, acuminadas, coriáceas, lisas, los márgenes crenulados; porción libre de peciolos verde o púrpura, la base envainante y rodeando al tallo. Inflorescencias estaminadas de hasta 4 cm de largo, compuestas de 1-3 espigas cortas. Inflorescencias pistiladas de hasta 3.2 cm de largo con 4-6 flores en una matriz de brácteas verdes encerrando las flores femeninas. Frutos en cimas pequeñas, púrpuras a negras, globosas, de hasta 1.2 cm en diámetro.',
+    description: 'Arbustos o pequeños árboles aromáticos, de hasta 4 m de alto. Tallos jóvenes cuadrangulares, púrpuras, lisos. Hojas angostamente elípticas a angostamente obovadas, de hasta 6.5 cm de largo, acuminadas, coriáceas, lisas, los márgenes crenulados; porción libre de peciolos verde o púrpura, la base envainante y rodeando al tallo. Inflorescencias estaminadas de hasta 4 cm de largo, compuestas de 1-3 espigas cortas. Inflorescencias pistiladas de hasta 3.2 cm de largo con 4-6 flores en una matriz de brácteas verdes encerrando las flores femeninas. Frutos en cimas pequeñas, blancas, globosas, de hasta 1.2 cm en diámetro.',
     distribution: 'Ecuador',
   },
   apiaceae_lilaeopsis_schaffneriana: {
@@ -1005,11 +1005,11 @@ const plants = {
     distribution: 'Costa Rica, Colombia a Chile',
   },
   fabaceae_lupinus_mutabilis: {
-    description: 'Hierbas robustas, muy ramificadas, de hasta 2 m de alto. Hojas palmeadas, digitadas, los folíolos 5 cm de largo, vellosos. Inflorecencias 15 cm de largo, con numerosas flores. Flores papilionáceas, principalmente azules con blanco, a veces rosadas. Fruto en legumbre, elíptico u oblongo, agudo en ambos extremos, numerosos por plant; legumbres con hasta 8 semillas, redondeadas u ovadas, lenticulares de hasta 15 mm de largo, recubiertas por un tegumento endurecido. Conocida en Ecuador como chocho',
+    description: 'Hierbas robustas, muy ramificadas, de hasta 2 m de alto. Hojas palmeadas, digitadas, los folíolos 5 cm de largo, vellosos. Inflorescencias 15 cm de largo, con numerosas flores. Flores papilionáceas, principalmente azules con blanco, a veces rosadas. Fruto en legumbre, elíptico u oblongo, agudo en ambos extremos, numerosos por plant; legumbres con hasta 8 semillas, redondeadas u ovadas, lenticulares de hasta 15 mm de largo, recubiertas por un tegumento endurecido. Conocida en Ecuador como chocho',
     distribution: 'Venezuela a Bolivia',
   },
   asteraceae_mutisia_microphylla: {
-    description: ' Bejuco robusto, trepando entre la vegetación por varios metros. Hojas pinnadas, en pares de 5-6, con pubescencia aracnoideo, terminando en un zarcillo. Folíolos de hasta 3 cm de largo, subsésiles a cortamente petiolulados, opuestos o alternos, ampliamente ovados, ápice agudo, mucronado, base redondeada, márgenes revolutos, glabrosos a ligeramente aracnoideos arriba, densamente lanados, color ocre abajo. Inflorecencia una cabezuela alargada con 8 flores externas con foma de lengüeta, rojas a púrpura, el limbo de hasta 35 mm de largo,  las flores internas tubulares, 16-18, bilabiadaS, de hasta 50 mm de largo.',
+    description: ' Bejuco robusto, trepando entre la vegetación por varios metros. Hojas pinnadas, en pares de 5-6, con pubescencia aracnoideo, terminando en un zarcillo. Folíolos de hasta 3 cm de largo, subsésiles a cortamente petiolulados, opuestos o alternos, ampliamente ovados, ápice agudo, mucronado, base redondeada, márgenes revolutos, glabrosos a ligeramente aracnoideos arriba, densamente lanados, color ocre abajo. Inflorescencia una cabezuela alargada con 8 flores externas con foma de lengüeta, rojas a púrpura, el limbo de hasta 35 mm de largo,  las flores internas tubulares, 16-18, bilabiadas, de hasta 50 mm de largo.',
     distribution: 'Ecuador',
   },
   proteaceae_oreocallis_grandiflora: {

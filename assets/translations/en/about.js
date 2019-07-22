@@ -43,7 +43,7 @@ const about = {
     + 'Arbustal siempreverde y Herbazal del Páramo, Bosque siempreverde del Páramo, Herbazal del Páramo,  Herbazal húmedo subnival del Páramo, Herbazal inundable del Páramo, y Herbazal y Arbustal siempreverde subnival.',
   ],
   app: [
-    'Flóramo is a field guide to identify some 240 species of wild plants found in the páramo, a vegetation type at the top of the Andes Mountains of tropical South America. '
+    'Flóramo is a field guide to identify over 250 species of wild plants found in the páramo, a vegetation type at the top of the Andes Mountains of tropical South America. '
     + 'It contains field images, species descriptions, and an identification key using life forms, flower colors or scientific names. '
     + 'A map with location of species, routes for personalized records. '
     + 'Additional features include searches into the Missouri Botanical Garden Tropicos® database. '

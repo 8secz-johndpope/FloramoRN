@@ -531,7 +531,7 @@ const plants = {
     description: 'Small herbs, in rosettes, up to 4 cm in diameter, solitary or in small groups. Leaves long lanceolate, up to 18 x 3 mm, very narrow, blue-purple upper leaf with ciliated margins. Numerous flowers in the center of the rosette, small, up to 8 mm long; white corolla 5-lobed; stamens connate in a tube 5 mm, anthers black. Fruit a capsule.',
     distribution: 'Endemic to Ecuador.',
   },
-  'campanulaceae_lysipomia_sphagnophila subsp. variabilis': {
+  'campanulaceae_lysipomia_sphagnophila_subsp_variabilis': {
     description: 'Small herbs with deep underground rhizomes, stems short, up to 2 cm. Leaves in a basal rosette, elliptic to oblanceolate, up to 15 mm long, ovate, slightly callous-crenulated, thick, with purple tints, ciliated. Many flowers in the center of the rosette, up to 5 mm long, calyx purple, ciliate. Corolla white or pale yellow, with 2 minute dorsal lobes and 3 ventral triangular lobes; stamens fused in a central column. Similar species: Lysipomia oellgaardii.',
     distribution: 'endemic S Ecuador.',
   },
@@ -635,7 +635,7 @@ const plants = {
     description: 'Perennial herbs, 2-4 cm long, vegetative stem short. Leaves in a basal rosette, obovate in outline, up to 1.2 x 1.6 cm, deeply palmatidivided into 5 segments, the largest is the central one, each segment lanceolate, with 1-3 apical bristles, midrib elevated on the surface below, glabrous, membranous, bright green ablove. Solitary flowers in the center of the rosette on a short pedicel, about 10 mm, tomentose, sepals about 6 mm long, lanceolate, green. Petals 5, about 8 mm long, oblong, erect-patent, entire, glabrous, white to pale pink with yellow-green center, the 5 ribs darker; stamens 10, anthers yellow. Fruit about 8 mm long, erect, reddish-brown, projecting the seeds. Similar species: Geranium sibbaldioides.',
     distribution: 'Colombia to Peru.',
   },
-  'geraniaceae_geranium_sibbaldioides subsp. sibbaldoides': {
+  geraniaceae_geranium_sibbaldioides: {
     description: 'Perennial herbs, up to 4 cm tall, forming small cushions, vegetative stem short. Leaves in a basal rosette of polygonal contour, up to 17 mm wide, deeply palmatidivided into 5 segments, white-pilose on both surfaces, the largest lobe is the central one, each segment lanceolate to oblanceolate, up to 7 mm long, apex reddish, membranaceous, petiole up to 18 mm, thin, white-pilose. Solitary flowers on the center of the rosette on a stalk about 10 mm, pilose. Sepals about 6 mm long, lanceolate, green with apical bristles, petals 5, about 5 mm long, oblong, erect-patent, entire, glabrous, white or pale pink with yellow-green center, 5 nerves darker, purple. Stamens 10, anthers yellow. Fruit about 5 mm long, erect, reddish-brown, projecting the seeds. Similar species: Geranium maniculatum.',
     distribution: 'Venezuela to Bolivia.',
   },
@@ -735,7 +735,7 @@ const plants = {
     description: 'Robust tussocks, 30-50 cm tall; basal leaves with fibrous sheaths that surround the base of the stems. The apical part covered by a dense mass of long white trichomes, which also cover the base of the blade. Culms simple, erect with a row of bearded trichomes under the nodes. Leaves involute, 5-20 cm x 2.3 mm, margins rough. Panicle contracted, elliptic, 4-10 x 2-3 cm, with short branches and covered with long and short white trichomes. Spikelets laterally compressed, with 2-3 flowers; glumes 3-nerved, lanceolate, cream color, 2.4 cm long, completely covering the flowers. Lemma tightly lanceolate, 6 mm long, with bifid apex and an apical awn 5 mm, originating in the middle of the lobes. Palea lanceolate, 5 mm long, with 2 lateral ciliate keels; callus covered with white trichomes, 4-5 mm long. Similar species: Cortaderia bífida.',
     distribution: 'Colombia to Peru.',
   },
-  'poaceae_festuca_parciflora subsp. parcifora': {
+  poaceae_festuca_parciflora_subsp_parcifora: {
     description: 'Slender tussocks, 25-40 cm tall, with short rhizomes; culms slightly scabrous, 0.4-0.5 mm diameter. Leaves basal, sheath membranous; ligule membranous, 0.8 mm long; blade conduplicate, 6-15 x 0.4 cm, mostly glabrous. Panicles contracted, 3-8 cm x 3-4 mm, rachis scabrous. Spikelets lanceolate, purple, 0.6-0.7 mm long, with 2 to 3 flowers; membranous glumes persistent, purple or white when mature, lower glume lanceolate, 2.4-2.6 mm long, upper glume ovate, about 3 mm long; lemma membranous, 6 mm long with an apical ridge 1 mm long; palea 0.5 mm long, lanceolate, margin winged, densely pilose. Similar species: Calamagrostis fibrovaginata.',
     distribution: 'endemic to S Ecuador.',
   },
@@ -827,7 +827,7 @@ const plants = {
     description: 'Shrubs 1-1.5 m tall, rarely epiphytic, stems striated, glabrous, bark grayish with fine cracks. Leaves alternate, thick, leathery, 2-5 x 1-3 cm elliptical, cuneate or rounded broadly base, rounded to acute apex, margins entire to lightly crenate or minutely serrated; petiole short, erect, thick. Inflorescences axillary, racemose, with 4-7 flowers, glabrous. Flowers tubular, conspicuous; calyx 6-9 mm long; corolla pentagonal, dilated basally, 35-54 x 12-16 mm diameter at base, fleshy, dark scarlet crimson, and markedly deflexed extended lobes, stamens and style exposed; pedicels thick, articulated with the calyx. Berries pentagonal, ca. 1.5 x 2 cm in diameter, green turning reddish, slightly sweet, pedicel thick, reddish.',
     distribution: '',
   },
-  'columelliaceae_columellia_oblonga subsp. sericea': {
+  columelliaceae_columellia_oblonga_subsp_sericea: {
     description: 'Shrubs or trees up to 5 m tall and 15 cm in diameter. Young twigs yellowish with sericeous trichomes. Outer bark greyish, often papery. Leaves dimple, opposite, obovate to spatulate, 2.5-3 x 0.8-1.5 cm, semicoriaceous, base decurrent ontopetiole, margins entire, apex obtuse and mucronate, glabrous, leas surface glossy above, pubescent, sericeous and white below; petiole ca. 10 mm long. Inflorescences in short cymes, terminal. Pedicels ca. 5mm long. Flowers conspicuos, densely pubescent, lobes lanceolate, 2-3 mm long, calyx green; corolla tubular, yellow, 5-lobed; stamens 2, yellow, anthers conspicuously folded; stigma green bilobed. Fruit a bilocular capsule, septicidal, green, with numerous seeds.',
     distribution: 'Ecuador to Bolivia.',
   },
@@ -981,7 +981,7 @@ const plants = {
     distribution: 'Colombia to Ecuador',
   },
   chloranthaceae_hedyosmum_purpurascens: {
-    description: 'Aromatic shrubs or small trees up to 4 m tall. Young stems quadrate, purple, smooth, glabrous. Leaves narrowly elliptic to narrowly obovate, up to 6.5 cm long, with acuminate tips, coriaceous, smooth; margins crenulate; free portion of petioles green or purple, the base with sheaths surrounding the stem. Staminate inflorescences up to 4 cm long, composed of 1-3 spikes. Pistillate inflorescences up to 3.2 cm long with 4-6 flowers in a geen bract matrix enclosing the female flowers. Fruiting cymules purple to black, globose, up to 1.2 cm in diam.',
+    description: 'Aromatic shrubs or small trees up to 4 m tall. Young stems quadrate, purple, smooth, glabrous. Leaves narrowly elliptic to narrowly obovate, up to 6.5 cm long, with acuminate tips, coriaceous, smooth; margins crenulate; free portion of petioles green or purple, the base with sheaths surrounding the stem. Staminate inflorescences up to 4 cm long, composed of 1-3 spikes. Pistillate inflorescences up to 3.2 cm long with 4-6 flowers in a green bract matrix enclosing the female flowers. Fruiting cymules white, globose, up to 1.2 cm in diam.',
     distribution: 'Ecuador',
   },
   apiaceae_lilaeopsis_schaffneriana: {

@@ -1,6 +1,6 @@
 /* @flow */
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 
 type Props = {
   name: string,
@@ -9,16 +9,18 @@ type Props = {
 };
 
 const NthIcon = (props: Props) => {
-  const {name, solid, light, ...rest} = props;
+  const {
+    name, solid, light, ...rest
+  } = props;
   const icon = [];
   if (solid) {
-    icon.push("fas");
+    icon.push('fas');
   } else if (light) {
-    icon.push("far");
+    icon.push('far');
   }
-  if(!solid && !light) {
+  if (!solid && !light) {
     console.warn('ICON WITH NO SOLID OR LIGHT!!', name);
-    icon.push("far");
+    icon.push('far');
   }
   icon.push(name);
   return <FontAwesomeIcon icon={icon} {...rest} />;
@@ -26,7 +28,7 @@ const NthIcon = (props: Props) => {
 
 NthIcon.defaultProps = {
   solid: false,
-  light: false
+  light: false,
 };
 
 export default NthIcon;

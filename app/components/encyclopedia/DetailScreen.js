@@ -1,7 +1,9 @@
 /* @flow */
 /* eslint-disable react/no-array-index-key */
 import React, { Component } from 'react';
-import { BackHandler, Dimensions, Image, ScrollView, TouchableOpacity, View } from 'react-native';
+import {
+  BackHandler, Dimensions, Image, ScrollView, TouchableOpacity, View,
+} from 'react-native';
 import _ from 'lodash';
 import { scale } from 'react-native-size-matters';
 import type { Plant } from '../../../data/plantTypes';
@@ -26,7 +28,7 @@ type State = {
   index: number
 }
 
-const {width} = Dimensions.get('window');
+const { width } = Dimensions.get('window');
 const labelWidth = 95;
 
 const getFullName = (plant: Plant) => `${plant.genus} ${plant.species}`;
@@ -36,7 +38,7 @@ const getLabel = label => (
     i18n={`plantDetails.${label}`}
     weight="semiBold"
     font="barlow"
-    style={{width: labelWidth}}
+    style={{ width: labelWidth }}
   />
 );
 
@@ -82,31 +84,28 @@ const lifeFormRow = plantLifeForms => (
 
 class DetailScreen extends Component<Props, State> {
   _didFocusSubscription;
+
   _willBlurSubscription;
 
   constructor(props: Props) {
     super(props);
-    const {navigation} = this.props;
-    const {plant} = navigation.state.params;
+    const { navigation } = this.props;
+    const { plant } = navigation.state.params;
     this.state = {
       overlayShown: false,
       index: 0,
-      totalPhotos: _.get(plant.photos, 'length', 0)
+      totalPhotos: _.get(plant.photos, 'length', 0),
     };
 
-    this._didFocusSubscription = props.navigation.addListener('didFocus', () =>
-      BackHandler.addEventListener('hardwareBackPress', this.onBackButtonPressAndroid)
-    );
+    this._didFocusSubscription = props.navigation.addListener('didFocus', () => BackHandler.addEventListener('hardwareBackPress', this.onBackButtonPressAndroid));
   }
 
   componentDidMount() {
-    this._willBlurSubscription = this.props.navigation.addListener('willBlur', () =>
-      BackHandler.removeEventListener('hardwareBackPress', this.onBackButtonPressAndroid)
-    );
+    this._willBlurSubscription = this.props.navigation.addListener('willBlur', () => BackHandler.removeEventListener('hardwareBackPress', this.onBackButtonPressAndroid));
   }
 
   onBackButtonPressAndroid = () => {
-    const {overlayShown} = this.state;
+    const { overlayShown } = this.state;
     if (overlayShown) {
       this.closeOverlay();
       return true;
@@ -121,10 +120,10 @@ class DetailScreen extends Component<Props, State> {
   }
 
   static getDerivedStateFromProps(nextProps) {
-    const {navigation} = nextProps;
-    const {plant} = navigation.state.params;
+    const { navigation } = nextProps;
+    const { plant } = navigation.state.params;
     return {
-      totalPhotos: _.get(plant.photos, 'length', 0)
+      totalPhotos: _.get(plant.photos, 'length', 0),
     };
   }
 
@@ -135,12 +134,12 @@ class DetailScreen extends Component<Props, State> {
   }
 
   onPlantPressed() {
-    const {navigation} = this.props;
-    const {plant, from} = navigation.state.params;
+    const { navigation } = this.props;
+    const { plant, from } = navigation.state.params;
     const url = `${appConfig.base_url}${plant.tropicosId}`;
     navigation.navigate({
       ...appNavigation.navigationTree.plantWebView,
-      ...{params: {url, plant, from}},
+      ...{ params: { url, plant, from } },
     });
   }
 
@@ -159,18 +158,18 @@ class DetailScreen extends Component<Props, State> {
       >
         <Image resizeMode="contain" source={photo} style={styles.galleryPhoto} />
       </TouchableOpacity>
-    )
+    );
   }
 
   detailGallery(photos: Array<number>) {
     return (
-      <NthCardView margin={{bottom: scale(20)}}>
+      <NthCardView margin={{ bottom: scale(20) }}>
         <ScrollView horizontal style={styles.flexRow}>
           {photos.map((photo, i) => this.galleryPhoto(i, photo))}
         </ScrollView>
       </NthCardView>
     );
-  };
+  }
 
   closeOverlayButton() {
     return (
@@ -221,7 +220,7 @@ class DetailScreen extends Component<Props, State> {
   }
 
   renderOverlay(plant: Plant) {
-    const {index, totalPhotos} = this.state;
+    const { index, totalPhotos } = this.state;
     const imageSize = width - 20;
 
     return (
@@ -231,13 +230,13 @@ class DetailScreen extends Component<Props, State> {
           i18n="plantDetails.photoIndex"
           weight="semiBold"
           color={colors.secondary100}
-          i18nParams={{current: index + 1, total: totalPhotos}}
-          style={{marginBottom: 8}}
+          i18nParams={{ current: index + 1, total: totalPhotos }}
+          style={{ marginBottom: 8 }}
         />
         <Image
           resizeMode="contain"
           source={plant.photos[index]}
-          style={{width: imageSize, height: imageSize}}
+          style={{ width: imageSize, height: imageSize }}
         />
         {this.prevPhotoButton(index)}
         {this.nextPhotoButton(index, totalPhotos)}
@@ -246,8 +245,8 @@ class DetailScreen extends Component<Props, State> {
   }
 
   onBackPressed() {
-    const {navigation} = this.props;
-    const {from} = navigation.state.params;
+    const { navigation } = this.props;
+    const { from } = navigation.state.params;
     if (from === 'search') {
       navigation.navigate(appNavigation.navigationTree.search);
       return;
@@ -258,9 +257,9 @@ class DetailScreen extends Component<Props, State> {
   }
 
   render() {
-    const {navigation} = this.props;
-    const {overlayShown} = this.state;
-    const {plant} = navigation.state.params;
+    const { navigation } = this.props;
+    const { overlayShown } = this.state;
+    const { plant } = navigation.state.params;
     return (
       <NthContainer onPress={() => this.onBackPressed()} header={getFullName(plant)} type="back" noPadding>
         <View style={styles.flex1}>
@@ -276,7 +275,7 @@ class DetailScreen extends Component<Props, State> {
               <Image source={tropicosLogo} style={styles.tropicosLogo} />
               <NthText i18n="plantDetails.tropicos" />
             </TouchableOpacity>
-            <NthCardView margin={{bottom: 0}}>
+            <NthCardView margin={{ bottom: 0 }}>
               {textRow('family', plant.family)}
               {textRow('genus', plant.genus)}
               {textRow('species', plant.species)}
@@ -284,7 +283,7 @@ class DetailScreen extends Component<Props, State> {
               {lifeFormRow(plant.lifeForms)}
               {i18nRow('distribution', `plants.${plant.key}.distribution`)}
             </NthCardView>
-            <NthCardView margin={{bottom: 0}}>
+            <NthCardView margin={{ bottom: 0 }}>
               <NthText i18n={`plants.${plant.key}.description`} multiline lineHeight={1.4} font="barlow" />
             </NthCardView>
             {this.detailGallery(plant.photos)}

@@ -17,20 +17,16 @@ type Props = {
 };
 type State = {
   name: string,
-  commonName: string,
   family: string,
   hasError: boolean,
   isLoading: boolean,
   results: any
 };
 
-const getParams = (name: string, commonName: string, family: string) => {
+const getParams = (name: string, family: string) => {
   const params = {};
   if (name !== '') {
     params.name = name;
-  }
-  if (commonName !== '') {
-    params.commonName = commonName;
   }
   if (family !== '') {
     params.family = family;
@@ -40,28 +36,24 @@ const getParams = (name: string, commonName: string, family: string) => {
 
 class TropicosSearchScreen extends Component<Props, State> {
   _didFocusSubscription;
+
   _willBlurSubscription;
 
   constructor(props: Props) {
     super(props);
     this.state = {
       name: '',
-      commonName: '',
       family: '',
       hasError: false,
       isLoading: false,
       results: undefined,
     };
 
-    this._didFocusSubscription = props.navigation.addListener('didFocus', () =>
-      BackHandler.addEventListener('hardwareBackPress', this.onBackButtonPressAndroid)
-    );
+    this._didFocusSubscription = props.navigation.addListener('didFocus', () => BackHandler.addEventListener('hardwareBackPress', this.onBackButtonPressAndroid));
   }
 
   componentDidMount() {
-    this._willBlurSubscription = this.props.navigation.addListener('willBlur', () =>
-      BackHandler.removeEventListener('hardwareBackPress', this.onBackButtonPressAndroid)
-    );
+    this._willBlurSubscription = this.props.navigation.addListener('willBlur', () => BackHandler.removeEventListener('hardwareBackPress', this.onBackButtonPressAndroid));
   }
 
   onBackButtonPressAndroid = () => {
@@ -75,12 +67,12 @@ class TropicosSearchScreen extends Component<Props, State> {
   }
 
   onBackPressed() {
-    const {results} = this.state;
-    if(results === undefined) {
-      const {navigation} = this.props;
+    const { results } = this.state;
+    if (results === undefined) {
+      const { navigation } = this.props;
       navigation.goBack();
     }
-    this.resetResults()
+    this.resetResults();
   }
 
   onChange(field: string, value: string) {
@@ -90,12 +82,11 @@ class TropicosSearchScreen extends Component<Props, State> {
   }
 
   onSearchPressed() {
-    const {name, commonName, family} = this.state;
+    const { name, family } = this.state;
     const trimmedName = name.trim();
-    const trimmedCommonName = commonName.trim();
     const trimmedFamily = family.trim();
-    if (trimmedName === '' && trimmedCommonName === '' && trimmedFamily === '') {
-      this.setState({hasError: true});
+    if (trimmedName === '' && trimmedFamily === '') {
+      this.setState({ hasError: true });
     } else {
       const url = appConfig.search_url;
       const key = appConfig.tropicos;
@@ -104,7 +95,7 @@ class TropicosSearchScreen extends Component<Props, State> {
       });
       axios.get(url, {
         params: {
-          ...getParams(trimmedName, trimmedCommonName, trimmedFamily),
+          ...getParams(trimmedName, trimmedFamily),
           type: 'wildcard',
           format: 'json',
           apikey: key,
@@ -116,7 +107,6 @@ class TropicosSearchScreen extends Component<Props, State> {
             results: response.data,
             isLoading: false,
             name: '',
-            commonName: '',
             family: '',
           });
         })
@@ -130,11 +120,11 @@ class TropicosSearchScreen extends Component<Props, State> {
   }
 
   onPlantPressed(nameId: string) {
-    const {navigation} = this.props;
+    const { navigation } = this.props;
     const url = `${appConfig.base_url}${nameId}`;
     navigation.navigate({
       ...appNavigation.navigationTree.plantWebView,
-      ...{params: {url, from: 'tropicos'}},
+      ...{ params: { url, from: 'tropicos' } },
     });
   }
 
@@ -146,9 +136,9 @@ class TropicosSearchScreen extends Component<Props, State> {
   }
 
   render() {
-    const {navigation} = this.props;
+    const { navigation } = this.props;
     const {
-      name, commonName, family, hasError, results, isLoading,
+      name, family, hasError, results, isLoading,
     } = this.state;
     const headerProps = {};
     let component;
@@ -171,7 +161,6 @@ class TropicosSearchScreen extends Component<Props, State> {
       component = (
         <TropicosSearchForm
           name={name}
-          commonName={commonName}
           family={family}
           onChange={(field, value) => this.onChange(field, value)}
           onSearchPressed={() => this.onSearchPressed()}

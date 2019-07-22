@@ -14,7 +14,9 @@ type Props = {
 };
 
 const NthButton = (props: Props) => {
-  const {icon, i18nTitle, i18nParams, onPress, marginBottom} = props;
+  const {
+    icon, i18nTitle, i18nParams, onPress, marginBottom,
+  } = props;
 
   const iconObj = {};
   if (icon) {
@@ -25,7 +27,7 @@ const NthButton = (props: Props) => {
         size={20}
         light
       />
-    )
+    );
   }
 
   return (
@@ -36,7 +38,7 @@ const NthButton = (props: Props) => {
       buttonStyle={{
         height: 50,
         borderRadius: 5,
-        marginBottom
+        marginBottom,
       }}
       titleStyle={{
         color: colors.secondary50,

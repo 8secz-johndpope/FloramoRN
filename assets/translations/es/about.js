@@ -45,7 +45,7 @@ const about = {
     + 'Arbustal siempreverde y Herbazal del Páramo, Bosque siempreverde del Páramo, Herbazal del Páramo, Herbazal húmedo subnival del Páramo, Herbazal inundable del Páramo, y Herbazal y Arbustal siempreverde subnival.',
   ],
   app: [
-    'Flóramo es una guía de campo para identificar cerca de 240 especies de plantas silvestres que se encuentran en el páramo, un tipo de vegetación se encuentra en la cima de las montañas de los Andes tropicales de América del Sur. '
+    'Flóramo es una guía de campo para identificar más de 250 especies de plantas silvestres que se encuentran en el páramo, un tipo de vegetación se encuentra en la cima de las montañas de los Andes tropicales de América del Sur. '
     + 'Contiene imágenes de campo, descripciones de las especies y una clave de identificación por formas de vida, colores de las flores o nombres científicos. '
     + 'Un mapa con ubicación de las especies, rutas para personalizar registros. '
     + 'Adicionalmente se puede hace búsqueda en la base de datos Tropicos® del Missouri Botanical Garden. '

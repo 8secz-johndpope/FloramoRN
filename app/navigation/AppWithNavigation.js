@@ -2,7 +2,7 @@
 * @format
 * @flow
 */
-import { library } from '@fortawesome/fontawesome-svg-core'
+import { library } from '@fortawesome/fontawesome-svg-core';
 import {
   faBadge as farBadge,
   faBars as farBars,
@@ -19,7 +19,7 @@ import {
   faTimes as farTimes,
   faUserFriends as farUserFriends,
   faWindowAlt as farWindowAlt,
-} from '@fortawesome/pro-regular-svg-icons'
+} from '@fortawesome/pro-regular-svg-icons';
 import {
   faArrowSquareLeft as fasArrowSquareLeft,
   faArrowSquareRight as fasArrowSquareRight,
@@ -33,12 +33,12 @@ import {
   faSpiderBlackWidow as fasSpiderBlackWidow,
   faUserFriends as fasUserFriends,
   faWindowAlt as fasWindowAlt,
-} from '@fortawesome/pro-solid-svg-icons'
+} from '@fortawesome/pro-solid-svg-icons';
 
 import React, { Component } from 'react';
 import { StatusBar, View } from 'react-native';
 import { ThemeProvider } from 'react-native-elements';
-import * as RNLocalize from "react-native-localize";
+import * as RNLocalize from 'react-native-localize';
 import { createAppContainer, createDrawerNavigator } from 'react-navigation';
 import NthDrawer from '../components/_common/NthDrawer/NthDrawer';
 import i18n from '../i18n';
@@ -90,7 +90,7 @@ class AppWithNavigation extends Component<{}, {}> {
     RNLocalize.removeEventListener('change', this.onLanguagesChange);
   }
 
-  onLanguagesChange = ({language}: Object) => {
+  onLanguagesChange = ({ language }: Object) => {
     i18n.locale = language;
   };
 

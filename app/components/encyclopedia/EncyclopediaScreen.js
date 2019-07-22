@@ -16,21 +16,22 @@ type State = {
 
 class EncyclopediaScreen extends Component<Props, State> {
   onPlantPress(plant: Plant) {
-    const {navigation} = this.props;
+    const { navigation } = this.props;
     navigation.navigate({
       ...appNavigation.navigationTree.detail,
-      ...{params: {plant, from: 'encyclopedia'}},
+      ...{ params: { plant, from: 'encyclopedia' } },
     });
   }
 
   render() {
-    const {navigation} = this.props;
+    const { navigation } = this.props;
     return (
       <NthContainer
         onPress={() => navigation.openDrawer()}
-        i18nHeader="navigation.title.encyclopedia" noPadding
+        i18nHeader="navigation.title.encyclopedia"
+        noPadding
       >
-        <View style={{flex: 1}}>
+        <View style={{ flex: 1 }}>
           <EncyclopediaList
             plantList={species}
             onPlantPressed={plant => this.onPlantPress(plant)}
