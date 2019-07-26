@@ -3907,7 +3907,11 @@ const species = [
       'tree'],
     thumbnail: require('../assets/images/encyclopedia/encyclopedia_thumbnails/Bejar_aest.jpg'),
     detailImage: require('../assets/images/encyclopedia/detail_images/Bejar_aest.jpg'),
-    photos: [require('../assets/images/encyclopedia/full_size/Bejar_aest.jpg')],
+    photos: [
+      require('../assets/images/encyclopedia/full_size/Bejar_aest.jpg'),
+      require('../assets/images/encyclopedia/full_size/Bejar_aest_2.jpg'),
+      require('../assets/images/encyclopedia/full_size/Bejar_aest_3.jpg'),
+    ],
     places: [],
   },
   {
