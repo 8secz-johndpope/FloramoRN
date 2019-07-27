@@ -3,15 +3,7 @@ package com.lzm.Cajas;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
-import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
-import com.avishayil.rnrestart.ReactNativeRestartPackage;
-import com.reactcommunity.rnlocalize.RNLocalizePackage;
-import com.horcrux.svg.SvgPackage;
-import com.oblador.vectoricons.VectorIconsPackage;
-import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
-import com.reactnativecommunity.webview.RNCWebViewPackage;
 import com.kishanjvaghela.cardview.RNCardViewPackage;
-import com.BV.LinearGradient.LinearGradientPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
@@ -32,15 +24,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-            new AsyncStoragePackage(),
-            new ReactNativeRestartPackage(),
-            new RNLocalizePackage(),
-            new SvgPackage(),
-            new VectorIconsPackage(),
-            new RNGestureHandlerPackage(),
-            new RNCWebViewPackage(),
-            new RNCardViewPackage(),
-            new LinearGradientPackage()
+            new RNCardViewPackage()
       );
     }
 

@@ -56,3 +56,6 @@ go_bck
 
 # Bundle artifact
 *.jsbundle
+
+# CocoaPods
+/ios/Pods/
