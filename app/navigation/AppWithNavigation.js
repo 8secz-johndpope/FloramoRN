@@ -82,7 +82,8 @@ const DrawerNavigation = createAppContainer(
 );
 
 class AppWithNavigation extends Component<{}, {}> {
-  componentWillMount() {
+  constructor(props: Props) {
+    super(props);
     RNLocalize.addEventListener('change', this.onLanguagesChange);
   }
 
@@ -90,7 +91,7 @@ class AppWithNavigation extends Component<{}, {}> {
     RNLocalize.removeEventListener('change', this.onLanguagesChange);
   }
 
-  onLanguagesChange = ({ language }: Object) => {
+  onLanguagesChange = ({language}: Object) => {
     i18n.locale = language;
   };
 
