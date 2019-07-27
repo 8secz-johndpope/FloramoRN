@@ -125,7 +125,7 @@ function task_clean {
 
 function task_clean_dir {
     echo "${utils_fg}cleaning everything not in git (except for idea folder)${normal}"
-    git clean -fxd -e .idea
+    git clean -fxd -e .idea -e android/app/my-release-key.keystore -e go_bck
 }
 
 function task_start_ios {
