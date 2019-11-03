@@ -39,7 +39,8 @@ import React, { Component } from 'react';
 import { StatusBar, View } from 'react-native';
 import { ThemeProvider } from 'react-native-elements';
 import * as RNLocalize from 'react-native-localize';
-import { createAppContainer, createDrawerNavigator } from 'react-navigation';
+import { createAppContainer } from 'react-navigation';
+import { createDrawerNavigator } from 'react-navigation-drawer'
 import NthDrawer from '../components/_common/NthDrawer/NthDrawer';
 import i18n from '../i18n';
 import colors from '../styles/colors';
